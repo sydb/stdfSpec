@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:rng="http://relaxng.org/ns/structure/1.0"
+     xmlns:sch="http://purl.oclc.org/dsdl/schematron">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+	<title>Proposal for encoding standoff annotations in TEI</title>
+	<author>
+	  <persName>
+	    <forename>Peter</forename>
+	    <surname>Stadler</surname>
+	  </persName>
+	</author>
+	<author>
+	  <persName>
+	    <forename>Laurent</forename>
+	    <surname>Romary</surname>
+	  </persName>
+	</author>
+	<respStmt xml:id="pb">
+	  <resp>contributor</resp>
+	  <persName ref="https://github.com/bansp">
+	    <forename>Piotr</forename>
+	    <surname>Banski</surname>
+	  </persName>
+	</respStmt>
+	<respStmt xml:id="sb">
+	  <resp>contributor</resp>
+	  <persName ref="https://github.com/sydb">
+	    <forename>Syd</forename>
+	    <surname>Bauman</surname>
+	  </persName>
+	</respStmt>
+	<respStmt xml:id="sm">
+	  <resp>contributor</resp>
+	  <persName ref="https://github.com/simonmeoni">
+	    <forename>Simon</forename>
+	    <surname>Meoni</surname>
+	  </persName>
+	</respStmt>
+      </titleStmt>
+      <publicationStmt>
+	<authority>Berlin task force "standoff"</authority>
+	<availability>
+	  <licence>CC+BY and BSD-2 licences</licence>
+	</availability>
+      </publicationStmt>
+      <sourceDesc>
+	<p>...</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change when="2018-10-28" who="#sb">Change overall structure, eliminating <gi>teiCorpus</gi> and allowing <gi>TEI</gi> to nest, thus removing need for crazy <gi>teiHeader</gi> inside <gi>standOff</gi>. This also obviates the need for <gi>listAnnotation</gi> inside <gi>standOff</gi>, putting its content directly in <gi>standOff</gi>.</change>
+      <change when="2017-03-16" who="#pb">purified this ODD</change>
+      <change when="2017-03-15" who="#pb">combined two elementSpec for "standoff" into one, removed the macroSpec redeclaration (it had no effect on the compiled ODD)</change>
+      <change when="2015-03-14" who="#ps">modification and extension (changes since that date not logged here, see the <ref target="https://github.com/laurentromary/stdfSpec/commits/master"
+      >repository history</ref>)</change>
+      <change when="2014-12-02" who="#lr">initial version created (changes since that date not logged here, see the <ref target="https://github.com/laurentromary/stdfSpec/commits/master"
+      >repository history</ref>)</change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <!-- http://wiki.tei-c.org/index.php/Proposal_for_@selector_attribute_on_rendition -->
+      <schemaSpec ident="standoff-proposal" start="TEI">
+	<moduleRef key="tei"/>
+	<moduleRef key="core"/>
+	<moduleRef key="analysis"/>
+	<moduleRef key="certainty"/>
+	<moduleRef key="corpus"/>
+	<moduleRef key="dictionaries"/>
+	<moduleRef key="drama"/>
+	<moduleRef key="figures"/>
+	<moduleRef key="gaiji"/>
+	<moduleRef key="header"/>
+	<moduleRef key="iso-fs"/>
+	<moduleRef key="linking"/>
+	<moduleRef key="msdescription"/>
+	<moduleRef key="namesdates"/>
+	<moduleRef key="nets"/>
+	<moduleRef key="spoken"/>
+	<moduleRef key="textcrit"/>
+	<moduleRef key="textstructure"/>
+	<moduleRef key="transcr"/>
+	<moduleRef key="verse"/>
+	<moduleRef key="tagdocs"/>
+
+	<!-- Remove <teiCorpus> -->
+	<elementSpec ident="teiCorpus" mode="delete" module="textstructure"/>
+
+	<!-- Alter <TEI> content to allow corpora -->
+	<elementSpec module="textstructure" ident="TEI" mode="change">
+	  <desc versionDate="2018-10-28" xml:lang="en">contains a
+	  single TEI-conformant document, combining a single TEI
+	  header with either one or more members of the <ident
+	  type="class">model.resourceLike</ident> class, a sequence of
+	  one or more <gi>TEI</gi> elements, or both.</desc>
+	  <classes>
+	    <memberOf key="att.global"/>
+	    <memberOf key="att.typed"/>
+	  </classes>
+	  <content>
+	    <sequence>
+	      <elementRef key="teiHeader"/>
+	      <alternate>
+		<sequence>
+		  <classRef key="model.resourceLike" minOccurs="1" maxOccurs="unbounded"/>
+		  <classRef key="TEI" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+		<classRef key="TEI" minOccurs="1" maxOccurs="unbounded"/>
+	      </alternate>
+	    </sequence>
+	  </content>
+	</elementSpec>
+
+	<!-- Specific model for the new elements introduced here: <standOff> and <listAnnotation> -->
+	<moduleSpec ident="standOff">
+	  <desc>Elements to allow stand-off annotations in a TEI document</desc>
+	</moduleSpec>
+
+	<!--  The entry point to stand-off annotations, as member of model.resourceLike-->
+	<elementSpec ident="standOff" mode="add" ns="http://www.tei-c.org/proposal/standoff/ns" module="standOff">
+	  <desc>Container element for stand-off annotations embedded in a TEI document</desc>
+	  <classes>
+	    <memberOf key="model.resourceLike"/>
+	    <!-- We need to check if and why we need to have all these attributes at the level of the <standOff> element. -->
+	    <memberOf key="att.global"/>
+	    <memberOf key="att.typed"/>
+	    <memberOf key="att.notated"/>
+	    <memberOf key="att.datable.w3c"/>
+	    <memberOf key="att.pointing"/>
+	  </classes>
+	  <content>
+	    <classRef key="model.annotation" minOccurs="1" maxOccurs="unbounded"/>
+	  </content>
+	  <constraintSpec ident="StandOffNamespace" scheme="isoschematron" mode="add">
+	    <constraint>
+	      <sch:ns prefix="stdf" uri="http://www.tei-c.org/proposal/standoff/ns"/>
+	    </constraint>
+	  </constraintSpec>
+	  <constraintSpec ident="SecondLevelStandOffTyping" scheme="isoschematron" mode="add">
+	    <constraint>
+	      <sch:assert test="@type or not(ancestor::stdf:standOff)">This <sch:name/> element must have a @type attribute, since it has an ancestor <sch:name/></sch:assert>
+	    </constraint>
+	  </constraintSpec>
+	</elementSpec>
+
+	<!-- The content model for <annotationBlock> is revised to deal with the various anticipated annotation use cases -->
+	<elementSpec ident="annotationBlock" mode="change" module="spoken">
+	  <classes mode="change">
+	    <memberOf key="model.annotation" mode="add"/>
+	    <!-- The following declaration is to ensure that it appears wherever annotated segLike objects can -->
+	    <memberOf key="model.segLike" mode="add"/>
+	    <!-- This is added to account for the notation variants introduced as content models for annotationBlock -->
+	    <memberOf key="att.notated" mode="add"/>
+	    <!-- Needs to be typed in stand-off context to reflect the ... type of annotaiotn we are dealing with -->
+	    <memberOf key="att.typed"/>
+	  </classes>
+	  <content>
+	    <alternate>
+	      <classRef key="model.annotation" minOccurs="1" maxOccurs="unbounded"/>
+	      <sequence>
+		<classRef key="model.linguisticSegment" minOccurs="0" maxOccurs="1"/>
+		<classRef key="model.interlinearAnnotation" minOccurs="0" maxOccurs="unbounded"/>
+	      </sequence>
+	      <sequence>
+		<classRef key="model.OABody" minOccurs="0" maxOccurs="unbounded"/>
+		<classRef key="model.OAAnnotation" minOccurs="1" maxOccurs="1"/>
+		<classRef key="model.OATarget" minOccurs="0" maxOccurs="unbounded"/>
+	      </sequence>
+	    </alternate>
+	  </content>
+	  <remarks>
+	    <p>The global xml:base attribute is used on this element both to specify the target of the annotations and to serve as the base for any target URIs contained by the annotation
+	    elements. If this attribute is not supplied, the listAnnotation must be embedded within the complete TEI document to which it applies. </p>
+	  </remarks>
+	</elementSpec>
+
+	<classSpec type="model" ident="model.annotation" mode="add" module="standOff">
+	  <desc>groups together any kind of element that may be used
+	  to annotate an annotable segment</desc>
+	</classSpec>
+
+	<!-- The following classes are introduced to have an Open
+	     Annotation compliant profile for <annotationBlock> -->
+
+	<!-- Open Annotation: Target -->
+	<classSpec type="model" ident="model.OATarget" mode="add" module="standOff">
+	  <desc>Class implementing the Target component from the Open Annotation model</desc>
+	</classSpec>
+
+	<!-- <span> is the basic implementation of the OA model Target component -->
+	<elementSpec ident="span" mode="change">
+	  <classes mode="change">
+	    <memberOf key="model.OATarget" mode="add"/>
+	  </classes>
+	</elementSpec>
+
+	<!-- Open Annotation: Body -->
+
+	<classSpec type="model" ident="model.OABody" mode="add" module="standOff">
+	  <desc>Class implementing the Body component from the Open Annotation model</desc>
+	</classSpec>
+
+	<!-- Providing a simple default to the OA Body with <note> -->
+	<elementSpec ident="note" mode="change">
+	  <classes mode="change">
+	    <memberOf key="model.OABody" mode="add"/>
+	  </classes>
+	</elementSpec>
+
+	<!-- Adding <person>, <measure>, <date>... to OA Body for the Named Entity use case -->
+	<elementSpec ident="person" mode="change">
+	  <classes mode="change">
+	    <memberOf key="model.OABody" mode="add"/>
+	  </classes>
+	</elementSpec>
+
+	<elementSpec ident="measure" mode="change">
+	  <classes mode="change">
+	    <memberOf key="model.OABody" mode="add"/>
+	  </classes>
+	</elementSpec>
+
+	<elementSpec ident="date" mode="change">
+	  <classes mode="change">
+	    <memberOf key="model.OABody" mode="add"/>
+	  </classes>
+	</elementSpec>
+
+	<elementSpec ident="place" mode="change">
+	  <classes mode="change">
+	    <memberOf key="model.OABody" mode="add"/>
+	  </classes>
+	</elementSpec>
+
+	<elementSpec ident="org" mode="change">
+	  <classes mode="change">
+	    <memberOf key="model.OABody" mode="add"/>
+	  </classes>
+	</elementSpec>
+
+	<!-- Open Annotation: Annotation -->
+	<classSpec type="model" ident="model.OAAnnotation" mode="add" module="standOff">
+	  <desc>Class implementing the Annotation component from the Open Annotation model</desc>
+	</classSpec>
+
+	<!-- <interp> is the basic implementation of the OA model Annotation component -->
+	<elementSpec ident="interp" mode="change">
+	  <classes mode="change">
+	    <memberOf key="model.OAAnnotation" mode="add"/>
+	  </classes>
+	</elementSpec>
+
+	<!--       *****       -->
+	<!-- Following are existing TEI declarations where we add our new class(es) -->
+	<elementSpec ident="u" mode="change" module="spoken">
+	  <classes mode="change">
+	    <memberOf key="model.annotation" mode="add"/>
+	  </classes>
+	</elementSpec>
+
+	<elementSpec ident="seg" mode="change" module="linking">
+	  <classes mode="change">
+	    <memberOf key="model.annotation" mode="add"/>
+	  </classes>
+	</elementSpec>
+
+	<classSpec type="model" ident="model.global.meta" mode="change">
+	  <classes mode="change">
+	    <memberOf key="model.annotation" mode="add"/>
+	  </classes>
+	</classSpec>
+
+	<classSpec type="model" ident="model.listLike" mode="change">
+	  <classes mode="change">
+	    <memberOf key="model.annotation" mode="add"/>
+	  </classes>
+	</classSpec>
+
+	<classSpec type="model" ident="model.entryLike" mode="change">
+	  <classes mode="change">
+	    <memberOf key="model.annotation" mode="add"/>
+	  </classes>
+	</classSpec>
+
+	<classSpec type="model" ident="model.biblLike" mode="change">
+	  <classes mode="change">
+	    <memberOf key="model.annotation" mode="add"/>
+	  </classes>
+	</classSpec>
+
+	<elementSpec ident="listChange" mode="change" module="header">
+	  <classes mode="change">
+	    <memberOf key="model.annotation" mode="add"/>
+	  </classes>
+	</elementSpec>
+	
+	<!--graph, listgraph forest, -->
+
+	<elementSpec ident="graph" mode="change">
+	  <classes mode="change">
+	    <memberOf key="model.annotation" mode="add"/>
+	  </classes>
+	</elementSpec>
+
+	<elementSpec ident="forest" mode="change">
+	  <classes mode="change">
+	    <memberOf key="model.annotation" mode="add"/>
+	  </classes>
+	</elementSpec>
+
+	<elementSpec ident="listForest" mode="change">
+	  <classes mode="change">
+	    <memberOf key="model.annotation" mode="add"/>
+	  </classes>
+	</elementSpec>
+
+	<elementSpec ident="tree" mode="change">
+	  <classes mode="change">
+	    <memberOf key="model.annotation" mode="add"/>
+	  </classes>
+	</elementSpec>
+
+	<elementSpec ident="eTree" mode="change">
+	  <classes mode="change">
+	    <memberOf key="model.annotation" mode="add"/>
+	  </classes>
+	</elementSpec>
+
+	<elementSpec ident="zone" mode="change">
+	  <classes mode="change">
+	    <memberOf mode="add" key="model.annotation"/>
+	  </classes>
+	</elementSpec>
+
+      </schemaSpec>
+    </body>
+  </text>
+</TEI>
