@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../Schemas/standoff-proposal.rnc" type="application/relax-ng-compact-syntax"?><?xml-stylesheet type="text/xsl" href="NERDtoSTDF.xsl"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../Specification/standoff-proposal.rnc" type="application/relax-ng-compact-syntax"?><?xml-stylesheet type="text/xsl" href="NERDtoSTDF.xsl"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader type="text">
       <fileDesc>
          <titleStmt>

@@ -26,7 +26,7 @@
                 <title>Détection d’entités nommées</title>
                 <respStmt xml:id="ISTEX-RD">
                     <resp>enrichissement entités nommées ISTEX RD</resp>
-                    <name>ISTEX R&D</name>
+                    <name>ISTEX R&amp;D</name>
                 </respStmt>
             </titleStmt>
         </fileDesc>
