@@ -16,7 +16,7 @@
          </sourceDesc>
       </fileDesc>
    </teiHeader>
-   <stdf xmlns="http://standoff.proposal">
+   <stdf xmlns="http://www.tei-c.org/proposal/standoff/ns">
       <soHeader>
          <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
             <appInfo>

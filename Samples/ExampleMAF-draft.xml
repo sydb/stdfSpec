@@ -14,7 +14,7 @@
          </sourceDesc>
       </fileDesc>
    </teiHeader>
-   <standOff xmlns="http://standoff.proposal">
+   <standOff xmlns="http://www.tei-c.org/proposal/standoff/ns">
       <listAnnotation>
 
          <token xml:id="tok1" target="#string-range(seg0,0,1)"/>

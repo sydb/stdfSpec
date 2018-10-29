@@ -65,7 +65,7 @@
          </langUsage>
       </profileDesc>
    </teiHeader>
-   <standOff xmlns="http://standoff.proposal">
+   <standOff xmlns="http://www.tei-c.org/proposal/standoff/ns">
       <standOff>
          <teiHeader xmlns="http://www.tei-c.org/ns/1.0">
             <fileDesc>

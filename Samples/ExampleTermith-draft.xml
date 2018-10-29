@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:ns="http://standoff.proposal">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:ns="http://www.tei-c.org/proposal/standoff/ns">
   <teiHeader>
     <fileDesc>
       <titleStmt>
@@ -6740,7 +6740,7 @@
   </ns:standOff>
   <ns:stdf>
     <ns:soHeader>
-      <encodingDesc xmlns:ns="http://standoff.proposal">
+      <encodingDesc xmlns:ns="http://www.tei-c.org/proposal/standoff/ns">
         <appInfo>
           <application ident="Termith" version="1.0">
             <label>atilf:termith:phase13:syntagmesDefinis</label>
@@ -6857,7 +6857,7 @@
   </ns:stdf>
   <ns:stdf>
     <ns:soHeader>
-      <encodingDesc xmlns:ns="http://standoff.proposal">
+      <encodingDesc xmlns:ns="http://www.tei-c.org/proposal/standoff/ns">
         <appInfo>
           <application ident="Termith" version="1.0">
             <label>atilf:termith:phase15:lexiqueTransdisciplinaire</label>
@@ -6943,7 +6943,7 @@
   </ns:stdf>
   <ns:stdf>
     <ns:soHeader>
-      <encodingDesc xmlns:ns="http://standoff.proposal">
+      <encodingDesc xmlns:ns="http://www.tei-c.org/proposal/standoff/ns">
         <appInfo>
           <application ident="Termith" version="1.0">
             <label>atilf:termith:phase14:glawi</label>
