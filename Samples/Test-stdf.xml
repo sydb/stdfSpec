@@ -1,37 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../Schemas/standoff-proposal.rnc" type="application/relax-ng-compact-syntax"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>A basic test for the standoff proposal spec</title>
-            </titleStmt>
-            <publicationStmt>
-                <p>freely available</p>
-            </publicationStmt>
-            <sourceDesc>
-                <p>born digital</p>
-            </sourceDesc>
-        </fileDesc>
+<?xml-model href="../Specification/standoff-proposal.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:so="http://www.tei-c.org/proposal/standoff/ns">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+	<title>A basic test for the standoff proposal spec</title>
+      </titleStmt>
+      <publicationStmt>
+	<p>freely available</p>
+      </publicationStmt>
+      <sourceDesc>
+	<p>born digital</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <TEI>
+    <teiHeader xmlns="http://www.tei-c.org/ns/1.0">
+      <fileDesc>
+	<titleStmt>
+	  <title>The title for the standoff annotation(s)</title>
+	</titleStmt>
+	<publicationStmt>
+	  <p>freely available</p>
+	</publicationStmt>
+	<sourceDesc>
+	  <p>born digital</p>
+	</sourceDesc>
+      </fileDesc>
     </teiHeader>
-    <standOff xmlns="http://www.tei-c.org/proposal/standoff/ns">
-        <teiHeader xmlns="http://www.tei-c.org/ns/1.0">
-           <fileDesc>
-              <titleStmt>
-                 <title>The title for the standoff annotation(s)</title>
-              </titleStmt>
-              <publicationStmt>
-                 <p>freely available</p>
-              </publicationStmt>
-              <sourceDesc>
-                 <p>born digital</p>
-              </sourceDesc>
-           </fileDesc>
-        </teiHeader>
-        <listAnnotation>
-            <listAnnotation>
-                <span xmlns="http://www.tei-c.org/ns/1.0"></span>
-            </listAnnotation>
-        </listAnnotation>
-    </standOff>
+    <so:standOff>
+      <so:listAnnotation>
+	<so:listAnnotation>
+	  <span xmlns="http://www.tei-c.org/ns/1.0"></span>
+	</so:listAnnotation>
+      </so:listAnnotation>
+    </so:standOff>
+  </TEI>
 </TEI>
