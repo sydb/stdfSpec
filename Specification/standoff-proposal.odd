@@ -5,14 +5,14 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-	<title>Proposal for encoding standoff annotations in TEI</title>
-	<author>
+	<title>Proposal for link data block &amp; standoff annotations in TEI</title>
+	<author xml:id="ps">
 	  <persName>
 	    <forename>Peter</forename>
 	    <surname>Stadler</surname>
 	  </persName>
 	</author>
-	<author>
+	<author xml:id="lr">
 	  <persName>
 	    <forename>Laurent</forename>
 	    <surname>Romary</surname>
@@ -25,13 +25,12 @@
 	    <surname>Banski</surname>
 	  </persName>
 	</respStmt>
-	<respStmt xml:id="sb">
-	  <resp>contributor</resp>
+	<author xml:id="sb">
 	  <persName ref="https://github.com/sydb">
 	    <forename>Syd</forename>
 	    <surname>Bauman</surname>
 	  </persName>
-	</respStmt>
+	</author>
 	<respStmt xml:id="sm">
 	  <resp>contributor</resp>
 	  <persName ref="https://github.com/simonmeoni">
@@ -51,6 +50,7 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2018-10-30" who="#sb">Change <gi>standOff</gi> to <gi>ldb</gi>, and return <gi>listAnnotation</gi>.</change>
       <change when="2018-10-28" who="#sb">Change overall structure, eliminating <gi>teiCorpus</gi> and allowing <gi>TEI</gi> to nest, thus removing need for crazy <gi>teiHeader</gi> inside <gi>standOff</gi>. This also obviates the need for <gi>listAnnotation</gi> inside <gi>standOff</gi>, putting its content directly in <gi>standOff</gi>.</change>
       <change when="2017-03-16" who="#pb">purified this ODD</change>
       <change when="2017-03-15" who="#pb">combined two elementSpec for "standoff" into one, removed the macroSpec redeclaration (it had no effect on the compiled ODD)</change>
@@ -114,14 +114,15 @@
 	  </content>
 	</elementSpec>
 
-	<!-- Specific model for the new elements introduced here: <standOff> and <listAnnotation> -->
+	<!-- Specific model for the new elements introduced here: <ldb> and <listAnnotation> -->
 	<moduleSpec ident="standOff">
 	  <desc>Elements to allow stand-off annotations in a TEI document</desc>
 	</moduleSpec>
 
 	<!--  The entry point to stand-off annotations, as member of model.resourceLike-->
-	<elementSpec ident="standOff" mode="add" ns="http://www.tei-c.org/proposal/standoff/ns" module="standOff">
-	  <desc>Container element for stand-off annotations embedded in a TEI document</desc>
+	<elementSpec ident="ldb" mode="add" ns="http://www.tei-c.org/proposal/standoff/ns" module="standOff">
+	  <gloss versionDate="2018-10-30">linked data block</gloss>
+	  <desc>Container element for linked data and stand-off annotations embedded in a TEI document</desc>
 	  <classes>
 	    <memberOf key="model.resourceLike"/>
 	    <!-- We need to check if and why we need to have all these attributes at the level of the <standOff> element. -->
@@ -134,17 +135,46 @@
 	  <content>
 	    <classRef key="model.annotation" minOccurs="1" maxOccurs="unbounded"/>
 	  </content>
-	  <constraintSpec ident="StandOffNamespace" scheme="isoschematron" mode="add">
+	  <constraintSpec ident="proposalNS" scheme="isoschematron" mode="add">
 	    <constraint>
-	      <sch:ns prefix="stdf" uri="http://www.tei-c.org/proposal/standoff/ns"/>
+	      <sch:ns prefix="prop" uri="http://www.tei-c.org/proposal/standoff/ns"/>
 	    </constraint>
 	  </constraintSpec>
 	  <constraintSpec ident="SecondLevelStandOffTyping" scheme="isoschematron" mode="add">
 	    <constraint>
-	      <sch:assert test="@type or not(ancestor::stdf:standOff)">This <sch:name/> element must have a @type attribute, since it has an ancestor <sch:name/></sch:assert>
+	      <sch:assert test="@type or not(ancestor::prop:ldb)">This <sch:name/> element must have a @type attribute, since it has an ancestor <sch:name/></sch:assert>
 	    </constraint>
 	  </constraintSpec>
 	</elementSpec>
+	<elementSpec ident="listAnnotation" mode="add" ns="http://standoff.proposal" module="standOff">
+	  <desc>Groups together annotations, for instance for parallel interpretations of a spoken segment</desc>
+	  <classes>
+	    <memberOf key="model.annotation"/>
+	    <memberOf key="att.global"/>
+	    <memberOf key="att.typed"/>
+	    <memberOf key="att.notated"/>
+	    <memberOf key="att.timed"/>
+	    <memberOf key="att.declaring"/>
+	  </classes>
+	  <content>
+	    <sequence>
+	      <classRef key="model.headLike" minOccurs="0" maxOccurs="unbounded"/>
+	      <alternate minOccurs="1" maxOccurs="unbounded">
+		<elementRef key="annotationBlock"/>
+		<classRef key="model.noteLike"/>
+	      </alternate>
+	    </sequence>
+	  </content>
+	  <remarks>
+	    <p>The global <att>xml:base</att> attribute is used on
+	    this element both to specify the target of the annotations
+	    and to serve as the base for any target URIs contained by
+	    the annotation elements. If this attribute is not
+	    supplied, the listAnnotation must be embedded within the
+	    complete TEI document to which it applies. </p>
+	  </remarks>
+	</elementSpec>
+	
 
 	<!-- The content model for <annotationBlock> is revised to deal with the various anticipated annotation use cases -->
 	<elementSpec ident="annotationBlock" mode="change" module="spoken">
