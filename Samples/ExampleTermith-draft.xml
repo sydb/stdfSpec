@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:ns="http://www.tei-c.org/proposal/standoff/ns">
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:tei="http://www.tei-c.org/ns/1.0"
+     xmlns:so="http://www.tei-c.org/proposal/standoff/ns">
   <teiHeader>
     <fileDesc>
       <titleStmt>
@@ -161,8 +163,8 @@
       </editorialDecl>
     </encodingDesc>
   </teiHeader>
-  <ns:standOff type="wordForms">
-    <ns:soHeader>
+  <so:standOff type="wordForms">
+    <so:soHeader>
       <encodingDesc>
         <appInfo>
           <application ident="TermSuite" version="2.0">
@@ -174,8 +176,8 @@
         <title>analyse morphosyntaxique</title>
         <author role="xxx">ATILF</author>
       </titleStmt>
-    </ns:soHeader>
-    <ns:annotations>
+    </so:soHeader>
+    <so:annotations>
       <span target="#t1" pos="NOM" lemma="corpus" corresp="dictionnaire_TLFiCategoriesTEI#l19339"/>
       <span target="#t2" pos="PRP" lemma="de" corresp="#noTS"/>
       <span target="#t3" pos="NOM" lemma="langue" corresp="dictionnaire_TLFiCategoriesTEI#l42601"/>
@@ -5821,10 +5823,10 @@
       <span target="#t5643" pos="PRO:DEM" lemma="ce" corresp="#noTS"/>
       <span target="#t5644" pos="NOM" lemma="texte" corresp="dictionnaire_TLFiCategoriesTEI#l75357"/>
       <span target="#t5645" pos="SENT" lemma="." corresp="#noTS"/>
-    </ns:annotations>
-  </ns:standOff>
-  <ns:standOff type="candidatsTermes">
-    <ns:soHeader>
+    </so:annotations>
+  </so:standOff>
+  <so:standOff type="candidatsTermes">
+    <so:soHeader>
       <encodingDesc>
         <appInfo>
           <application ident="TermSuite" version="2.0">
@@ -5836,8 +5838,8 @@
         <title>occurrences de candidats termes</title>
         <author role="xxx">ATILF</author>
       </titleStmt>
-    </ns:soHeader>
-    <ns:annotations>
+    </so:soHeader>
+    <so:annotations>
       <interpGrp>
         <interp xml:id="DM1">Occurrence du candidat terme validée seulement au niveau
                         syntaxique</interp>
@@ -6736,10 +6738,10 @@
       <span target="#t5621" lemma="internet" corresp="#TS2.0-entry-7696-#TS1.4-entry-997003" ana="#DM1 #DAOff"/>
       <span target="#t5626" lemma="précédente" corresp="#TS1.4-entry-832188" ana="#DM0 #DAOff"/>
       <span target="#t5644" lemma="texte" corresp="#TS1.4-entry-50209" ana="#DM1 #DAOff"/>
-    </ns:annotations>
-  </ns:standOff>
-  <ns:stdf>
-    <ns:soHeader>
+    </so:annotations>
+  </so:standOff>
+  <so:stdf>
+    <so:soHeader>
       <encodingDesc xmlns:ns="http://www.tei-c.org/proposal/standoff/ns">
         <appInfo>
           <application ident="Termith" version="1.0">
@@ -6751,8 +6753,8 @@
         <title>syntagmesDefinis</title>
         <author role="SyntagmesDectection">atilf</author>
       </titleStmt>
-    </ns:soHeader>
-    <ns:annotations>
+    </so:soHeader>
+    <so:annotations>
       <span target="#t17 #t18 #t19" lemma="au sein de" corresp="#syntita-36378"/>
       <span target="#t83 #t84 #t85 #t86 #t87" lemma="de plein droit" corresp="#syntita-13719"/>
       <span target="#t85 #t86 #t87" lemma="de plein droit" corresp="#syntita-13719"/>
@@ -6853,10 +6855,10 @@
       <span target="#t5537 #t5538" lemma="analyse quantitative" corresp="#syntita-32376"/>
       <span target="#t5555 #t5556" lemma="en définitive" corresp="#syntita-12375"/>
       <span target="#t5614 #t5615" lemma="allongement vocalique" corresp="#syntita-1348"/>
-    </ns:annotations>
-  </ns:stdf>
-  <ns:stdf>
-    <ns:soHeader>
+    </so:annotations>
+  </so:stdf>
+  <so:stdf>
+    <so:soHeader>
       <encodingDesc xmlns:ns="http://www.tei-c.org/proposal/standoff/ns">
         <appInfo>
           <application ident="Termith" version="1.0">
@@ -6868,8 +6870,8 @@
         <title>syntagmesDefinis</title>
         <author role="LexiqueTransdisciplinaireDectection">atilf</author>
       </titleStmt>
-    </ns:soHeader>
-    <ns:annotations>
+    </so:soHeader>
+    <so:annotations>
       <span target="#t1" lemma="corpus" corresp="#transdisc-169"/>
       <span target="#t85 #t86" lemma="de plein" corresp="#transdisc-2180"/>
       <span target="#t280 #t281" lemma="tant que" corresp="#transdisc-2407"/>
@@ -6939,10 +6941,10 @@
       <span target="#t5449 #t5450" lemma="par exemple" corresp="#transdisc-1114"/>
       <span target="#t5514 #t5515 #t5516" lemma="une part d'" corresp="#transdisc-1156"/>
       <span target="#t5718 #t5719" lemma="au début" corresp="#transdisc-1344"/>
-    </ns:annotations>
-  </ns:stdf>
-  <ns:stdf>
-    <ns:soHeader>
+    </so:annotations>
+  </so:stdf>
+  <so:stdf>
+    <so:soHeader>
       <encodingDesc xmlns:ns="http://www.tei-c.org/proposal/standoff/ns">
         <appInfo>
           <application ident="Termith" version="1.0">
@@ -6954,8 +6956,8 @@
         <title>glawi</title>
         <author role="glawiDectection">atilf</author>
       </titleStmt>
-    </ns:soHeader>
-    <ns:annotations>
+    </so:soHeader>
+    <so:annotations>
       <span target="#t1" lemma="corpus" pos="NOM" corresp="#glawi-21685"/>
       <span target="#t2" lemma="de" pos="PRP" corresp="#noGlawi"/>
       <span target="#t3" lemma="langue" pos="NOM" corresp="#noGlawi"/>
@@ -12819,10 +12821,10 @@
       <span target="#t5861" lemma="ce" pos="PRO:DEM" corresp="#noGlawi"/>
       <span target="#t5862" lemma="texte" pos="NOM" corresp="#glawi-16615"/>
       <span target="#t5863" lemma="." pos="SENT" corresp="#noGlawi"/>
-    </ns:annotations>
-  </ns:stdf>
-  <ns:standOff type="indexation-phase1">
-    <ns:soHeader>
+    </so:annotations>
+  </so:stdf>
+  <so:standOff type="indexation-phase1">
+    <so:soHeader>
       <titleStmt>
         <title>Evaluation de l'indexation TermITH - phase 1</title>
         <author role="IndexingEditor">LINA</author>
@@ -12834,9 +12836,9 @@
           <domain>linguistique</domain>
         </textDesc>
       </profileDesc>
-    </ns:soHeader>
-    <ns:standOff xml:id="mi1">
-      <ns:soHeader>
+    </so:soHeader>
+    <so:standOff xml:id="mi1">
+      <so:soHeader>
         <encodingDesc>
           <appInfo>
             <application ident="lina-1:notice:tfidf:sequences_nom_adj" version="1.0">
@@ -12848,81 +12850,81 @@
           <title>Indexation TermITH</title>
           <author role="IndexingEditor">LINA</author>
         </titleStmt>
-      </ns:soHeader>
-      <ns:annotations>
-        <termEntry xml:ns="http://www.tbx.org" xml:id="#mi1kw1">
+      </so:soHeader>
+      <so:annotations>
+        <termEntry xml:ns="http://www.tbx.org" xml:id="mi1kw1">
           <langSet xml:lang="fr">
             <tig>
               <term xml:ns="http://www.tei-c.org/ns/1.0">activité</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xml:ns="http://www.tbx.org" xml:id="#mi1kw2">
+        <termEntry xml:ns="http://www.tbx.org" xml:id="mi1kw2">
           <langSet xml:lang="fr">
             <tig>
               <term xml:ns="http://www.tei-c.org/ns/1.0">alignements</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xml:ns="http://www.tbx.org" xml:id="#mi1kw3">
+        <termEntry xml:ns="http://www.tbx.org" xml:id="mi1kw3">
           <langSet xml:lang="fr">
             <tig>
               <term xml:ns="http://www.tei-c.org/ns/1.0">clôture</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xml:ns="http://www.tbx.org" xml:id="#mi1kw4">
+        <termEntry xml:ns="http://www.tbx.org" xml:id="mi1kw4">
           <langSet xml:lang="fr">
             <tig>
               <term xml:ns="http://www.tei-c.org/ns/1.0">dés</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xml:ns="http://www.tbx.org" xml:id="#mi1kw5">
+        <termEntry xml:ns="http://www.tbx.org" xml:id="mi1kw5">
           <langSet xml:lang="fr">
             <tig>
               <term xml:ns="http://www.tei-c.org/ns/1.0">étude interactionnelle</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xml:ns="http://www.tbx.org" xml:id="#mi1kw6">
+        <termEntry xml:ns="http://www.tbx.org" xml:id="mi1kw6">
           <langSet xml:lang="fr">
             <tig>
               <term xml:ns="http://www.tei-c.org/ns/1.0">interaction</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xml:ns="http://www.tbx.org" xml:id="#mi1kw7">
+        <termEntry xml:ns="http://www.tbx.org" xml:id="mi1kw7">
           <langSet xml:lang="fr">
             <tig>
               <term xml:ns="http://www.tei-c.org/ns/1.0">observations</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xml:ns="http://www.tbx.org" xml:id="#mi1kw8">
+        <termEntry xml:ns="http://www.tbx.org" xml:id="mi1kw8">
           <langSet xml:lang="fr">
             <tig>
               <term xml:ns="http://www.tei-c.org/ns/1.0">organisation</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xml:ns="http://www.tbx.org" xml:id="#mi1kw9">
+        <termEntry xml:ns="http://www.tbx.org" xml:id="mi1kw9">
           <langSet xml:lang="fr">
             <tig>
               <term xml:ns="http://www.tei-c.org/ns/1.0">organisation interactionnelle</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xml:ns="http://www.tbx.org" xml:id="#mi1kw10">
+        <termEntry xml:ns="http://www.tbx.org" xml:id="mi1kw10">
           <langSet xml:lang="fr">
             <tig>
               <term xml:ns="http://www.tei-c.org/ns/1.0">parole</term>
             </tig>
           </langSet>
         </termEntry>
-      </ns:annotations>
-      <ns:standOff>
-        <ns:soHeader>
+      </so:annotations>
+      <so:standOff>
+        <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
             <appInfo>
               <application ident="idefix" version="1.0">
@@ -12934,9 +12936,9 @@
             <title>évaluation indexation</title>
             <author role="IndexingEvaluator">INIST</author>
           </titleStmt>
-        </ns:soHeader>
-        <ns:annotations>
-          <ns:annotationGrp type="pertinence">
+        </so:soHeader>
+        <so:annotations>
+          <so:annotationGrp type="pertinence">
             <span from="#mi1kw1">
               <num type="pertinence">0</num>
             </span>
@@ -12970,8 +12972,8 @@
             <span from="#mi1kw10">
               <num type="pertinence">2</num>
             </span>
-          </ns:annotationGrp>
-          <ns:annotationGrp type="silence">
+          </so:annotationGrp>
+          <so:annotationGrp type="silence">
             <span from="#ikwfr6">
               <num type="silence">0</num>
               <link type="TermithForm" target="#mi1kw2"/>
@@ -13002,12 +13004,12 @@
               <num type="silence">1</num>
               <note>générique</note>
             </span>
-          </ns:annotationGrp>
-        </ns:annotations>
-      </ns:standOff>
-    </ns:standOff>
-    <ns:standOff xml:id="mi2">
-      <ns:soHeader>
+          </so:annotationGrp>
+        </so:annotations>
+      </so:standOff>
+    </so:standOff>
+    <so:standOff xml:id="mi2">
+      <so:soHeader>
         <encodingDesc>
           <appInfo>
             <application ident="lina-1:notice:topicrank:sequences_nom_adj" version="1.0">
@@ -13019,81 +13021,81 @@
           <title>Indexation TermITH</title>
           <author role="IndexingEditor">LINA</author>
         </titleStmt>
-      </ns:soHeader>
-      <ns:annotations>
-        <termEntry xml:ns="http://www.tbx.org" xml:id="#mi2kw1">
+      </so:soHeader>
+      <so:annotations>
+        <termEntry xml:ns="http://www.tbx.org" xml:id="mi2kw1">
           <langSet xml:lang="fr">
             <tig>
               <term xml:ns="http://www.tei-c.org/ns/1.0">clôture</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xml:ns="http://www.tbx.org" xml:id="#mi2kw2">
+        <termEntry xml:ns="http://www.tbx.org" xml:id="mi2kw2">
           <langSet xml:lang="fr">
             <tig>
               <term xml:ns="http://www.tei-c.org/ns/1.0">corpus</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xml:ns="http://www.tbx.org" xml:id="#mi2kw3">
+        <termEntry xml:ns="http://www.tbx.org" xml:id="mi2kw3">
           <langSet xml:lang="fr">
             <tig>
               <term xml:ns="http://www.tei-c.org/ns/1.0">étude interactionnelle</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xml:ns="http://www.tbx.org" xml:id="#mi2kw4">
+        <termEntry xml:ns="http://www.tbx.org" xml:id="mi2kw4">
           <langSet xml:lang="fr">
             <tig>
               <term xml:ns="http://www.tei-c.org/ns/1.0">français</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xml:ns="http://www.tbx.org" xml:id="#mi2kw5">
+        <termEntry xml:ns="http://www.tbx.org" xml:id="mi2kw5">
           <langSet xml:lang="fr">
             <tig>
               <term xml:ns="http://www.tei-c.org/ns/1.0">interaction</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xml:ns="http://www.tbx.org" xml:id="#mi2kw6">
+        <termEntry xml:ns="http://www.tbx.org" xml:id="mi2kw6">
           <langSet xml:lang="fr">
             <tig>
               <term xml:ns="http://www.tei-c.org/ns/1.0">observations</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xml:ns="http://www.tbx.org" xml:id="#mi2kw7">
+        <termEntry xml:ns="http://www.tbx.org" xml:id="mi2kw7">
           <langSet xml:lang="fr">
             <tig>
               <term xml:ns="http://www.tei-c.org/ns/1.0">organisation interactionnelle</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xml:ns="http://www.tbx.org" xml:id="#mi2kw8">
+        <termEntry xml:ns="http://www.tbx.org" xml:id="mi2kw8">
           <langSet xml:lang="fr">
             <tig>
               <term xml:ns="http://www.tei-c.org/ns/1.0">parole</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xml:ns="http://www.tbx.org" xml:id="#mi2kw9">
+        <termEntry xml:ns="http://www.tbx.org" xml:id="mi2kw9">
           <langSet xml:lang="fr">
             <tig>
               <term xml:ns="http://www.tei-c.org/ns/1.0">phase suivante</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xml:ns="http://www.tbx.org" xml:id="#mi2kw10">
+        <termEntry xml:ns="http://www.tbx.org" xml:id="mi2kw10">
           <langSet xml:lang="fr">
             <tig>
               <term xml:ns="http://www.tei-c.org/ns/1.0">place fondamentale</term>
             </tig>
           </langSet>
         </termEntry>
-      </ns:annotations>
-      <ns:standOff>
-        <ns:soHeader>
+      </so:annotations>
+      <so:standOff>
+        <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
             <appInfo>
               <application ident="idefix" version="1.0">
@@ -13105,9 +13107,9 @@
             <title>évaluation indexation</title>
             <author role="IndexingEvaluator">INIST</author>
           </titleStmt>
-        </ns:soHeader>
-        <ns:annotations>
-          <ns:annotationGrp type="pertinence">
+        </so:soHeader>
+        <so:annotations>
+          <so:annotationGrp type="pertinence">
             <span from="#mi2kw1">
               <num type="pertinence">2</num>
             </span>
@@ -13140,8 +13142,8 @@
             <span from="#mi2kw10">
               <num type="pertinence">0</num>
             </span>
-          </ns:annotationGrp>
-          <ns:annotationGrp type="silence">
+          </so:annotationGrp>
+          <so:annotationGrp type="silence">
             <span from="#ikwfr6">
               <num type="silence">2</num>
             </span>
@@ -13173,13 +13175,13 @@
               <num type="silence">1</num>
               <note>générique</note>
             </span>
-          </ns:annotationGrp>
-        </ns:annotations>
-      </ns:standOff>
-    </ns:standOff>
-  </ns:standOff>
-  <ns:standOff type="indexation-phase2">
-    <ns:soHeader>
+          </so:annotationGrp>
+        </so:annotations>
+      </so:standOff>
+    </so:standOff>
+  </so:standOff>
+  <so:standOff type="indexation-phase2">
+    <so:soHeader>
       <titleStmt>
         <title>Evaluation de l'indexation TermITH - phase 2</title>
         <author role="IndexingEditor">LINA</author>
@@ -13191,9 +13193,9 @@
           <domain>linguistique</domain>
         </textDesc>
       </profileDesc>
-    </ns:soHeader>
-    <ns:standOff xml:id="mi1">
-      <ns:soHeader>
+    </so:soHeader>
+    <so:standOff xml:id="somi1">
+      <so:soHeader>
         <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
           <appInfo>
             <application ident="lina-2:notice_body:tfidf:sequences_nom_adj" version="1.0">
@@ -13205,83 +13207,83 @@
           <title>Indexation TermITH</title>
           <author role="IndexingEditor">LINA</author>
         </titleStmt>
-      </ns:soHeader>
+      </so:soHeader>
       <!-- termes-cles -->
-      <ns:annotations>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi1kw1">
+      <so:annotations>
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi1kw1">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">désalignement</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi1kw2">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi1kw2">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">clôture</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi1kw3">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi1kw3">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">nouvelle clôture</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi1kw4">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi1kw4">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">participants</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi1kw5">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi1kw5">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">charles</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi1kw6">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi1kw6">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">phase</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi1kw7">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi1kw7">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">tour désaligné</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi1kw8">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi1kw8">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">geste désaligné</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi1kw9">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi1kw9">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">pause</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi1kw10">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi1kw10">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">réunion</term>
             </tig>
           </langSet>
         </termEntry>
-      </ns:annotations>
-      <ns:standOff>
+      </so:annotations>
+      <so:standOff>
         <!--standOff subordonné au standOff principal-->
-        <ns:soHeader>
+        <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
             <appInfo>
               <!--nom de l'outil d'évaluation-->
@@ -13294,43 +13296,43 @@
             <title>évaluation indexation</title>
             <author role="IndexingEvaluator">INIST</author>
           </titleStmt>
-        </ns:soHeader>
-        <ns:annotations>
-          <ns:annotationGrp type="pertinence">
-            <span from="#mi1kw1">
+        </so:soHeader>
+        <so:annotations>
+          <so:annotationGrp type="pertinence">
+            <span from="#somi1kw1">
               <num type="pertinence">2</num>
               <link type="INISTForm" target="#ikwfr6"/>
             </span>
-            <span from="#mi1kw2">
+            <span from="#somi1kw2">
               <num type="pertinence">2</num>
             </span>
-            <span from="#mi1kw3">
+            <span from="#somi1kw3">
               <num type="pertinence">1</num>
-              <link type="preferredForm" target="#mi1kw2"/>
+              <link type="preferredForm" target="#somi1kw2"/>
             </span>
-            <span from="#mi1kw4">
+            <span from="#somi1kw4">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi1kw5">
+            <span from="#somi1kw5">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi1kw6">
+            <span from="#somi1kw6">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi1kw7">
+            <span from="#somi1kw7">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi1kw8">
+            <span from="#somi1kw8">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi1kw9">
+            <span from="#somi1kw9">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi1kw10">
+            <span from="#somi1kw10">
               <num type="pertinence">0</num>
             </span>
-          </ns:annotationGrp>
-          <ns:annotationGrp type="silence">
+          </so:annotationGrp>
+          <so:annotationGrp type="silence">
             <span from="#ikwfr1">
               <num type="silence">2</num>
             </span>
@@ -13350,7 +13352,7 @@
             </span>
             <span from="#ikwfr6">
               <num type="silence">0</num>
-              <link type="TermithForm" target="#mi1kw1"/>
+              <link type="TermithForm" target="#somi1kw1"/>
             </span>
             <span from="#ikwfr7">
               <num type="silence">2</num>
@@ -13358,12 +13360,12 @@
             <span from="#ikwfr8">
               <num type="silence">2</num>
             </span>
-          </ns:annotationGrp>
-        </ns:annotations>
-      </ns:standOff>
-    </ns:standOff>
-    <ns:standOff xml:id="mi2">
-      <ns:soHeader>
+          </so:annotationGrp>
+        </so:annotations>
+      </so:standOff>
+    </so:standOff>
+    <so:standOff xml:id="somi2">
+      <so:soHeader>
         <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
           <appInfo>
             <application ident="lina-2:notice_body:topicrank:sequences_nom_adj" version="1.0">
@@ -13375,83 +13377,83 @@
           <title>Indexation TermITH</title>
           <author role="IndexingEditor">LINA</author>
         </titleStmt>
-      </ns:soHeader>
+      </so:soHeader>
       <!-- termes-cles -->
-      <ns:annotations>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi2kw1">
+      <so:annotations>
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi2kw1">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">clôture</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi2kw2">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi2kw2">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">tour</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi2kw3">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi2kw3">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">phase suivante</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi2kw4">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi2kw4">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">participant</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi2kw5">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi2kw5">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">plan</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi2kw6">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi2kw6">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">analyse</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi2kw7">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi2kw7">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">corpus</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi2kw8">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi2kw8">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">activité</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi2kw9">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi2kw9">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">ressources</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi2kw10">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi2kw10">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">alignement</term>
             </tig>
           </langSet>
         </termEntry>
-      </ns:annotations>
-      <ns:standOff>
+      </so:annotations>
+      <so:standOff>
         <!--standOff subordonné au standOff principal-->
-        <ns:soHeader>
+        <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
             <appInfo>
               <!--nom de l'outil d'évaluation-->
@@ -13464,44 +13466,44 @@
             <title>évaluation indexation</title>
             <author role="IndexingEvaluator">INIST</author>
           </titleStmt>
-        </ns:soHeader>
-        <ns:annotations>
-          <ns:annotationGrp type="pertinence">
-            <span from="#mi2kw1">
+        </so:soHeader>
+        <so:annotations>
+          <so:annotationGrp type="pertinence">
+            <span from="#somi2kw1">
               <num type="pertinence">2</num>
             </span>
-            <span from="#mi2kw2">
+            <span from="#somi2kw2">
               <num type="pertinence">1</num>
               <note>forme préférée dans le texte : tour de parole</note>
             </span>
-            <span from="#mi2kw3">
+            <span from="#somi2kw3">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi2kw4">
+            <span from="#somi2kw4">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi2kw5">
+            <span from="#somi2kw5">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi2kw6">
+            <span from="#somi2kw6">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi2kw7">
+            <span from="#somi2kw7">
               <num type="pertinence">2</num>
               <link type="INISTForm" target="#ikwfr3"/>
             </span>
-            <span from="#mi2kw8">
+            <span from="#somi2kw8">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi2kw9">
+            <span from="#somi2kw9">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi2kw10">
+            <span from="#somi2kw10">
               <num type="pertinence">2</num>
               <link type="INISTForm" target="#ikwfr6"/>
             </span>
-          </ns:annotationGrp>
-          <ns:annotationGrp type="silence">
+          </so:annotationGrp>
+          <so:annotationGrp type="silence">
             <span from="#ikwfr1">
               <num type="silence">2</num>
             </span>
@@ -13511,7 +13513,7 @@
             </span>
             <span from="#ikwfr3">
               <num type="silence">0</num>
-              <link type="TermithForm" target="#mi2kw7"/>
+              <link type="TermithForm" target="#somi2kw7"/>
             </span>
             <span from="#ikwfr4">
               <num type="silence">2</num>
@@ -13522,7 +13524,7 @@
             </span>
             <span from="#ikwfr6">
               <num type="silence">0</num>
-              <link type="TermithForm" target="#mi2kw10"/>
+              <link type="TermithForm" target="#somi2kw10"/>
             </span>
             <span from="#ikwfr7">
               <num type="silence">2</num>
@@ -13530,12 +13532,12 @@
             <span from="#ikwfr8">
               <num type="silence">2</num>
             </span>
-          </ns:annotationGrp>
-        </ns:annotations>
-      </ns:standOff>
-    </ns:standOff>
-    <ns:standOff xml:id="mi3">
-      <ns:soHeader>
+          </so:annotationGrp>
+        </so:annotations>
+      </so:standOff>
+    </so:standOff>
+    <so:standOff xml:id="mi3">
+      <so:soHeader>
         <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
           <appInfo>
             <application ident="lina-2:notice_body:topicrank_termsuite:candidats_termes" version="1.0">
@@ -13547,9 +13549,9 @@
           <title>Indexation TermITH</title>
           <author role="IndexingEditor">LINA</author>
         </titleStmt>
-      </ns:soHeader>
+      </so:soHeader>
       <!-- termes-cles -->
-      <ns:annotations>
+      <so:annotations>
         <termEntry xmlns="http://www.tbx.org" xml:id="mi3kw1">
           <langSet xml:lang="fr">
             <tig>
@@ -13620,10 +13622,10 @@
             </tig>
           </langSet>
         </termEntry>
-      </ns:annotations>
-      <ns:standOff>
+      </so:annotations>
+      <so:standOff>
         <!--standOff subordonné au standOff principal-->
-        <ns:soHeader>
+        <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
             <appInfo>
               <!--nom de l'outil d'évaluation-->
@@ -13636,9 +13638,9 @@
             <title>évaluation indexation</title>
             <author role="IndexingEvaluator">INIST</author>
           </titleStmt>
-        </ns:soHeader>
-        <ns:annotations>
-          <ns:annotationGrp type="pertinence">
+        </so:soHeader>
+        <so:annotations>
+          <so:annotationGrp type="pertinence">
             <span from="#mi3kw1">
               <num type="pertinence">1</num>
               <note>forme préférée dans le texte : tour de parole</note>
@@ -13671,8 +13673,8 @@
             <span from="#mi3kw10">
               <num type="pertinence">0</num>
             </span>
-          </ns:annotationGrp>
-          <ns:annotationGrp type="silence">
+          </so:annotationGrp>
+          <so:annotationGrp type="silence">
             <span from="#ikwfr1">
               <num type="silence">2</num>
             </span>
@@ -13700,13 +13702,13 @@
             <span from="#ikwfr8">
               <num type="silence">2</num>
             </span>
-          </ns:annotationGrp>
-        </ns:annotations>
-      </ns:standOff>
-    </ns:standOff>
-  </ns:standOff>
-  <ns:standOff type="indexation-phase3">
-    <ns:soHeader>
+          </so:annotationGrp>
+        </so:annotations>
+      </so:standOff>
+    </so:standOff>
+  </so:standOff>
+  <so:standOff type="indexation-phase3">
+    <so:soHeader>
       <titleStmt>
         <title>Evaluation de l'indexation TermITH - phase 3</title>
         <author role="IndexingEditor">LINA</author>
@@ -13718,9 +13720,9 @@
           <domain>linguistique, archéologie, sciences de l'information, chimie</domain>
         </textDesc>
       </profileDesc>
-    </ns:soHeader>
-    <ns:standOff xml:id="mi3">
-      <ns:soHeader>
+    </so:soHeader>
+    <so:standOff xml:id="somi3">
+      <so:soHeader>
         <encodingDesc>
           <appInfo>
             <application ident="lina-3:notice:topicrank_termsuite:candidats_termes" version="1.0">
@@ -13732,10 +13734,10 @@
           <title>Indexation TermITH</title>
           <author role="IndexingEditor">LINA</author>
         </titleStmt>
-      </ns:soHeader>
+      </so:soHeader>
       <!-- termes-cles -->
-      <ns:annotations>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi3kw1">
+      <so:annotations>
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi3kw1">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">interaction
@@ -13743,7 +13745,7 @@
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi3kw2">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi3kw2">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">corpus
@@ -13751,7 +13753,7 @@
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi3kw3">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi3kw3">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">pose
@@ -13759,7 +13761,7 @@
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi3kw4">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi3kw4">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">article
@@ -13767,7 +13769,7 @@
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi3kw5">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi3kw5">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">organisation
@@ -13775,7 +13777,7 @@
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi3kw6">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi3kw6">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">notamment
@@ -13783,7 +13785,7 @@
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi3kw7">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi3kw7">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">menée
@@ -13791,7 +13793,7 @@
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi3kw8">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi3kw8">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">question
@@ -13799,7 +13801,7 @@
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi3kw9">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi3kw9">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">double
@@ -13807,7 +13809,7 @@
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi3kw10">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi3kw10">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">étude
@@ -13815,10 +13817,10 @@
             </tig>
           </langSet>
         </termEntry>
-      </ns:annotations>
-      <ns:standOff>
+      </so:annotations>
+      <so:standOff>
         <!--standOff subordonné au standOff principal-->
-        <ns:soHeader>
+        <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
             <appInfo>
               <!--nom de l'outil d'évaluation-->
@@ -13831,44 +13833,44 @@
             <title>évaluation indexation</title>
             <author role="IndexingEvaluator">INIST</author>
           </titleStmt>
-        </ns:soHeader>
-        <ns:annotations>
-          <ns:annotationGrp type="pertinence">
-            <span from="#mi3kw1">
+        </so:soHeader>
+        <so:annotations>
+          <so:annotationGrp type="pertinence">
+            <span from="#somi3kw1">
               <num type="pertinence">2</num>
               <link type="INISTForm" target="#ikwfr4"/>
             </span>
-            <span from="#mi3kw2">
+            <span from="#somi3kw2">
               <num type="pertinence">2</num>
               <link type="INISTForm" target="#ikwfr3"/>
             </span>
-            <span from="#mi3kw3">
+            <span from="#somi3kw3">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi3kw4">
+            <span from="#somi3kw4">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi3kw5">
+            <span from="#somi3kw5">
               <num type="pertinence">1</num>
               <note>(P) Forme préférée dans le texte : organisation interactionnelle </note>
             </span>
-            <span from="#mi3kw6">
+            <span from="#somi3kw6">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi3kw7">
+            <span from="#somi3kw7">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi3kw8">
+            <span from="#somi3kw8">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi3kw9">
+            <span from="#somi3kw9">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi3kw10">
+            <span from="#somi3kw10">
               <num type="pertinence">0</num>
             </span>
-          </ns:annotationGrp>
-          <ns:annotationGrp type="silence">
+          </so:annotationGrp>
+          <so:annotationGrp type="silence">
             <span from="#ikwfr1">
               <num type="silence">2</num>
             </span>
@@ -13878,11 +13880,11 @@
             </span>
             <span from="#ikwfr3">
               <num type="silence">0</num>
-              <link type="TermithForm" target="#mi3kw2"/>
+              <link type="TermithForm" target="#somi3kw2"/>
             </span>
             <span from="#ikwfr4">
               <num type="silence">0</num>
-              <link type="TermithForm" target="#mi3kw1"/>
+              <link type="TermithForm" target="#somi3kw1"/>
             </span>
             <span from="#ikwfr5">
               <num type="silence">0</num>
@@ -13899,12 +13901,12 @@
               <num type="silence">1</num>
               <note>(S) Implicite.</note>
             </span>
-          </ns:annotationGrp>
-        </ns:annotations>
-      </ns:standOff>
-    </ns:standOff>
-    <ns:standOff xml:id="mi4">
-      <ns:soHeader>
+          </so:annotationGrp>
+        </so:annotations>
+      </so:standOff>
+    </so:standOff>
+    <so:standOff xml:id="mi4">
+      <so:soHeader>
         <encodingDesc>
           <appInfo>
             <application ident="lina-3:notice:kea:sequences_nom_adj" version="1.0">
@@ -13916,9 +13918,9 @@
           <title>Indexation TermITH</title>
           <author role="IndexingEditor">LINA</author>
         </titleStmt>
-      </ns:soHeader>
+      </so:soHeader>
       <!-- termes-cles -->
-      <ns:annotations>
+      <so:annotations>
         <termEntry xmlns="http://www.tbx.org" xml:id="mi4kw1">
           <langSet xml:lang="fr">
             <tig>
@@ -13999,10 +14001,10 @@
             </tig>
           </langSet>
         </termEntry>
-      </ns:annotations>
-      <ns:standOff>
+      </so:annotations>
+      <so:standOff>
         <!--standOff subordonné au standOff principal-->
-        <ns:soHeader>
+        <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
             <appInfo>
               <!--nom de l'outil d'évaluation-->
@@ -14015,9 +14017,9 @@
             <title>évaluation indexation</title>
             <author role="IndexingEvaluator">INIST</author>
           </titleStmt>
-        </ns:soHeader>
-        <ns:annotations>
-          <ns:annotationGrp type="pertinence">
+        </so:soHeader>
+        <so:annotations>
+          <so:annotationGrp type="pertinence">
             <span from="#mi4kw1">
               <num type="pertinence">2</num>
             </span>
@@ -14054,8 +14056,8 @@
               <num type="pertinence">2</num>
               <link type="INISTForm" target="#ikwfr5"/>
             </span>
-          </ns:annotationGrp>
-          <ns:annotationGrp type="silence">
+          </so:annotationGrp>
+          <so:annotationGrp type="silence">
             <span from="#ikwfr1">
               <num type="silence">0</num>
               <link type="TermithForm" target="#mi4kw3"/>
@@ -14088,12 +14090,12 @@
               <num type="silence">1</num>
               <note>(S) Implicite.</note>
             </span>
-          </ns:annotationGrp>
-        </ns:annotations>
-      </ns:standOff>
-    </ns:standOff>
-    <ns:standOff xml:id="mi5">
-      <ns:soHeader>
+          </so:annotationGrp>
+        </so:annotations>
+      </so:standOff>
+    </so:standOff>
+    <so:standOff xml:id="mi5">
+      <so:soHeader>
         <encodingDesc>
           <appInfo>
             <application ident="lina-3:notice:topiccorank:sequences_nom_adj" version="1.0">
@@ -14105,9 +14107,9 @@
           <title>Indexation TermITH</title>
           <author role="IndexingEditor">LINA</author>
         </titleStmt>
-      </ns:soHeader>
+      </so:soHeader>
       <!-- termes-cles -->
-      <ns:annotations>
+      <so:annotations>
         <termEntry xmlns="http://www.tbx.org" xml:id="mi5kw1">
           <langSet xml:lang="fr">
             <tig>
@@ -14188,10 +14190,10 @@
             </tig>
           </langSet>
         </termEntry>
-      </ns:annotations>
-      <ns:standOff>
+      </so:annotations>
+      <so:standOff>
         <!--standOff subordonné au standOff principal-->
-        <ns:soHeader>
+        <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
             <appInfo>
               <!--nom de l'outil d'évaluation-->
@@ -14204,9 +14206,9 @@
             <title>évaluation indexation</title>
             <author role="IndexingEvaluator">INIST</author>
           </titleStmt>
-        </ns:soHeader>
-        <ns:annotations>
-          <ns:annotationGrp type="pertinence">
+        </so:soHeader>
+        <so:annotations>
+          <so:annotationGrp type="pertinence">
             <span from="#mi5kw1">
               <num type="pertinence">2</num>
               <link type="INISTForm" target="#ikwfr4"/>
@@ -14242,8 +14244,8 @@
             <span from="#mi5kw10">
               <num type="pertinence">0</num>
             </span>
-          </ns:annotationGrp>
-          <ns:annotationGrp type="silence">
+          </so:annotationGrp>
+          <so:annotationGrp type="silence">
             <span from="#ikwfr1">
               <num type="silence">0</num>
               <link type="TermithForm" target="#mi5kw2"/>
@@ -14275,12 +14277,12 @@
               <num type="silence">1</num>
               <note>(S) Implicite.</note>
             </span>
-          </ns:annotationGrp>
-        </ns:annotations>
-      </ns:standOff>
-    </ns:standOff>
-    <ns:standOff xml:id="mi6">
-      <ns:soHeader>
+          </so:annotationGrp>
+        </so:annotations>
+      </so:standOff>
+    </so:standOff>
+    <so:standOff xml:id="mi6">
+      <so:soHeader>
         <encodingDesc>
           <appInfo>
             <application ident="lina-3:notice:topiccorank_termsuite:candidats_termes" version="1.0">
@@ -14292,9 +14294,9 @@
           <title>Indexation TermITH</title>
           <author role="IndexingEditor">LINA</author>
         </titleStmt>
-      </ns:soHeader>
+      </so:soHeader>
       <!-- termes-cles -->
-      <ns:annotations>
+      <so:annotations>
         <termEntry xmlns="http://www.tbx.org" xml:id="mi6kw1">
           <langSet xml:lang="fr">
             <tig>
@@ -14375,10 +14377,10 @@
             </tig>
           </langSet>
         </termEntry>
-      </ns:annotations>
-      <ns:standOff>
+      </so:annotations>
+      <so:standOff>
         <!--standOff subordonné au standOff principal-->
-        <ns:soHeader>
+        <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
             <appInfo>
               <!--nom de l'outil d'évaluation-->
@@ -14391,9 +14393,9 @@
             <title>évaluation indexation</title>
             <author role="IndexingEvaluator">INIST</author>
           </titleStmt>
-        </ns:soHeader>
-        <ns:annotations>
-          <ns:annotationGrp type="pertinence">
+        </so:soHeader>
+        <so:annotations>
+          <so:annotationGrp type="pertinence">
             <span from="#mi6kw1">
               <num type="pertinence">2</num>
               <link type="INISTForm" target="#ikwfr4"/>
@@ -14429,8 +14431,8 @@
             <span from="#mi6kw10">
               <num type="pertinence">0</num>
             </span>
-          </ns:annotationGrp>
-          <ns:annotationGrp type="silence">
+          </so:annotationGrp>
+          <so:annotationGrp type="silence">
             <span from="#ikwfr1">
               <num type="silence">0</num>
               <link type="TermithForm" target="#mi6kw3"/>
@@ -14462,13 +14464,13 @@
               <num type="silence">1</num>
               <note>(S) Implicite.</note>
             </span>
-          </ns:annotationGrp>
-        </ns:annotations>
-      </ns:standOff>
-    </ns:standOff>
-  </ns:standOff>
-  <ns:standOff type="indexation-phase4">
-    <ns:soHeader>
+          </so:annotationGrp>
+        </so:annotations>
+      </so:standOff>
+    </so:standOff>
+  </so:standOff>
+  <so:standOff type="indexation-phase4">
+    <so:soHeader>
       <titleStmt>
         <title>Evaluation de l'indexation TermITH - phase 4</title>
         <author role="IndexingEditor">LINA</author>
@@ -14480,9 +14482,9 @@
           <domain>linguistique, sciences de l'information, chimie</domain>
         </textDesc>
       </profileDesc>
-    </ns:soHeader>
-    <ns:standOff xml:id="mi3">
-      <ns:soHeader>
+    </so:soHeader>
+    <so:standOff xml:id="mi3">
+      <so:soHeader>
         <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
           <appInfo>
             <application ident="lina-4:notice:topicrank_termsuite:sequences_nom_adj_and_candidats_termes" version="1.0">
@@ -14494,9 +14496,9 @@
           <title>Indexation TermITH</title>
           <author role="IndexingEditor">LINA</author>
         </titleStmt>
-      </ns:soHeader>
+      </so:soHeader>
       <!-- termes-cles -->
-      <ns:annotations>
+      <so:annotations>
         <termEntry xmlns="http://www.tbx.org" xml:id="mi3kw1">
           <langSet xml:lang="fr">
             <tig>
@@ -14567,10 +14569,10 @@
             </tig>
           </langSet>
         </termEntry>
-      </ns:annotations>
-      <ns:standOff>
+      </so:annotations>
+      <so:standOff>
         <!--standOff subordonné au standOff principal-->
-        <ns:soHeader>
+        <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
             <appInfo>
               <!--nom de l'outil d'évaluation-->
@@ -14583,9 +14585,9 @@
             <title>évaluation indexation</title>
             <author role="IndexingEvaluator">INIST</author>
           </titleStmt>
-        </ns:soHeader>
-        <ns:annotations>
-          <ns:annotationGrp type="pertinence">
+        </so:soHeader>
+        <so:annotations>
+          <so:annotationGrp type="pertinence">
             <span from="#mi3kw1">
               <num type="pertinence">2</num>
             </span>
@@ -14618,8 +14620,8 @@
             <span from="#mi3kw10">
               <num type="pertinence">0</num>
             </span>
-          </ns:annotationGrp>
-          <ns:annotationGrp type="silence">
+          </so:annotationGrp>
+          <so:annotationGrp type="silence">
             <span from="#ikwfr1">
               <num type="silence">2</num>
             </span>
@@ -14647,12 +14649,12 @@
             <span from="#ikwfr8">
               <num type="silence">2</num>
             </span>
-          </ns:annotationGrp>
-        </ns:annotations>
-      </ns:standOff>
-    </ns:standOff>
-    <ns:standOff xml:id="mi4">
-      <ns:soHeader>
+          </so:annotationGrp>
+        </so:annotations>
+      </so:standOff>
+    </so:standOff>
+    <so:standOff xml:id="mi4">
+      <so:soHeader>
         <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
           <appInfo>
             <application ident="lina-4:notice:kea:sequences_nom_adj" version="1.0">
@@ -14664,9 +14666,9 @@
           <title>Indexation TermITH</title>
           <author role="IndexingEditor">LINA</author>
         </titleStmt>
-      </ns:soHeader>
+      </so:soHeader>
       <!-- termes-cles -->
-      <ns:annotations>
+      <so:annotations>
         <termEntry xmlns="http://www.tbx.org" xml:id="mi4kw1">
           <langSet xml:lang="fr">
             <tig>
@@ -14737,10 +14739,10 @@
             </tig>
           </langSet>
         </termEntry>
-      </ns:annotations>
-      <ns:standOff>
+      </so:annotations>
+      <so:standOff>
         <!--standOff subordonné au standOff principal-->
-        <ns:soHeader>
+        <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
             <appInfo>
               <!--nom de l'outil d'évaluation-->
@@ -14753,9 +14755,9 @@
             <title>évaluation indexation</title>
             <author role="IndexingEvaluator">INIST</author>
           </titleStmt>
-        </ns:soHeader>
-        <ns:annotations>
-          <ns:annotationGrp type="pertinence">
+        </so:soHeader>
+        <so:annotations>
+          <so:annotationGrp type="pertinence">
             <span from="#mi4kw1">
               <num type="pertinence">2</num>
             </span>
@@ -14789,8 +14791,8 @@
               <link type="INISTForm" target="#ikwfr4"/>
               <note>(P) Forme préférée dans le texte : interaction verbale</note>
             </span>
-          </ns:annotationGrp>
-          <ns:annotationGrp type="silence">
+          </so:annotationGrp>
+          <so:annotationGrp type="silence">
             <span from="#ikwfr1">
               <num type="silence">2</num>
             </span>
@@ -14819,12 +14821,12 @@
             <span from="#ikwfr8">
               <num type="silence">2</num>
             </span>
-          </ns:annotationGrp>
-        </ns:annotations>
-      </ns:standOff>
-    </ns:standOff>
-    <ns:standOff xml:id="mi5">
-      <ns:soHeader>
+          </so:annotationGrp>
+        </so:annotations>
+      </so:standOff>
+    </so:standOff>
+    <so:standOff xml:id="mi5">
+      <so:soHeader>
         <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
           <appInfo>
             <application ident="lina-4:notice:topiccorank:sequences_nom_adj" version="1.0">
@@ -14836,9 +14838,9 @@
           <title>Indexation TermITH</title>
           <author role="IndexingEditor">LINA</author>
         </titleStmt>
-      </ns:soHeader>
+      </so:soHeader>
       <!-- termes-cles -->
-      <ns:annotations>
+      <so:annotations>
         <termEntry xmlns="http://www.tbx.org" xml:id="mi5kw1">
           <langSet xml:lang="fr">
             <tig>
@@ -14909,10 +14911,10 @@
             </tig>
           </langSet>
         </termEntry>
-      </ns:annotations>
-      <ns:standOff>
+      </so:annotations>
+      <so:standOff>
         <!--standOff subordonné au standOff principal-->
-        <ns:soHeader>
+        <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
             <appInfo>
               <!--nom de l'outil d'évaluation-->
@@ -14925,9 +14927,9 @@
             <title>évaluation indexation</title>
             <author role="IndexingEvaluator">INIST</author>
           </titleStmt>
-        </ns:soHeader>
-        <ns:annotations>
-          <ns:annotationGrp type="pertinence">
+        </so:soHeader>
+        <so:annotations>
+          <so:annotationGrp type="pertinence">
             <span from="#mi5kw1">
               <num type="pertinence">2</num>
               <link type="INISTForm" target="#ikwfr1"/>
@@ -14963,8 +14965,8 @@
             <span from="#mi5kw10">
               <num type="pertinence">0</num>
             </span>
-          </ns:annotationGrp>
-          <ns:annotationGrp type="silence">
+          </so:annotationGrp>
+          <so:annotationGrp type="silence">
             <span from="#ikwfr1">
               <num type="silence">0</num>
               <link type="TermithForm" target="#mi5kw1"/>
@@ -14995,12 +14997,12 @@
               <num type="silence">0</num>
               <link type="TermithForm" target="#mi5kw3"/>
             </span>
-          </ns:annotationGrp>
-        </ns:annotations>
-      </ns:standOff>
-    </ns:standOff>
-    <ns:standOff xml:id="mi6">
-      <ns:soHeader>
+          </so:annotationGrp>
+        </so:annotations>
+      </so:standOff>
+    </so:standOff>
+    <so:standOff xml:id="mi6">
+      <so:soHeader>
         <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
           <appInfo>
             <application ident="lina-4:notice:topiccorank_termsuite:sequences_nom_adj_and_candidats_termes" version="1.0">
@@ -15012,9 +15014,9 @@
           <title>Indexation TermITH</title>
           <author role="IndexingEditor">LINA</author>
         </titleStmt>
-      </ns:soHeader>
+      </so:soHeader>
       <!-- termes-cles -->
-      <ns:annotations>
+      <so:annotations>
         <termEntry xmlns="http://www.tbx.org" xml:id="mi6kw1">
           <langSet xml:lang="fr">
             <tig>
@@ -15085,10 +15087,10 @@
             </tig>
           </langSet>
         </termEntry>
-      </ns:annotations>
-      <ns:standOff>
+      </so:annotations>
+      <so:standOff>
         <!--standOff subordonné au standOff principal-->
-        <ns:soHeader>
+        <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
             <appInfo>
               <!--nom de l'outil d'évaluation-->
@@ -15101,9 +15103,9 @@
             <title>évaluation indexation</title>
             <author role="IndexingEvaluator">INIST</author>
           </titleStmt>
-        </ns:soHeader>
-        <ns:annotations>
-          <ns:annotationGrp type="pertinence">
+        </so:soHeader>
+        <so:annotations>
+          <so:annotationGrp type="pertinence">
             <span from="#mi6kw1">
               <num type="pertinence">2</num>
             </span>
@@ -15140,8 +15142,8 @@
             <span from="#mi6kw10">
               <num type="pertinence">0</num>
             </span>
-          </ns:annotationGrp>
-          <ns:annotationGrp type="silence">
+          </so:annotationGrp>
+          <so:annotationGrp type="silence">
             <span from="#ikwfr1">
               <num type="silence">0</num>
               <link type="TermithForm" target="#mi6kw2"/>
@@ -15173,11 +15175,11 @@
               <num type="silence">0</num>
               <link type="TermithForm" target="#mi6kw3"/>
             </span>
-          </ns:annotationGrp>
-        </ns:annotations>
-      </ns:standOff>
-    </ns:standOff>
-  </ns:standOff>
+          </so:annotationGrp>
+        </so:annotations>
+      </so:standOff>
+    </so:standOff>
+  </so:standOff>
   <text>
     <front>
       <titlePage>
