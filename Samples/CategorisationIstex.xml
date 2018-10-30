@@ -1,58 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../Specification/out/standoff-proposal.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title/>
-            </titleStmt>
-            <publicationStmt/>
-            <sourceDesc/>
-        </fileDesc>
-    </teiHeader>
-    <standOff xmlns="http://www.tei-c.org/proposal/standoff/ns">
-        <listAnnotation>
-            <annotationBlock xmlns="http://www.tei-c.org/ns/1.0" mode="justBody" corresp="#text">
-                <keywords scheme="http://refcode.inist.fr">
-                    <term corresp="http://refcode.inist.fr#001C" key="refcode:001C" cert="0,8">CHIMIE</term>
-                    <term key="refcode:001C03" cert="0,5">CHIMIE ORGANIQUE</term>
-                </keywords>
-            </annotationBlock>
-            
-            <annotationBlock xmlns="http://www.tei-c.org/ns/1.0" mode="justBody" corresp="#text">
-                <keywords>
-                    <term key="refcode:001C" level="1" cert="0,8">CHIMIE</term>
-                    <term key="refcode:001C03" level="2" cert="0,5">CHIMIE ORGANIQUE</term>
-                </keywords>
-            </annotationBlock>
-                
-                
-                
-            <annotationBlock xmlns="http://www.tei-c.org/ns/1.0" mode="justBody">   
-                <skos:Concept/>
-                <textClass>
-
-                    <classCode scheme="http://refcode.inist.fr">001C</classCode>
-                    <classCode scheme="http://refcode.inist.fr">001Cxxx</classCode>
-                    
-                    <keywords>
-                        <term key="refcode:001C" level="1" cert="0,8">CHIMIE</term>
-                    </keywords>
-                    
-                    
-                    <fs>
-                        <f name="probability">
-                            <numeric value="0,8"/>
-                        </f>
-                    </fs>
-                </textClass>
-                <certainty locus=""/>
-            </annotationBlock>
-        </listAnnotation>
-    </standOff>
-    <text>
-        <body>
-            <div/>
-        </body>
-    </text>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title/>
+      </titleStmt>
+      <publicationStmt/>
+      <sourceDesc/>
+    </fileDesc>
+  </teiHeader>
+  <standOff xmlns="http://www.tei-c.org/proposal/standoff/ns">
+    <listAnnotation>
+      <annotationBlock xmlns="http://www.tei-c.org/ns/1.0" mode="justBody" corresp="#text">
+        <keywords scheme="http://refcode.inist.fr">
+          <term corresp="http://refcode.inist.fr#001C" key="refcode:001C" cert="0,8">CHIMIE</term>
+          <term key="refcode:001C03" cert="0,5">CHIMIE ORGANIQUE</term>
+        </keywords>
+      </annotationBlock>
+      
+      <annotationBlock xmlns="http://www.tei-c.org/ns/1.0" mode="justBody" corresp="#text">
+        <keywords>
+          <term key="refcode:001C" level="1" cert="0,8">CHIMIE</term>
+          <term key="refcode:001C03" level="2" cert="0,5">CHIMIE ORGANIQUE</term>
+        </keywords>
+      </annotationBlock>
+      
+      <annotationBlock xmlns="http://www.tei-c.org/ns/1.0" mode="justBody">   
+        <skos:Concept/>
+        <textClass>
+          
+          <classCode scheme="http://refcode.inist.fr">001C</classCode>
+          <classCode scheme="http://refcode.inist.fr">001Cxxx</classCode>
+          
+          <keywords>
+            <term key="refcode:001C" level="1" cert="0,8">CHIMIE</term>
+          </keywords>     
+          
+          <fs>
+            <f name="probability">
+              <numeric value="0,8"/>
+            </f>
+          </fs>
+        </textClass>
+        <certainty locus=""/>
+      </annotationBlock>
+    </listAnnotation>
+  </standOff>
+  <text>
+    <body>
+      <div/>
+    </body>
+  </text>
 </TEI>

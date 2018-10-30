@@ -195,8 +195,8 @@
          <when xml:id="T122" interval="141.792" since="#T0"/>
       </timeline>
       <body>
-         <annotationGrp who="#SPK1" start="#T0" end="#T1" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg0" type="utterance" subtype="exclamative"><w xml:id="w1"
+         <annotationGrp who="#SPK1" start="#T0" end="#T1" xml:id="au01">
+            <u xml:id="u01"><seg xml:id="seg0" type="utterance" subtype="exclamative"><w xml:id="w1"
                      >Guten</w><w xml:id="w2">Tag</w></seg></u>
             <spanGrp type="en">
                <span from="#T0" to="#T1">Hello! </span>
@@ -225,8 +225,8 @@
                <span from="#w2" to="#w2">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T1" end="#T4" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg41" type="utterance" subtype="declarative"><w xml:id="w3"
+         <annotationGrp who="#SPK0" start="#T1" end="#T4" xml:id="au02">
+            <u xml:id="u02"><seg xml:id="seg41" type="utterance" subtype="declarative"><w xml:id="w3"
                      >Guten</w><w xml:id="w4">Tach</w><pc xml:id="pc1">,</pc><w xml:id="w5"
                      >mein</w><w xml:id="w6">Name</w><w xml:id="w7">is</w><w xml:id="w8"
                      >Schneider</w></seg><anchor synch="#T2"/><seg xml:id="seg42" type="utterance"
@@ -325,8 +325,8 @@
                <span from="#w5" to="#w5">true</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK1" start="#T3" end="#T5" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg1" type="utterance" subtype="declarative"><w xml:id="w13"
+         <annotationGrp who="#SPK1" start="#T3" end="#T5" xml:id="au03">
+            <u xml:id="u03"><seg xml:id="seg1" type="utterance" subtype="declarative"><w xml:id="w13"
                      >Jaa</w></seg><anchor synch="#T4"/><seg xml:id="seg2" type="utterance"
                   subtype="declarative"><w xml:id="w14">Dann</w><w xml:id="w15">woll'n</w><w
                      xml:id="w16">wer</w><w xml:id="w17">mal</w><w xml:id="w18">schaun</w></seg></u>
@@ -384,8 +384,8 @@
                <span from="#w16" to="#w16">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T5" end="#T6" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg43" type="utterance" subtype="declarative"><w
+         <annotationGrp who="#SPK0" start="#T5" end="#T6" xml:id="au04">
+            <u xml:id="u04"><seg xml:id="seg43" type="utterance" subtype="declarative"><w
                      xml:id="w19">Ja</w></seg></u>
             <spanGrp type="en">
                <span from="#T5" to="#T6">Yes. </span>
@@ -407,8 +407,8 @@
                <span from="#w19" to="#w19">neuter</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK1" start="#T6" end="#T7" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg3" type="utterance" subtype="interrogative"><w
+         <annotationGrp who="#SPK1" start="#T6" end="#T7" xml:id="au05">
+            <u xml:id="u05"><seg xml:id="seg3" type="utterance" subtype="interrogative"><w
                      xml:id="w20">Was</w><w xml:id="w21">wir</w><w type="repair" xml:id="w22"
                      >f</w><w xml:id="w23">sie</w><w xml:id="w24">tun</w><w xml:id="w25">könn</w><w
                      xml:id="w26">nich</w></seg></u>
@@ -480,8 +480,8 @@
                <span from="#w25" to="#w25">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T7" end="#T8" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg44" type="utterance" subtype="declarative"><w
+         <annotationGrp who="#SPK0" start="#T7" end="#T8" xml:id="au06">
+            <u xml:id="u06"><seg xml:id="seg44" type="utterance" subtype="declarative"><w
                      xml:id="w27">Ja</w></seg></u>
             <spanGrp type="en">
                <span from="#T7" to="#T8">Yes. </span>
@@ -503,8 +503,8 @@
                <span from="#w27" to="#w27">neuter</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK1" start="#T8" end="#T10" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg4" type="utterance" subtype="declarative"><w xml:id="w28"
+         <annotationGrp who="#SPK1" start="#T8" end="#T10" xml:id="au07">
+            <u xml:id="u07"><seg xml:id="seg4" type="utterance" subtype="declarative"><w xml:id="w28"
                      >Tja</w><pc xml:id="pc2">,</pc><w xml:id="w29">da</w><w xml:id="w30"
                      >hätten</w><w xml:id="w31">wir</w><w xml:id="w32">vielleicht</w><w xml:id="w33"
                      >hier</w><w xml:id="w34">eine</w><w xml:id="w35">Stelle</w><pause dur="PT0.5S"
@@ -616,8 +616,8 @@
                <span from="#w42" to="#w42">accusative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T9" end="#T12" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg45" type="utterance" subtype="declarative"><w
+         <annotationGrp who="#SPK0" start="#T9" end="#T12" xml:id="au08">
+            <u xml:id="u08"><seg xml:id="seg45" type="utterance" subtype="declarative"><w
                      xml:id="w43">Nee</w><pc xml:id="pc3">,</pc><anchor synch="#T10"/><w
                      xml:id="w44">hab</w><w xml:id="w45">kein</w><w xml:id="w46">Führer<anchor
                         synch="#T11"/>schein</w></seg></u>
@@ -671,8 +671,8 @@
                <span from="#w45" to="#w45">true</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK1" start="#T11" end="#T18" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg5" type="utterance" subtype="declarative"><w xml:id="w47"
+         <annotationGrp who="#SPK1" start="#T11" end="#T18" xml:id="au09">
+            <u xml:id="u09"><seg xml:id="seg5" type="utterance" subtype="declarative"><w xml:id="w47"
                      >Ach</w><anchor synch="#T12"/><w xml:id="w48">so</w></seg><anchor synch="#T13"
                   /><seg xml:id="seg6" type="utterance" subtype="declarative"><w xml:id="w49"
                      >Mhm</w><pc xml:id="pc4">,</pc><anchor synch="#T14"/><pause dur="PT1.1S"
@@ -727,16 +727,16 @@
                <span from="#w51" to="#w51">true</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T15" end="#T17" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg46" type="utterance" subtype="not_classified"><incident>
+         <annotationGrp who="#SPK0" start="#T15" end="#T17" xml:id="au10">
+            <u xml:id="u10"><seg xml:id="seg46" type="utterance" subtype="not_classified"><incident>
                      <desc>räuspert sich,0,5s</desc>
                   </incident></seg></u>
             <spanGrp type="en">
                <span from="#T15" to="#T17">((clearing his throat,0,5s)) </span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T18" end="#T20" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg47" type="utterance" subtype="declarative"><pause
+         <annotationGrp who="#SPK0" start="#T18" end="#T20" xml:id="au11">
+            <u xml:id="u11"><seg xml:id="seg47" type="utterance" subtype="declarative"><pause
                      dur="PT0.8S"/><anchor synch="#T19"/><w xml:id="w53">Tja</w></seg></u>
             <spanGrp type="en">
                <span from="#T19" to="#T20">Well. </span>
@@ -751,8 +751,8 @@
                <span from="#w53" to="#w53">interjection</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK1" start="#T20" end="#T22" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg7" type="utterance" subtype="declarative"><w xml:id="w54"
+         <annotationGrp who="#SPK1" start="#T20" end="#T22" xml:id="au12">
+            <u xml:id="u12"><seg xml:id="seg7" type="utterance" subtype="declarative"><w xml:id="w54"
                      >Tja</w><pc xml:id="pc5">,</pc><w xml:id="w55">dann</w><w xml:id="w56"
                      >muss</w><w xml:id="w57">ich</w><w xml:id="w58">mal</w><w xml:id="w59">in</w><w
                      xml:id="w60">meiner</w><w xml:id="w61">Karteikarte</w><w xml:id="w62"
@@ -837,16 +837,16 @@
                <span from="#w60" to="#w60">true</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T22" end="#T23" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg48" type="utterance" subtype="not_classified"><incident>
+         <annotationGrp who="#SPK0" start="#T22" end="#T23" xml:id="au13">
+            <u xml:id="u13"><seg xml:id="seg48" type="utterance" subtype="not_classified"><incident>
                      <desc>räuspert sich</desc>
                   </incident></seg></u>
             <spanGrp type="en">
                <span from="#T22" to="#T23">((clearing his throat)) </span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK1" start="#T23" end="#T24" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg9" type="utterance" subtype="interrogative"><w
+         <annotationGrp who="#SPK1" start="#T23" end="#T24" xml:id="au14">
+            <u xml:id="u14"><seg xml:id="seg9" type="utterance" subtype="interrogative"><w
                      xml:id="w63">Tja</w><pause dur="PTShort"/><w xml:id="w64">inner</w><w
                      xml:id="w65">Lederfabrik</w></seg></u>
             <spanGrp type="en">
@@ -880,8 +880,8 @@
                <span from="#w65" to="#w65">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T24" end="#T26" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg49" type="utterance" subtype="declarative"><w
+         <annotationGrp who="#SPK0" start="#T24" end="#T26" xml:id="au15">
+            <u xml:id="u15"><seg xml:id="seg49" type="utterance" subtype="declarative"><w
                      xml:id="w66">Nee</w><pc xml:id="pc6">,</pc><w xml:id="w67">dat</w><w
                      xml:id="w68">stinkt</w><w xml:id="w69">so</w></seg><anchor synch="#T25"/><seg
                   xml:id="seg50" type="utterance" subtype="declarative"><w xml:id="w70">Da</w><w
@@ -959,8 +959,8 @@
                <span from="#w73" to="#w73">true</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK1" start="#T26" end="#T28" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg10" type="utterance" subtype="interrupted"><w
+         <annotationGrp who="#SPK1" start="#T26" end="#T28" xml:id="au16">
+            <u xml:id="u16"><seg xml:id="seg10" type="utterance" subtype="interrupted"><w
                      xml:id="w74">Ja</w><w xml:id="w75">nun</w><pc xml:id="pc7">,</pc><w
                      xml:id="w76">Herr</w><w xml:id="w77">Schneider</w><w xml:id="w78"
                   >äh</w></seg><anchor synch="#T27"/><seg xml:id="seg11" type="utterance"
@@ -1048,8 +1048,8 @@
                <span from="#w81" to="#w81">true</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T28" end="#T29" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg51" type="utterance" subtype="declarative"><w
+         <annotationGrp who="#SPK0" start="#T28" end="#T29" xml:id="au17">
+            <u xml:id="u17"><seg xml:id="seg51" type="utterance" subtype="declarative"><w
                      xml:id="w84">Ja</w><pc xml:id="pc9">,</pc><w xml:id="w85"
                >Schneider</w></seg></u>
             <spanGrp type="en">
@@ -1079,8 +1079,8 @@
                <span from="#w85" to="#w85">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK1" start="#T29" end="#T33" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg12" type="utterance" subtype="declarative"><w
+         <annotationGrp who="#SPK1" start="#T29" end="#T33" xml:id="au18">
+            <u xml:id="u18"><seg xml:id="seg12" type="utterance" subtype="declarative"><w
                      xml:id="w86">Äh</w><pc xml:id="pc10">,</pc><w xml:id="w87">es</w><w
                      xml:id="w88">geht</w><w xml:id="w89">nicht</w><w xml:id="w90">immer</w><w
                      xml:id="w91">äh</w><w xml:id="w92">danach</w><pc xml:id="pc11">,</pc><w
@@ -1312,8 +1312,8 @@
                <span from="#w116" to="#w116">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T33" end="#T35" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg52" type="utterance" subtype="declarative"><w
+         <annotationGrp who="#SPK0" start="#T33" end="#T35" xml:id="au19">
+            <u xml:id="u19"><seg xml:id="seg52" type="utterance" subtype="declarative"><w
                      xml:id="w117">Ja</w><w xml:id="w118">nur</w><w xml:id="w119">dat</w><w
                      xml:id="w120">kann</w><w xml:id="w121">ich</w><w xml:id="w122">auch</w><w
                      xml:id="w123">nich</w><anchor synch="#T34"/><w xml:id="w124"
@@ -1375,8 +1375,8 @@
                <span from="#w121" to="#w121">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK1" start="#T34" end="#T38" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg16" type="utterance" subtype="declarative"><w
+         <annotationGrp who="#SPK1" start="#T34" end="#T38" xml:id="au20">
+            <u xml:id="u20"><seg xml:id="seg16" type="utterance" subtype="declarative"><w
                      xml:id="w125">Naja</w><pc xml:id="pc14">,</pc><w xml:id="w126">wenn</w><w
                      xml:id="w127">Sie</w><anchor synch="#T35"/><w xml:id="w128">gesheitlich</w><w
                      xml:id="w129">dadurch</w><w xml:id="w130">gefährdet</w><w xml:id="w131"
@@ -1519,8 +1519,8 @@
                <span from="#w144" to="#w144">neuter</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T38" end="#T40" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg53" type="utterance" subtype="declarative"><w
+         <annotationGrp who="#SPK0" start="#T38" end="#T40" xml:id="au21">
+            <u xml:id="u21"><seg xml:id="seg53" type="utterance" subtype="declarative"><w
                      xml:id="w145">S</w><w xml:id="w146">waär</w><w xml:id="w147"
                   >schön</w></seg><anchor synch="#T39"/><seg xml:id="seg54" type="utterance"
                   subtype="declarative"><w xml:id="w148">Wär</w><w xml:id="w149">sehr</w><w
@@ -1582,8 +1582,8 @@
                <span from="#w152" to="#w152">dative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK1" start="#T40" end="#T43" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg19" type="utterance" subtype="declarative"><w
+         <annotationGrp who="#SPK1" start="#T40" end="#T43" xml:id="au22">
+            <u xml:id="u22"><seg xml:id="seg19" type="utterance" subtype="declarative"><w
                      xml:id="w153">Ah</w><pc xml:id="pc16">,</pc><w xml:id="w154">ja</w><pc
                      xml:id="pc17">,</pc><w xml:id="w155">das</w><w xml:id="w156">wär</w><w
                      xml:id="w157">vielleicht</w><w xml:id="w158">was</w><w xml:id="w159">für</w><w
@@ -1743,8 +1743,8 @@
                <span from="#w175" to="#w175">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T43" end="#T44" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg55" type="utterance" subtype="interrogative"><w
+         <annotationGrp who="#SPK0" start="#T43" end="#T44" xml:id="au23">
+            <u xml:id="u23"><seg xml:id="seg55" type="utterance" subtype="interrogative"><w
                      xml:id="w176">Da</w><w xml:id="w177">muss</w><w xml:id="w178">ich</w><w
                      xml:id="w179">aufpassen</w><pc xml:id="pc21">,</pc><w xml:id="w180">dass</w><w
                      xml:id="w181">die</w><w xml:id="w182">Blumen</w><w xml:id="w183">nicht</w><w
@@ -1841,8 +1841,8 @@
                <span from="#w186" to="#w186">neuter</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK1" start="#T44" end="#T49" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg22" type="utterance" subtype="declarative"><pause
+         <annotationGrp who="#SPK1" start="#T44" end="#T49" xml:id="au24">
+            <u xml:id="u24"><seg xml:id="seg22" type="utterance" subtype="declarative"><pause
                      dur="PT0.3S"/><w xml:id="w187">Nein</w><pc xml:id="pc23">,</pc><w xml:id="w188"
                      >äh</w><w xml:id="w189">Sie</w><w xml:id="w190">sollen</w><w xml:id="w191"
                      >nicht</w><w xml:id="w192">darauf</w><w xml:id="w193">aufpassen</w><pc
@@ -2027,8 +2027,8 @@
                <span from="#w213" to="#w213">dative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T47" end="#T48" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg56" type="utterance" subtype="interrupted"><unclear><w
+         <annotationGrp who="#SPK0" start="#T47" end="#T48" xml:id="au25">
+            <u xml:id="u25"><seg xml:id="seg56" type="utterance" subtype="interrupted"><unclear><w
                         xml:id="w214">Ja</w>,</unclear><w xml:id="w215">ich</w><w xml:id="w216"
                      >hab</w></seg></u>
             <spanGrp type="en">
@@ -2070,8 +2070,8 @@
                <span from="#w215" to="#w215">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T49" end="#T51" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg57" type="utterance" subtype="interrogative"><unclear><w
+         <annotationGrp who="#SPK0" start="#T49" end="#T51" xml:id="au26">
+            <u xml:id="u26"><seg xml:id="seg57" type="utterance" subtype="interrogative"><unclear><w
                         xml:id="w217">Ja</w>,</unclear><w xml:id="w218">ich</w><w xml:id="w219"
                      >hab</w><w xml:id="w220">aber</w><w xml:id="w221">keen</w><w xml:id="w222"
                      >Waffenschein</w><pc xml:id="pc27">,</pc><w xml:id="w223">mit</w><w
@@ -2183,8 +2183,8 @@
                <span from="#w226" to="#w226">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK1" start="#T50" end="#T52" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg24" type="utterance" subtype="declarative"><w
+         <annotationGrp who="#SPK1" start="#T50" end="#T52" xml:id="au27">
+            <u xml:id="u27"><seg xml:id="seg24" type="utterance" subtype="declarative"><w
                      xml:id="w230">Nein</w><pc xml:id="pc29">,</pc><w xml:id="w231">nein</w><pc
                      xml:id="pc30">,</pc><w xml:id="w232">nein</w><pc xml:id="pc31">,</pc><w
                      xml:id="w233">das</w><w xml:id="w234">ist<anchor synch="#T51"/>äh</w><w
@@ -2263,8 +2263,8 @@
                <span from="#w233" to="#w233">neuter</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T52" end="#T57" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg58" type="utterance" subtype="declarative"><pause
+         <annotationGrp who="#SPK0" start="#T52" end="#T57" xml:id="au28">
+            <u xml:id="u28"><seg xml:id="seg58" type="utterance" subtype="declarative"><pause
                      dur="PT1.3S"/><anchor synch="#T53"/><w xml:id="w241">Ja</w><pc xml:id="pc32"
                      >,</pc><w type="repair" xml:id="w242">u</w><anchor synch="#T54"/><w
                      xml:id="w243">irgendwie</w><pause dur="PT0.3S"/><w xml:id="w244"
@@ -2337,8 +2337,8 @@
                <span from="#w246" to="#w246">neuter</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK1" start="#T54" end="#T55" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg25" type="utterance" subtype="interrupted"><w
+         <annotationGrp who="#SPK1" start="#T54" end="#T55" xml:id="au29">
+            <u xml:id="u29"><seg xml:id="seg25" type="utterance" subtype="interrupted"><w
                      xml:id="w249">Ja</w><pc xml:id="pc33">,</pc><w xml:id="w250">aber</w><w
                      xml:id="w251">was</w><w xml:id="w252">haben</w><w xml:id="w253">Sie</w><w
                      xml:id="w254">denn</w></seg></u>
@@ -2398,8 +2398,8 @@
                <span from="#w253" to="#w253">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK1" start="#T56" end="#T58" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg26" type="utterance" subtype="interrogative"><w
+         <annotationGrp who="#SPK1" start="#T56" end="#T58" xml:id="au30">
+            <u xml:id="u30"><seg xml:id="seg26" type="utterance" subtype="interrogative"><w
                      xml:id="w255">J<anchor synch="#T57"/>a</w><pc xml:id="pc34">,</pc><w
                      xml:id="w256">warum</w><w xml:id="w257">denn</w><w xml:id="w258"
                   >nicht</w></seg></u>
@@ -2430,8 +2430,8 @@
                <span from="#w258" to="#w258">particle</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T58" end="#T63" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg59" type="utterance" subtype="declarative"><incident>
+         <annotationGrp who="#SPK0" start="#T58" end="#T63" xml:id="au31">
+            <u xml:id="u31"><seg xml:id="seg59" type="utterance" subtype="declarative"><incident>
                      <desc>holt Luft,0,5s</desc>
                   </incident><anchor synch="#T59"/><w xml:id="w259">Ja</w><pc xml:id="pc35">,</pc><w
                      xml:id="w260">das</w><w xml:id="w261">is</w><w xml:id="w262">irgendwie</w><w
@@ -2516,8 +2516,8 @@
                <span from="#w267" to="#w267">accusative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK1" start="#T60" end="#T75" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg27" type="utterance" subtype="interrogative"><w
+         <annotationGrp who="#SPK1" start="#T60" end="#T75" xml:id="au32">
+            <u xml:id="u32"><seg xml:id="seg27" type="utterance" subtype="interrogative"><w
                      xml:id="w270">Ja</w><w xml:id="w271">nun</w><pc xml:id="pc36">,</pc><w
                      xml:id="w272">Sie</w><w xml:id="w273">können</w><w xml:id="w274">jetzt</w><w
                      type="repair" xml:id="w275">n<anchor synch="#T61"/>icht</w><anchor synch="#T62"
@@ -2823,8 +2823,8 @@
                <span from="#w312" to="#w312">neuter</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T64" end="#T67" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg60" type="utterance" subtype="declarative"><w
+         <annotationGrp who="#SPK0" start="#T64" end="#T67" xml:id="au33">
+            <u xml:id="u33"><seg xml:id="seg60" type="utterance" subtype="declarative"><w
                      xml:id="w315">Ja</w><w xml:id="w316">nu</w><pc xml:id="pc38">,</pc><w
                      xml:id="w317">ich</w><w xml:id="w318">will</w><anchor synch="#T65"/><w
                      xml:id="w319">aber</w><w xml:id="w320">nich</w><pc xml:id="pc39">,</pc><w
@@ -2887,8 +2887,8 @@
                <span from="#w317" to="#w317">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T68" end="#T71" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg61" type="utterance" subtype="interrupted"><w
+         <annotationGrp who="#SPK0" start="#T68" end="#T71" xml:id="au34">
+            <u xml:id="u34"><seg xml:id="seg61" type="utterance" subtype="interrupted"><w
                      xml:id="w322">J<anchor synch="#T69"/>a</w><pc xml:id="pc40">,</pc><w
                      xml:id="w323">ich</w></seg><anchor synch="#T70"/><seg xml:id="seg62"
                   type="utterance" subtype="interrupted"><w xml:id="w324">Aber</w><w xml:id="w325"
@@ -2957,8 +2957,8 @@
                <span from="#w326" to="#w326">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T74" end="#T77" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg63" type="utterance" subtype="interrupted"><w
+         <annotationGrp who="#SPK0" start="#T74" end="#T77" xml:id="au35">
+            <u xml:id="u35"><seg xml:id="seg63" type="utterance" subtype="interrupted"><w
                      xml:id="w331">J<anchor synch="#T75"/>a</w><pc xml:id="pc41">,</pc><unclear><w
                         xml:id="w332">also</w></unclear><anchor synch="#T76"/><w xml:id="w333"
                   >d</w></seg></u>
@@ -2983,8 +2983,8 @@
                <span from="#w333" to="#w333">proper name</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK1" start="#T76" end="#T79" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg30" type="utterance" subtype="exclamative"><w
+         <annotationGrp who="#SPK1" start="#T76" end="#T79" xml:id="au36">
+            <u xml:id="u36"><seg xml:id="seg30" type="utterance" subtype="exclamative"><w
                      xml:id="w334">Dan<anchor synch="#T77"/>n</w><w xml:id="w335">machen</w><w
                      xml:id="w336">Sie</w><w xml:id="w337">eine<anchor synch="#T78"/>n</w></seg></u>
             <spanGrp type="en">
@@ -3039,8 +3039,8 @@
                <span from="#w337" to="#w337">accusative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T78" end="#T81" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg64" type="utterance" subtype="interrogative"><w
+         <annotationGrp who="#SPK0" start="#T78" end="#T81" xml:id="au37">
+            <u xml:id="u37"><seg xml:id="seg64" type="utterance" subtype="interrogative"><w
                      xml:id="w338">N<anchor synch="#T79"/>a</w><pc xml:id="pc42">,</pc><w
                      type="repair" xml:id="w339">s</w><w xml:id="w340">bin</w><w xml:id="w341"
                      >ich</w><w xml:id="w342">denn</w><w xml:id="w343">v<anchor synch="#T80"
@@ -3118,8 +3118,8 @@
                <span from="#w345" to="#w345">neuter</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK1" start="#T80" end="#T90" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg31" type="utterance" subtype="declarative"><w
+         <annotationGrp who="#SPK1" start="#T80" end="#T90" xml:id="au38">
+            <u xml:id="u38"><seg xml:id="seg31" type="utterance" subtype="declarative"><w
                      xml:id="w346">Oder</w><w xml:id="w347">Sie</w><w xml:id="w348">nehmen</w><w
                      xml:id="w349">die</w><w type="repair" xml:id="w350">f</w><anchor synch="#T81"
                      /><w xml:id="w351">Stelle</w><w xml:id="w352">in</w><w xml:id="w353">der</w><w
@@ -3388,8 +3388,8 @@
                <span from="#w378" to="#w378">true</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T82" end="#T88" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg65" type="utterance" subtype="declarative"><w
+         <annotationGrp who="#SPK0" start="#T82" end="#T88" xml:id="au39">
+            <u xml:id="u39"><seg xml:id="seg65" type="utterance" subtype="declarative"><w
                      xml:id="w384">N<anchor synch="#T83"/>ä</w><pc xml:id="pc46">,</pc><w
                      xml:id="w385">dat</w><w type="repair" xml:id="w386">sch</w><w type="repair"
                      xml:id="w387">ich</w><w xml:id="w388">nä</w><pc xml:id="pc47">,</pc><w
@@ -3605,8 +3605,8 @@
                <span from="#w411" to="#w411">genitive</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T89" end="#T93" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg67" type="utterance" subtype="declarative"><w
+         <annotationGrp who="#SPK0" start="#T89" end="#T93" xml:id="au40">
+            <u xml:id="u40"><seg xml:id="seg67" type="utterance" subtype="declarative"><w
                      xml:id="w413">Hab</w><w xml:id="w414">ich</w><w xml:id="w415">aber</w><w
                      xml:id="w416">echt</w><pc xml:id="pc52">,</pc><w xml:id="w417">zwei</w><w
                      xml:id="w418">Lin<anchor synch="#T90"/>ke</w><w xml:id="w419"
@@ -3685,8 +3685,8 @@
                <span from="#w419" to="#w419">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK1" start="#T91" end="#T102" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg35" type="utterance" subtype="declarative"><incident>
+         <annotationGrp who="#SPK1" start="#T91" end="#T102" xml:id="au41">
+            <u xml:id="u41"><seg xml:id="seg35" type="utterance" subtype="declarative"><incident>
                      <desc>holt Luft,0,3s</desc>
                   </incident><anchor synch="#T92"/><w xml:id="w422">Ja</w><pc xml:id="pc53">,</pc><w
                      xml:id="w423">Herr</w><w type="repair" xml:id="w424">Sch<anchor synch="#T93"
@@ -3813,8 +3813,8 @@
                <span from="#w438" to="#w438">true</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T94" end="#T97" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg68" type="utterance" subtype="declarative"><incident>
+         <annotationGrp who="#SPK0" start="#T94" end="#T97" xml:id="au42">
+            <u xml:id="u42"><seg xml:id="seg68" type="utterance" subtype="declarative"><incident>
                      <desc>holt Luft,0,6s</desc>
                   </incident><anchor synch="#T95"/><w xml:id="w440">Aber</w><w xml:id="w441"
                      >dat</w><w xml:id="w442">will</w><w xml:id="w443">ich</w><w xml:id="w444"
@@ -3876,8 +3876,8 @@
                <span from="#w443" to="#w443">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T99" end="#T100" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg69" type="utterance" subtype="declarative"><w
+         <annotationGrp who="#SPK0" start="#T99" end="#T100" xml:id="au43">
+            <u xml:id="u43"><seg xml:id="seg69" type="utterance" subtype="declarative"><w
                      xml:id="w446">Da</w><w xml:id="w447">habe</w><w xml:id="w448">ich</w><w
                      xml:id="w449">kein</w><w xml:id="w450">Interesse</w></seg></u>
             <spanGrp type="en">
@@ -3938,8 +3938,8 @@
                <span from="#w449" to="#w449">true</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T101" end="#T104" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg70" type="utterance" subtype="interrogative"><w
+         <annotationGrp who="#SPK0" start="#T101" end="#T104" xml:id="au44">
+            <u xml:id="u44"><seg xml:id="seg70" type="utterance" subtype="interrogative"><w
                      xml:id="w451">Och</w><pc xml:id="pc55">,</pc><w xml:id="w452">Sie</w><w
                      xml:id="w453">sind</w><w xml:id="w454">doch</w><anchor synch="#T102"/><w
                      xml:id="w455">wohl</w><w xml:id="w456">bekloppt</w><w xml:id="w457"
@@ -4027,8 +4027,8 @@
                <span from="#w459" to="#w459">neuter</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK1" start="#T103" end="#T105" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg37" type="utterance" subtype="declarative"><w
+         <annotationGrp who="#SPK1" start="#T103" end="#T105" xml:id="au45">
+            <u xml:id="u45"><seg xml:id="seg37" type="utterance" subtype="declarative"><w
                      xml:id="w461">Da</w><w xml:id="w462">kommen</w><w xml:id="w463">wir</w><w
                      xml:id="w464">g<anchor synch="#T104"/>ar</w><w xml:id="w465">nicht</w><w
                      xml:id="w466">umhin</w></seg></u>
@@ -4086,8 +4086,8 @@
                <span from="#w463" to="#w463">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T105" end="#T116" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg71" type="utterance" subtype="declarative"><w
+         <annotationGrp who="#SPK0" start="#T105" end="#T116" xml:id="au46">
+            <u xml:id="u46"><seg xml:id="seg71" type="utterance" subtype="declarative"><w
                      xml:id="w467">Ja</w></seg><anchor synch="#T106"/><seg xml:id="seg72"
                   type="utterance" subtype="interrupted"><incident>
                      <desc>holt Luft,0,3s</desc>
@@ -4327,8 +4327,8 @@
                <span from="#w482" to="#w482">true</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK1" start="#T110" end="#T113" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg38" type="utterance" subtype="declarative"><w
+         <annotationGrp who="#SPK1" start="#T110" end="#T113" xml:id="au47">
+            <u xml:id="u47"><seg xml:id="seg38" type="utterance" subtype="declarative"><w
                      xml:id="w496">Na</w><w xml:id="w497">gut</w><pc xml:id="pc67">,</pc><w
                      xml:id="w498">wie</w><w xml:id="w499">S<anchor synch="#T111"/>ie</w><w
                      xml:id="w500">woll<anchor synch="#T112"/>en</w></seg></u>
@@ -4385,8 +4385,8 @@
                <span from="#w499" to="#w499">nominative</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK1" start="#T115" end="#T119" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg39" type="utterance" subtype="declarative"><w
+         <annotationGrp who="#SPK1" start="#T115" end="#T119" xml:id="au48">
+            <u xml:id="u48"><seg xml:id="seg39" type="utterance" subtype="declarative"><w
                      xml:id="w501">Sch<anchor synch="#T116"/>ön</w></seg><anchor synch="#T117"/><seg
                   xml:id="seg40" type="utterance" subtype="declarative"><w xml:id="w502">Auf</w><w
                      xml:id="w503">W<anchor synch="#T118"/>iedersehen</w></seg></u>
@@ -4422,8 +4422,8 @@
                <span from="#w503" to="#w503">neuter</span>
             </spanGrp>
          </annotationGrp>
-         <annotationGrp who="#SPK0" start="#T117" end="#T122" xml:id="au1">
-            <u xml:id="u1"><seg xml:id="seg77" type="utterance" subtype="interrogative"><w
+         <annotationGrp who="#SPK0" start="#T117" end="#T122" xml:id="au49">
+            <u xml:id="u49"><seg xml:id="seg77" type="utterance" subtype="interrogative"><w
                      xml:id="w504">Ne</w></seg><anchor synch="#T118"/><seg xml:id="seg78"
                   type="utterance" subtype="interrupted"><w xml:id="w505">Äh</w></seg><anchor
                   synch="#T120"/><seg xml:id="seg79" type="utterance" subtype="modeless"><pause

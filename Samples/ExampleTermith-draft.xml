@@ -14483,7 +14483,7 @@
         </textDesc>
       </profileDesc>
     </so:soHeader>
-    <so:standOff xml:id="mi3">
+    <so:standOff xml:id="SOMI3">
       <so:soHeader>
         <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
           <appInfo>
@@ -14499,70 +14499,70 @@
       </so:soHeader>
       <!-- termes-cles -->
       <so:annotations>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi3kw1">
+        <termEntry xmlns="http://www.tbx.org" xml:id="SOMI3kw1">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">clôture</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi3kw2">
+        <termEntry xmlns="http://www.tbx.org" xml:id="SOMI3kw2">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">phase suivante</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi3kw3">
+        <termEntry xmlns="http://www.tbx.org" xml:id="SOMI3kw3">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">tour</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi3kw4">
+        <termEntry xmlns="http://www.tbx.org" xml:id="SOMI3kw4">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">participant</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi3kw5">
+        <termEntry xmlns="http://www.tbx.org" xml:id="SOMI3kw5">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">corpus</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi3kw6">
+        <termEntry xmlns="http://www.tbx.org" xml:id="SOMI3kw6">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">plan</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi3kw7">
+        <termEntry xmlns="http://www.tbx.org" xml:id="SOMI3kw7">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">analyse</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi3kw8">
+        <termEntry xmlns="http://www.tbx.org" xml:id="SOMI3kw8">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">activité</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi3kw9">
+        <termEntry xmlns="http://www.tbx.org" xml:id="SOMI3kw9">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">ressources linguistiques</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi3kw10">
+        <termEntry xmlns="http://www.tbx.org" xml:id="SOMI3kw10">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">phénomène</term>
@@ -14653,7 +14653,7 @@
         </so:annotations>
       </so:standOff>
     </so:standOff>
-    <so:standOff xml:id="mi4">
+    <so:standOff xml:id="somi4">
       <so:soHeader>
         <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
           <appInfo>
@@ -14669,70 +14669,70 @@
       </so:soHeader>
       <!-- termes-cles -->
       <so:annotations>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi4kw1">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi4kw1">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">désalignement</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi4kw2">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi4kw2">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">clôture</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi4kw3">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi4kw3">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">participants</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi4kw4">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi4kw4">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">phase</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi4kw5">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi4kw5">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">phase suivante</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi4kw6">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi4kw6">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">ressources</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi4kw7">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi4kw7">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">séquentielle</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi4kw8">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi4kw8">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">tour</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi4kw9">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi4kw9">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">son</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi4kw10">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi4kw10">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">interaction</term>
@@ -14758,35 +14758,35 @@
         </so:soHeader>
         <so:annotations>
           <so:annotationGrp type="pertinence">
-            <span from="#mi4kw1">
+            <span from="#somi4kw1">
               <num type="pertinence">2</num>
             </span>
-            <span from="#mi4kw2">
+            <span from="#somi4kw2">
               <num type="pertinence">2</num>
             </span>
-            <span from="#mi4kw3">
+            <span from="#somi4kw3">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi4kw4">
+            <span from="#somi4kw4">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi4kw5">
+            <span from="#somi4kw5">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi4kw6">
+            <span from="#somi4kw6">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi4kw7">
+            <span from="#somi4kw7">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi4kw8">
+            <span from="#somi4kw8">
               <num type="pertinence">1</num>
               <note>(P) Forme préférée dans le texte : tour de parole</note>
             </span>
-            <span from="#mi4kw9">
+            <span from="#somi4kw9">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi4kw10">
+            <span from="#somi4kw10">
               <num type="pertinence">1</num>
               <link type="INISTForm" target="#ikwfr4"/>
               <note>(P) Forme préférée dans le texte : interaction verbale</note>
@@ -14805,7 +14805,7 @@
             </span>
             <span from="#ikwfr4">
               <num type="silence">0</num>
-              <link type="TermithForm" target="#mi4kw10"/>
+              <link type="TermithForm" target="#somi4kw10"/>
             </span>
             <span from="#ikwfr5">
               <num type="silence">0</num>
@@ -14825,7 +14825,7 @@
         </so:annotations>
       </so:standOff>
     </so:standOff>
-    <so:standOff xml:id="mi5">
+    <so:standOff xml:id="somi5">
       <so:soHeader>
         <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
           <appInfo>
@@ -14841,70 +14841,70 @@
       </so:soHeader>
       <!-- termes-cles -->
       <so:annotations>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi5kw1">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi5kw1">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">français</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi5kw2">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi5kw2">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">interaction</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi5kw3">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi5kw3">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">pragmatique</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi5kw4">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi5kw4">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">analyse</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi5kw5">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi5kw5">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">verbales</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi5kw6">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi5kw6">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">interaction verbale</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi5kw7">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi5kw7">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">corpus</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi5kw8">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi5kw8">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">syntaxe</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi5kw9">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi5kw9">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">sémantique</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi5kw10">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi5kw10">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">discours</term>
@@ -14930,57 +14930,57 @@
         </so:soHeader>
         <so:annotations>
           <so:annotationGrp type="pertinence">
-            <span from="#mi5kw1">
+            <span from="#somi5kw1">
               <num type="pertinence">2</num>
               <link type="INISTForm" target="#ikwfr1"/>
             </span>
-            <span from="#mi5kw2">
+            <span from="#somi5kw2">
               <num type="pertinence">1</num>
-              <link type="preferredForm" target="#mi5kw6"/>
+              <link type="preferredForm" target="#somi5kw6"/>
             </span>
-            <span from="#mi5kw3">
+            <span from="#somi5kw3">
               <num type="pertinence">2</num>
               <link type="INISTForm" target="#ikwfr8"/>
             </span>
-            <span from="#mi5kw4">
+            <span from="#somi5kw4">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi5kw5">
+            <span from="#somi5kw5">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi5kw6">
+            <span from="#somi5kw6">
               <num type="pertinence">2</num>
               <link type="INISTForm" target="#ikwfr4"/>
             </span>
-            <span from="#mi5kw7">
+            <span from="#somi5kw7">
               <num type="pertinence">2</num>
               <link type="INISTForm" target="#ikwfr3"/>
             </span>
-            <span from="#mi5kw8">
+            <span from="#somi5kw8">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi5kw9">
+            <span from="#somi5kw9">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi5kw10">
+            <span from="#somi5kw10">
               <num type="pertinence">0</num>
             </span>
           </so:annotationGrp>
           <so:annotationGrp type="silence">
             <span from="#ikwfr1">
               <num type="silence">0</num>
-              <link type="TermithForm" target="#mi5kw1"/>
+              <link type="TermithForm" target="#somi5kw1"/>
             </span>
             <span from="#ikwfr2">
               <num type="silence">2</num>
             </span>
             <span from="#ikwfr3">
               <num type="silence">0</num>
-              <link type="TermithForm" target="#mi5kw7"/>
+              <link type="TermithForm" target="#somi5kw7"/>
             </span>
             <span from="#ikwfr4">
               <num type="silence">0</num>
-              <link type="TermithForm" target="#mi5kw6"/>
+              <link type="TermithForm" target="#somi5kw6"/>
             </span>
             <span from="#ikwfr5">
               <num type="silence">0</num>
@@ -14995,13 +14995,13 @@
             </span>
             <span from="#ikwfr8">
               <num type="silence">0</num>
-              <link type="TermithForm" target="#mi5kw3"/>
+              <link type="TermithForm" target="#somi5kw3"/>
             </span>
           </so:annotationGrp>
         </so:annotations>
       </so:standOff>
     </so:standOff>
-    <so:standOff xml:id="mi6">
+    <so:standOff xml:id="somi6">
       <so:soHeader>
         <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
           <appInfo>
@@ -15017,70 +15017,70 @@
       </so:soHeader>
       <!-- termes-cles -->
       <so:annotations>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi6kw1">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi6kw1">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">français parlé</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi6kw2">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi6kw2">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">français</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi6kw3">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi6kw3">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">pragmatique</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi6kw4">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi6kw4">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">interaction</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi6kw5">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi6kw5">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">structure syntaxique</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi6kw6">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi6kw6">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">syntaxe</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi6kw7">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi6kw7">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">verbales</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi6kw8">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi6kw8">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">interaction verbale</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi6kw9">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi6kw9">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">analyse du discours</term>
             </tig>
           </langSet>
         </termEntry>
-        <termEntry xmlns="http://www.tbx.org" xml:id="mi6kw10">
+        <termEntry xmlns="http://www.tbx.org" xml:id="somi6kw10">
           <langSet xml:lang="fr">
             <tig>
               <term xmlns="http://www.tei-c.org/ns/1.0">analyse</term>
@@ -15106,47 +15106,47 @@
         </so:soHeader>
         <so:annotations>
           <so:annotationGrp type="pertinence">
-            <span from="#mi6kw1">
+            <span from="#somi6kw1">
               <num type="pertinence">2</num>
             </span>
-            <span from="#mi6kw2">
+            <span from="#somi6kw2">
               <num type="pertinence">1</num>
-              <link type="preferredForm" target="#mi6kw1"/>
+              <link type="preferredForm" target="#somi6kw1"/>
               <link type="INISTForm" target="#ikwfr1"/>
             </span>
-            <span from="#mi6kw3">
+            <span from="#somi6kw3">
               <num type="pertinence">2</num>
               <link type="INISTForm" target="#ikwfr8"/>
             </span>
-            <span from="#mi6kw4">
+            <span from="#somi6kw4">
               <num type="pertinence">1</num>
-              <link type="preferredForm" target="#mi6kw8"/>
+              <link type="preferredForm" target="#somi6kw8"/>
             </span>
-            <span from="#mi6kw5">
+            <span from="#somi6kw5">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi6kw6">
+            <span from="#somi6kw6">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi6kw7">
+            <span from="#somi6kw7">
               <num type="pertinence">0</num>
             </span>
-            <span from="#mi6kw8">
+            <span from="#somi6kw8">
               <num type="pertinence">2</num>
               <link type="INISTForm" target="#ikwfr4"/>
             </span>
-            <span from="#mi6kw9">
+            <span from="#somi6kw9">
               <num type="pertinence">0</num>
               <link type="INISTForm" target="#ikwfr7"/>
             </span>
-            <span from="#mi6kw10">
+            <span from="#somi6kw10">
               <num type="pertinence">0</num>
             </span>
           </so:annotationGrp>
           <so:annotationGrp type="silence">
             <span from="#ikwfr1">
               <num type="silence">0</num>
-              <link type="TermithForm" target="#mi6kw2"/>
+              <link type="TermithForm" target="#somi6kw2"/>
             </span>
             <span from="#ikwfr2">
               <num type="silence">2</num>
@@ -15157,7 +15157,7 @@
             </span>
             <span from="#ikwfr4">
               <num type="silence">0</num>
-              <link type="TermithForm" target="#mi6kw8"/>
+              <link type="TermithForm" target="#somi6kw8"/>
             </span>
             <span from="#ikwfr5">
               <num type="silence">0</num>
@@ -15168,12 +15168,12 @@
             </span>
             <span from="#ikwfr7">
               <num type="silence">0</num>
-              <link type="TermithForm" target="#mi6kw9"/>
+              <link type="TermithForm" target="#somi6kw9"/>
               <note>(S) Erreur d’indexation.</note>
             </span>
             <span from="#ikwfr8">
               <num type="silence">0</num>
-              <link type="TermithForm" target="#mi6kw3"/>
+              <link type="TermithForm" target="#somi6kw3"/>
             </span>
           </so:annotationGrp>
         </so:annotations>
