@@ -50,7 +50,7 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
-      <change when="2018-10-30" who="#sb">Change <gi>standOff</gi> to <gi>ldb</gi>, and return <gi>listAnnotation</gi>.</change>
+      <change when="2018-10-30" who="#sb">Change <gi>standOff</gi> to <gi>ldb</gi>, and return <gi>listAnnotation</gi>; add <gi>castList</gi> to <name>model.annotation</name> (and thus to <gi>ldb</gi>)</change>
       <change when="2018-10-28" who="#sb">Change overall structure, eliminating <gi>teiCorpus</gi> and allowing <gi>TEI</gi> to nest, thus removing need for crazy <gi>teiHeader</gi> inside <gi>standOff</gi>. This also obviates the need for <gi>listAnnotation</gi> inside <gi>standOff</gi>, putting its content directly in <gi>standOff</gi>.</change>
       <change when="2017-03-16" who="#pb">purified this ODD</change>
       <change when="2017-03-15" who="#pb">combined two elementSpec for "standoff" into one, removed the macroSpec redeclaration (it had no effect on the compiled ODD)</change>
