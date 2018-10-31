@@ -112,17 +112,35 @@
 	      </alternate>
 	    </sequence>
 	  </content>
+	  <remarks>
+	    <?TEI This prose is intended as much for source material for use in the main prose
+	          of the Guidelines as for use here in the remakrs —Syd, 2018-10-31 ?>
+	    <p>The <gi>TEI</gi> element is used to group together an
+	    encoded resource (e.g., a diplomatic transcription of a
+	    source document in a <gi>sourceDoc</gi> element; a logical
+	    transcription of a source document in a <gi>text</gi>
+	    element; or an encoded representation of text bearing
+	    objects as images in a <gi>facsimile</gi>) with metadata
+	    about it (in <gi>teiHeader</gi>).
+	    <?SB discussion of nested TEI here?>
+	    </p>
+	  </remarks>
 	</elementSpec>
 
-	<!-- Specific model for the new elements introduced here: <ldb> and <listAnnotation> -->
+	<!-- Create new "standOff" module for the new elements introduced here:
+	     <ldb> and <listAnnotation> -->
 	<moduleSpec ident="standOff">
-	  <desc>Elements to allow stand-off annotations in a TEI document</desc>
+	  <desc>Elements to collect stand-off annotations and
+	  contextual information in a TEI document</desc>
 	</moduleSpec>
 
 	<!--  The entry point to stand-off annotations, as member of model.resourceLike-->
-	<elementSpec ident="ldb" mode="add" ns="http://www.tei-c.org/proposal/standoff/ns" module="standOff">
+	<elementSpec ident="ldb" mode="add" module="standOff"
+		     ns="http://www.tei-c.org/proposal/standoff/ns">
 	  <gloss versionDate="2018-10-30">linked data block</gloss>
-	  <desc>Container element for linked data and stand-off annotations embedded in a TEI document</desc>
+	  <desc>Container element for linked data, contextual
+	  information, and stand-off annotations embedded in a TEI
+	  document</desc>
 	  <classes>
 	    <memberOf key="model.resourceLike"/>
 	    <memberOf key="att.global"/>
@@ -142,7 +160,36 @@
 	      <sch:assert test="@type or not(ancestor::prop:ldb)">This <sch:name/> element must have a @type attribute, since it is nested inside an <sch:name/></sch:assert>
 	    </constraint>
 	  </constraintSpec>
+	  <remarks>
+	    <?TEI This prose is intended as much for source material for use in the main prose
+	          of the Guidelines as for use here in the remakrs —Syd, 2018-10-31 ?>
+	    <p>The <gi>ldb</gi> or <soCalled>linked data
+	    block</soCalled> element is a catch-all element intended
+	    for holding content that is neither transcribed from the
+	    source document, nor strictly speaking metadata about said
+	    document. It may also be used to hold transcribed text
+	    that does not, for some reason, fit into the encoding
+	    model being used.</p>
+	    <p>Examples of the former include contextual information
+	    about named entities (typically encoded using
+	    <gi>listBibl</gi>, <gi>listOrg</gi>, <?TEI LR or HC:
+	    <gi>listNym</gi>, too?><gi>listPerson</gi>, or
+	    <gi>listPlace</gi>), collections of <gi>alt</gi> elements
+	    for encoding ambiguity of reference, and an encoded
+	    <gi>castList</gi> used to record information about
+	    speaking characters in a drama who were not mentioned in
+	    the source cast list.</p>
+	    <p>Examples of the latter include encoding source
+	    authorial footnotes in the <gi>ldb</gi> in order to more
+	    easily represent source pages when a footnote runs across
+	    a page break, or to encode words that appear in the source
+	    text as part of an acrostic.<?TEI The WWP has two elements
+	    specifically for this latter case: <acrostics> which contains
+	    a serios of one or more <acrostic>.?></p>
+	  </remarks>
 	</elementSpec>
+
+	<!-- The main container for linguistic stand-off or OAM type annotations -->
 	<elementSpec ident="listAnnotation" mode="add" ns="http://www.tei-c.org/proposal/standoff/ns" module="standOff">
 	  <desc>Groups together annotations, for instance for parallel interpretations of a spoken segment</desc>
 	  <classes>
@@ -150,7 +197,7 @@
 	    <memberOf key="att.global"/>
 	    <memberOf key="att.typed"/>
 	    <memberOf key="att.notated"/>
-	    <memberOf key="att.timed"/>
+	    <memberOf key="att.timed"/>         <?LR Why is this here? —Syd, 2018-10-31 ?>
 	    <memberOf key="att.declaring"/>
 	  </classes>
 	  <content>
@@ -163,12 +210,16 @@
 	    </sequence>
 	  </content>
 	  <remarks>
+	    <?LR What? Why is @xml:base used to specify the target,
+	         rather than a @target attribute? And why can't I
+		 specify complete absolute URIs if I want?
+		 —Syd, 2018-10-31 ?>
 	    <p>The global <att>xml:base</att> attribute is used on
 	    this element both to specify the target of the annotations
 	    and to serve as the base for any target URIs contained by
 	    the annotation elements. If this attribute is not
-	    supplied, the listAnnotation must be embedded within the
-	    complete TEI document to which it applies. </p>
+	    supplied, the <gi>listAnnotation</gi> must be embedded
+	    within the complete TEI document to which it applies. </p>
 	  </remarks>
 	</elementSpec>
 	
@@ -178,11 +229,11 @@
 	<elementSpec ident="annotationBlock" mode="change" module="spoken">
 	  <classes mode="change">
 	    <memberOf key="model.annotation" mode="add"/>
-	    <!-- The following declaration is to ensure that it appears wherever annotated segLike objects can -->
+	    <!-- allow <annotationBlock> wherever annotated segLike objects can go -->
 	    <memberOf key="model.segLike" mode="add"/>
-	    <!-- This is added to account for the notation variants introduced as content models for annotationBlock -->
+	    <!-- allow indication of notation variants inside -->
 	    <memberOf key="att.notated" mode="add"/>
-	    <!-- Needs to be typed in stand-off context to reflect the ... type of annotaiotn we are dealing with -->
+	    <!-- 'tis repeatable and catagorizable: -->
 	    <memberOf key="att.typed"/>
 	  </classes>
 	  <content>
@@ -200,6 +251,10 @@
 	    </alternate>
 	  </content>
 	  <remarks>
+	    <?LR What? Why is @xml:base used to specify the target,
+	         rather than a @target attribute? And why can't I
+		 specify complete absolute URIs if I want?
+		 —Syd, 2018-10-31 ?>
 	    <p>The global <att>xml:base</att> attribute is used on
 	    this element both to specify the target of the annotations
 	    and to serve as the base for any target URIs contained by
