@@ -35,7 +35,7 @@
       <change who="#ISTEX-RD" when="2016-01" xml:id="Unitex-3.1">version 4190</change>
     </revisionDesc>
   </teiHeader>
-  <so:standOff>
+  <so:ldb>
     <so:listAnnotation>
       <annotationBlock corresp="#p2" mode="jusBody">
         
@@ -85,5 +85,5 @@
         </annotationGrp>
       </so:listAnnotation>
     </so:listAnnotation>
-  </so:standOff>
+  </so:ldb>
 </TEI>

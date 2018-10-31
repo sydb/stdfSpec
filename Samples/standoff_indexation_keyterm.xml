@@ -46,7 +46,7 @@
       <change when="2016-07-04" who="#istex-rd" xml:id="keyterm-run1">Indexation de documents ISTEX</change>
     </revisionDesc>
   </teiHeader>
-  <so:standOff>
+  <so:ldb>
     <so:listAnnotation type="keyphrase">
       <annotationBlock corresp="#text">
 	<keywords resp="#istex-rd" change="#keyterm-run1">
@@ -76,5 +76,5 @@
 	</keywords>
       </annotationBlock>
     </so:listAnnotation>
-  </so:standOff>
+  </so:ldb>
 </TEI>

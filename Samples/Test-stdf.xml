@@ -28,12 +28,12 @@
 	</sourceDesc>
       </fileDesc>
     </teiHeader>
-    <so:standOff>
+    <so:ldb>
       <so:listAnnotation>
 	<so:listAnnotation>
 	  <span xmlns="http://www.tei-c.org/ns/1.0"></span>
 	</so:listAnnotation>
       </so:listAnnotation>
-    </so:standOff>
+    </so:ldb>
   </TEI>
 </TEI>

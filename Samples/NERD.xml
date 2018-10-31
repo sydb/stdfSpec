@@ -20,7 +20,7 @@
 	<sourceDesc></sourceDesc>
       </fileDesc>
     </teiHeader>
-    <so:standOff>
+    <so:ldb>
       <so:listAnnotation type="persons">
 	<annotationBlock xmlns="http://www.tei-c.org/ns/1.0">
 	  <person xml:id="person28a">
@@ -40,7 +40,7 @@
       <so:listAnnotation type="places">
 	....
       </so:listAnnotation>
-    </so:standOff>
+    </so:ldb>
   </TEI>
   <TEI>
     <teiHeader>

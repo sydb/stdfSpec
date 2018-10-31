@@ -4,137 +4,135 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-	<title>Test file with morphosyntactic annotations</title>
+        <title>Test file with morphosyntactic annotations</title>
       </titleStmt>
       <publicationStmt>
-	<publisher>the stdf gang</publisher>
-	<availability>
-	  <licence>CC-BY</licence>
-	</availability>
+        <publisher>the stdf gang</publisher>
+        <availability>
+          <licence>CC-BY</licence>
+        </availability>
       </publicationStmt>
       <sourceDesc>
-	<bibl>ISO MAGF</bibl>
+        <bibl>ISO MAGF</bibl>
       </sourceDesc>
     </fileDesc>
   </teiHeader>
   <text>
     <body>
       <div>
-	<p>
-	  <w xml:id="w1">I</w>
-	  <w xml:id="w2">wanna</w>
-	  <w xml:id="w3">put</w>
-	  <w xml:id="w4">up</w>
-	  <w xml:id="w5">new</w>
-	  <w xml:id="w6">wallpaper</w>
-	  <pc>.</pc>
-	</p>
+        <p>
+          <w xml:id="w1">I</w>
+          <w xml:id="w2">wanna</w>
+          <w xml:id="w3">put</w>
+          <w xml:id="w4">up</w>
+          <w xml:id="w5">new</w>
+          <w xml:id="w6">wallpaper</w>
+          <pc>.</pc>
+        </p>
       </div>
     </body>
   </text>
   <TEI>
     <teiHeader>
       <fileDesc>
-	<titleStmt>
-	  <title>Morpho-syntactic annotation</title>
-	</titleStmt>
-	<publicationStmt>
-	  <p>freely available</p>
-	</publicationStmt>
-	<sourceDesc>
-	  <p>born digital</p>
-	</sourceDesc>
+        <titleStmt>
+          <title>Morpho-syntactic annotation</title>
+        </titleStmt>
+        <publicationStmt>
+          <p>freely available</p>
+        </publicationStmt>
+        <sourceDesc>
+          <p>born digital</p>
+        </sourceDesc>
       </fileDesc>
     </teiHeader>
-    <so:standOff>
-      <so:listAnnotation>
-	<spanGrp type="wordForm" xmlns="http://www.tei-c.org/ns/1.0">
-	  <span from="#w1" ana="#fs1" corresp="#entry1"/>
-	  <span from="#w2" ana="#fs2" corresp="#entry2"/>
-	  <span from="#w2" ana="#fs3" corresp="#entry3"/>
-	  <span from="#w3" to="#w4" ana="#fs4" corresp="#entry4"/>
-	  <span from="#w5" ana="#fs5" corresp="#entry5"/>
-	  <span from="#w6" ana="#fs6" corresp="#entry6"/>
-	</spanGrp>
-	<fs xml:id="fs1" corresp="#entry1" xmlns="http://www.tei-c.org/ns/1.0">
-	  <f name="lemma">
-	    <string>I</string>
-	  </f>
-	  <f name="pos">
-	    <symbol value="PP"/>
-	  </f>
-	</fs>
-	<fs xml:id="fs2" xmlns="http://www.tei-c.org/ns/1.0">
-	  <f name="lemma">
-	    <string>want</string>
-	  </f>
-	  <f name="pos">
-	    <symbol value="VBP"/>
-	  </f>
-	</fs>
-	<fs xml:id="fs3" xmlns="http://www.tei-c.org/ns/1.0">
-	  <f name="lemma">
-	    <string>to</string>
-	  </f>
-	  <f name="pos">
-	    <symbol value="TO"/>
-	  </f>
-	</fs>
-	<fs xml:id="fs4" xmlns="http://www.tei-c.org/ns/1.0">
-	  <f name="lemma">
-	    <string>put up</string>
-	  </f>
-	  <f name="pos">
-	    <symbol value="VB"/>
-	  </f>
-	</fs>
-	<fs xml:id="fs5" xmlns="http://www.tei-c.org/ns/1.0">
-	  <f name="lemma">
-	    <string>new</string>
-	  </f>
-	  <f name="pos">
-	    <symbol value="JJ"/>
-	  </f>
-	</fs>
-	<fs xml:id="fs6" xmlns="http://www.tei-c.org/ns/1.0">
-	  <f name="lemma">
-	    <string>wallpaper</string>
-	  </f>
-	  <f name="pos">
-	    <symbol value="NN"/>
-	  </f>
-	</fs>
-	<entry xml:id="entry1" xmlns="http://www.tei-c.org/ns/1.0">
-	  <form type="lemma">
-	    <orth>I</orth>
-	  </form>
-	</entry>
-	<entry xml:id="entry2" xmlns="http://www.tei-c.org/ns/1.0">
-	  <form type="lemma">
-	    <orth>want</orth>
-	  </form>
-	</entry>
-	<entry xml:id="entry3" xmlns="http://www.tei-c.org/ns/1.0">
-	  <form type="lemma">
-	    <orth>to</orth>
-	  </form>
-	</entry>
-	<entry xml:id="entry4" xmlns="http://www.tei-c.org/ns/1.0">
-	  <form type="lemma">
-	    <orth>put up</orth>
-	  </form>
-	</entry>
-	<entry xml:id="entry5" xmlns="http://www.tei-c.org/ns/1.0">
-	  <form type="lemma">
-	    <orth>new</orth>
-	  </form>
-	</entry>
-	<entry xml:id="entry6" xmlns="http://www.tei-c.org/ns/1.0">
-	  <form type="lemma">
-	    <orth>wallpaper</orth>
-	  </form>
-	</entry>
-      </so:listAnnotation>
-    </so:standOff>
+    <so:ldb>
+      <spanGrp type="wordForm" xmlns="http://www.tei-c.org/ns/1.0">
+        <span from="#w1" ana="#fs1" corresp="#entry1"/>
+        <span from="#w2" ana="#fs2" corresp="#entry2"/>
+        <span from="#w2" ana="#fs3" corresp="#entry3"/>
+        <span from="#w3" to="#w4" ana="#fs4" corresp="#entry4"/>
+        <span from="#w5" ana="#fs5" corresp="#entry5"/>
+        <span from="#w6" ana="#fs6" corresp="#entry6"/>
+      </spanGrp>
+      <fs xml:id="fs1" corresp="#entry1" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lemma">
+          <string>I</string>
+        </f>
+        <f name="pos">
+          <symbol value="PP"/>
+        </f>
+      </fs>
+      <fs xml:id="fs2" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lemma">
+          <string>want</string>
+        </f>
+        <f name="pos">
+          <symbol value="VBP"/>
+        </f>
+      </fs>
+      <fs xml:id="fs3" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lemma">
+          <string>to</string>
+        </f>
+        <f name="pos">
+          <symbol value="TO"/>
+        </f>
+      </fs>
+      <fs xml:id="fs4" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lemma">
+          <string>put up</string>
+        </f>
+        <f name="pos">
+          <symbol value="VB"/>
+        </f>
+      </fs>
+      <fs xml:id="fs5" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lemma">
+          <string>new</string>
+        </f>
+        <f name="pos">
+          <symbol value="JJ"/>
+        </f>
+      </fs>
+      <fs xml:id="fs6" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lemma">
+          <string>wallpaper</string>
+        </f>
+        <f name="pos">
+          <symbol value="NN"/>
+        </f>
+      </fs>
+      <entry xml:id="entry1" xmlns="http://www.tei-c.org/ns/1.0">
+        <form type="lemma">
+          <orth>I</orth>
+        </form>
+      </entry>
+      <entry xml:id="entry2" xmlns="http://www.tei-c.org/ns/1.0">
+        <form type="lemma">
+          <orth>want</orth>
+        </form>
+      </entry>
+      <entry xml:id="entry3" xmlns="http://www.tei-c.org/ns/1.0">
+        <form type="lemma">
+          <orth>to</orth>
+        </form>
+      </entry>
+      <entry xml:id="entry4" xmlns="http://www.tei-c.org/ns/1.0">
+        <form type="lemma">
+          <orth>put up</orth>
+        </form>
+      </entry>
+      <entry xml:id="entry5" xmlns="http://www.tei-c.org/ns/1.0">
+        <form type="lemma">
+          <orth>new</orth>
+        </form>
+      </entry>
+      <entry xml:id="entry6" xmlns="http://www.tei-c.org/ns/1.0">
+        <form type="lemma">
+          <orth>wallpaper</orth>
+        </form>
+      </entry>
+    </so:ldb>
   </TEI>
 </TEI>

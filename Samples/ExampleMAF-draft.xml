@@ -14,7 +14,13 @@
       </sourceDesc>
     </fileDesc>
   </teiHeader>
-  <standOff xmlns="http://www.tei-c.org/proposal/standoff/ns">
+  <ldb xmlns="http://www.tei-c.org/proposal/standoff/ns">
+    <!-- 
+	 What the BLEEP is this? Neither <token> nor <wordForm> are
+	 defined by either TEI or the oringal standOff ODD. Thus I
+	 have no idea if these shoulc be children of <ldb> or of
+	 <listAnnotation>. Are they MAF elements? —Syd, 2018-10-30
+    -->
     <token xml:id="tok1" target="#string-range(seg0,0,1)"/>
     <token xml:id="tok2" target="#string-range(seg0,1,1)"/>
     <token xml:id="tok3" target="#string-range(seg0,2,1)"/>
@@ -26,7 +32,7 @@
       <wordForm lemma="猪" tokens="#tok4" entry="urn:lexicon:cn:pig"/>
       <wordForm lemma="肉" tokens="#tok5" entry="urn:lexicon:cn:meat"/>
     </wordForm>
-  </standOff>
+  </ldb>
   <text>
     <body>
       <p><seg xml:id="seg0">白菜和猪肉</seg></p>

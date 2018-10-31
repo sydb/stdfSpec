@@ -163,7 +163,7 @@
       </editorialDecl>
     </encodingDesc>
   </teiHeader>
-  <so:standOff type="wordForms">
+  <so:ldb type="wordForms">
     <so:soHeader>
       <encodingDesc>
         <appInfo>
@@ -5824,8 +5824,8 @@
       <span target="#t5644" pos="NOM" lemma="texte" corresp="dictionnaire_TLFiCategoriesTEI#l75357"/>
       <span target="#t5645" pos="SENT" lemma="." corresp="#noTS"/>
     </so:annotations>
-  </so:standOff>
-  <so:standOff type="candidatsTermes">
+  </so:ldb>
+  <so:ldb type="candidatsTermes">
     <so:soHeader>
       <encodingDesc>
         <appInfo>
@@ -6739,7 +6739,7 @@
       <span target="#t5626" lemma="précédente" corresp="#TS1.4-entry-832188" ana="#DM0 #DAOff"/>
       <span target="#t5644" lemma="texte" corresp="#TS1.4-entry-50209" ana="#DM1 #DAOff"/>
     </so:annotations>
-  </so:standOff>
+  </so:ldb>
   <so:stdf>
     <so:soHeader>
       <encodingDesc xmlns:ns="http://www.tei-c.org/proposal/standoff/ns">
@@ -12823,7 +12823,7 @@
       <span target="#t5863" lemma="." pos="SENT" corresp="#noGlawi"/>
     </so:annotations>
   </so:stdf>
-  <so:standOff type="indexation-phase1">
+  <so:ldb type="indexation-phase1">
     <so:soHeader>
       <titleStmt>
         <title>Evaluation de l'indexation TermITH - phase 1</title>
@@ -12837,7 +12837,7 @@
         </textDesc>
       </profileDesc>
     </so:soHeader>
-    <so:standOff xml:id="mi1">
+    <so:ldb xml:id="mi1">
       <so:soHeader>
         <encodingDesc>
           <appInfo>
@@ -12923,7 +12923,7 @@
           </langSet>
         </termEntry>
       </so:annotations>
-      <so:standOff>
+      <so:ldb>
         <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
             <appInfo>
@@ -13006,9 +13006,9 @@
             </span>
           </so:annotationGrp>
         </so:annotations>
-      </so:standOff>
-    </so:standOff>
-    <so:standOff xml:id="mi2">
+      </so:ldb>
+    </so:ldb>
+    <so:ldb xml:id="mi2">
       <so:soHeader>
         <encodingDesc>
           <appInfo>
@@ -13094,7 +13094,7 @@
           </langSet>
         </termEntry>
       </so:annotations>
-      <so:standOff>
+      <so:ldb>
         <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
             <appInfo>
@@ -13177,10 +13177,10 @@
             </span>
           </so:annotationGrp>
         </so:annotations>
-      </so:standOff>
-    </so:standOff>
-  </so:standOff>
-  <so:standOff type="indexation-phase2">
+      </so:ldb>
+    </so:ldb>
+  </so:ldb>
+  <so:ldb type="indexation-phase2">
     <so:soHeader>
       <titleStmt>
         <title>Evaluation de l'indexation TermITH - phase 2</title>
@@ -13194,7 +13194,7 @@
         </textDesc>
       </profileDesc>
     </so:soHeader>
-    <so:standOff xml:id="somi1">
+    <so:ldb xml:id="somi1">
       <so:soHeader>
         <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
           <appInfo>
@@ -13281,7 +13281,7 @@
           </langSet>
         </termEntry>
       </so:annotations>
-      <so:standOff>
+      <so:ldb>
         <!--standOff subordonné au standOff principal-->
         <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
@@ -13362,9 +13362,9 @@
             </span>
           </so:annotationGrp>
         </so:annotations>
-      </so:standOff>
-    </so:standOff>
-    <so:standOff xml:id="somi2">
+      </so:ldb>
+    </so:ldb>
+    <so:ldb xml:id="somi2">
       <so:soHeader>
         <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
           <appInfo>
@@ -13451,7 +13451,7 @@
           </langSet>
         </termEntry>
       </so:annotations>
-      <so:standOff>
+      <so:ldb>
         <!--standOff subordonné au standOff principal-->
         <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
@@ -13534,9 +13534,9 @@
             </span>
           </so:annotationGrp>
         </so:annotations>
-      </so:standOff>
-    </so:standOff>
-    <so:standOff xml:id="mi3">
+      </so:ldb>
+    </so:ldb>
+    <so:ldb xml:id="mi3">
       <so:soHeader>
         <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
           <appInfo>
@@ -13623,7 +13623,7 @@
           </langSet>
         </termEntry>
       </so:annotations>
-      <so:standOff>
+      <so:ldb>
         <!--standOff subordonné au standOff principal-->
         <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
@@ -13704,10 +13704,10 @@
             </span>
           </so:annotationGrp>
         </so:annotations>
-      </so:standOff>
-    </so:standOff>
-  </so:standOff>
-  <so:standOff type="indexation-phase3">
+      </so:ldb>
+    </so:ldb>
+  </so:ldb>
+  <so:ldb type="indexation-phase3">
     <so:soHeader>
       <titleStmt>
         <title>Evaluation de l'indexation TermITH - phase 3</title>
@@ -13721,7 +13721,7 @@
         </textDesc>
       </profileDesc>
     </so:soHeader>
-    <so:standOff xml:id="somi3">
+    <so:ldb xml:id="somi3">
       <so:soHeader>
         <encodingDesc>
           <appInfo>
@@ -13818,7 +13818,7 @@
           </langSet>
         </termEntry>
       </so:annotations>
-      <so:standOff>
+      <so:ldb>
         <!--standOff subordonné au standOff principal-->
         <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
@@ -13903,9 +13903,9 @@
             </span>
           </so:annotationGrp>
         </so:annotations>
-      </so:standOff>
-    </so:standOff>
-    <so:standOff xml:id="mi4">
+      </so:ldb>
+    </so:ldb>
+    <so:ldb xml:id="mi4">
       <so:soHeader>
         <encodingDesc>
           <appInfo>
@@ -14002,7 +14002,7 @@
           </langSet>
         </termEntry>
       </so:annotations>
-      <so:standOff>
+      <so:ldb>
         <!--standOff subordonné au standOff principal-->
         <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
@@ -14092,9 +14092,9 @@
             </span>
           </so:annotationGrp>
         </so:annotations>
-      </so:standOff>
-    </so:standOff>
-    <so:standOff xml:id="mi5">
+      </so:ldb>
+    </so:ldb>
+    <so:ldb xml:id="mi5">
       <so:soHeader>
         <encodingDesc>
           <appInfo>
@@ -14191,7 +14191,7 @@
           </langSet>
         </termEntry>
       </so:annotations>
-      <so:standOff>
+      <so:ldb>
         <!--standOff subordonné au standOff principal-->
         <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
@@ -14279,9 +14279,9 @@
             </span>
           </so:annotationGrp>
         </so:annotations>
-      </so:standOff>
-    </so:standOff>
-    <so:standOff xml:id="mi6">
+      </so:ldb>
+    </so:ldb>
+    <so:ldb xml:id="mi6">
       <so:soHeader>
         <encodingDesc>
           <appInfo>
@@ -14378,7 +14378,7 @@
           </langSet>
         </termEntry>
       </so:annotations>
-      <so:standOff>
+      <so:ldb>
         <!--standOff subordonné au standOff principal-->
         <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
@@ -14466,10 +14466,10 @@
             </span>
           </so:annotationGrp>
         </so:annotations>
-      </so:standOff>
-    </so:standOff>
-  </so:standOff>
-  <so:standOff type="indexation-phase4">
+      </so:ldb>
+    </so:ldb>
+  </so:ldb>
+  <so:ldb type="indexation-phase4">
     <so:soHeader>
       <titleStmt>
         <title>Evaluation de l'indexation TermITH - phase 4</title>
@@ -14483,7 +14483,7 @@
         </textDesc>
       </profileDesc>
     </so:soHeader>
-    <so:standOff xml:id="SOMI3">
+    <so:ldb xml:id="SOMI3">
       <so:soHeader>
         <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
           <appInfo>
@@ -14570,7 +14570,7 @@
           </langSet>
         </termEntry>
       </so:annotations>
-      <so:standOff>
+      <so:ldb>
         <!--standOff subordonné au standOff principal-->
         <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
@@ -14651,9 +14651,9 @@
             </span>
           </so:annotationGrp>
         </so:annotations>
-      </so:standOff>
-    </so:standOff>
-    <so:standOff xml:id="somi4">
+      </so:ldb>
+    </so:ldb>
+    <so:ldb xml:id="somi4">
       <so:soHeader>
         <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
           <appInfo>
@@ -14740,7 +14740,7 @@
           </langSet>
         </termEntry>
       </so:annotations>
-      <so:standOff>
+      <so:ldb>
         <!--standOff subordonné au standOff principal-->
         <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
@@ -14823,9 +14823,9 @@
             </span>
           </so:annotationGrp>
         </so:annotations>
-      </so:standOff>
-    </so:standOff>
-    <so:standOff xml:id="somi5">
+      </so:ldb>
+    </so:ldb>
+    <so:ldb xml:id="somi5">
       <so:soHeader>
         <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
           <appInfo>
@@ -14912,7 +14912,7 @@
           </langSet>
         </termEntry>
       </so:annotations>
-      <so:standOff>
+      <so:ldb>
         <!--standOff subordonné au standOff principal-->
         <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
@@ -14999,9 +14999,9 @@
             </span>
           </so:annotationGrp>
         </so:annotations>
-      </so:standOff>
-    </so:standOff>
-    <so:standOff xml:id="somi6">
+      </so:ldb>
+    </so:ldb>
+    <so:ldb xml:id="somi6">
       <so:soHeader>
         <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
           <appInfo>
@@ -15088,7 +15088,7 @@
           </langSet>
         </termEntry>
       </so:annotations>
-      <so:standOff>
+      <so:ldb>
         <!--standOff subordonné au standOff principal-->
         <so:soHeader>
           <encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
@@ -15177,9 +15177,9 @@
             </span>
           </so:annotationGrp>
         </so:annotations>
-      </so:standOff>
-    </so:standOff>
-  </so:standOff>
+      </so:ldb>
+    </so:ldb>
+  </so:ldb>
   <text>
     <front>
       <titlePage>
