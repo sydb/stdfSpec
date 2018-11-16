@@ -29,12 +29,12 @@
       </encodingDesc>
     </teiHeader>
     <ldb xmlns="http://www.tei-c.org/proposal/standoff/ns">
-      <!-- 
+      <?LR
 	   What is going on here? There is neither an <annotations>
 	   element, an <annotationGrp> element, a <definitions>
 	   element, an <element> element, nor a <definition> element
 	   in either TEI or in the standOff proposal.
-      -->
+      ?>
       <annotations>
         <annotationGrp type="global">
           <language ident="en" degree="0.9999994"/>

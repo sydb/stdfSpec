@@ -358,13 +358,8 @@ between other resource thingies:
 	    <alternate>
 	      <classRef key="model.annotation" minOccurs="1" maxOccurs="unbounded"/>
 	      <sequence>
-		<classRef key="model.linguisticSegment" minOccurs="0" maxOccurs="1"/>
-		<classRef key="model.interlinearAnnotation" minOccurs="0" maxOccurs="unbounded"/>
-	      </sequence>
-	      <sequence>
-		<classRef key="model.OABody" minOccurs="0" maxOccurs="unbounded"/>
-		<classRef key="model.OAAnnotation" minOccurs="1" maxOccurs="1"/>
-		<classRef key="model.OATarget" minOccurs="0" maxOccurs="unbounded"/>
+		<classRef key="model.OABody" minOccurs="1" maxOccurs="unbounded"/>
+		<classRef key="model.OATarget" minOccurs="1" maxOccurs="unbounded"/>
 	      </sequence>
 	    </alternate>
 	  </content>
@@ -372,12 +367,14 @@ between other resource thingies:
 	    <?LR What? Why is @xml:base used to specify the target,
 	         rather than a @target attribute? And why can't I
 		 specify complete absolute URIs if I want?
-		 —Syd, 2018-10-31 ?>
+		 —Syd, 2018-10-31 HC, MT, and I think what you should
+		 be using here is a prive prefix. But in any case, this
+		 seems like abuse of @xml:base. ?>
 	    <p>The global <att>xml:base</att> attribute is used on
 	    this element both to specify the target of the annotations
 	    and to serve as the base for any target URIs contained by
 	    the annotation elements. If this attribute is not
-	    supplied, the <gi>listAnnotation</gi> must be embedded
+	    supplied, the <gi>annotationBlock</gi> must be embedded
 	    within the complete TEI document to which it applies. </p>
 	  </remarks>
 	</elementSpec>

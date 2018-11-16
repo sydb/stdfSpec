@@ -62,6 +62,6 @@ but allows some new weird things (in addition to the weird things we already all
 
 #### Notes
 
-[1] This is a simplification of the actual content model, which actually requires that you have at least one child of `<teiCorpus>`: either one element from model.resourceLike or one of `<TEI>` or `<teiCorpus>`.
+[1] This is a simplification of the actual content model, which actually requires that you have at least one child of `<teiCorpus>`: either one element from model.resourceLike or a `<TEI>` or a `<teiCorpus>`.
  
  [2] This is a simplification of the actual content model, which requires that you have at least one child of `<TEI>`, either one element from model.resourceLike or a `<TEI>`.
