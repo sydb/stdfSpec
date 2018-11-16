@@ -8,7 +8,8 @@ Basic idea
 Add a new stand-off element to `model.resourceLike` which can record
 information/annotations about the present document or about external
 documents. Also remove `&lt;teiCorpus>` and allow `&lt;TEI>` to nest.
-
+See the README in the Specification/ directory for more details on
+that.
 
 Most important files
 --------------------

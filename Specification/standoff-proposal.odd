@@ -7,13 +7,13 @@
       <titleStmt>
 	<title>Proposal for link data block &amp; standoff annotations in TEI</title>
 	<author xml:id="ps">
-	  <persName>
+	  <persName ref="https://github.com/peterstadler">
 	    <forename>Peter</forename>
 	    <surname>Stadler</surname>
 	  </persName>
 	</author>
 	<author xml:id="lr">
-	  <persName>
+	  <persName ref="https://github.com/laurentromary">
 	    <forename>Laurent</forename>
 	    <surname>Romary</surname>
 	  </persName>
@@ -40,16 +40,22 @@
 	</respStmt>
       </titleStmt>
       <publicationStmt>
-	<authority>Berlin task force "standoff"</authority>
+	<authority>Berlin task force “standoff”</authority>
 	<availability>
 	  <licence>CC+BY and BSD-2 licences</licence>
 	</availability>
       </publicationStmt>
       <sourceDesc>
-	<p>...</p>
+	<p>Born digital.</p>
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2018-11-15" who="#sb">
+	<list>
+	  <item>Move <gi>schemaSpec</gi> into <gi>back</gi>, thus giving us a place to put prose (in <gi>body</gi>)</item>
+	  <item>Add start of discussion in <gi>body</gi></item>
+	</list>
+      </change>
       <change when="2018-10-30" who="#sb">Change <gi>standOff</gi> to <gi>ldb</gi>, and return <gi>listAnnotation</gi>; add <gi>castList</gi> to <name>model.annotation</name> (and thus to <gi>ldb</gi>)</change>
       <change when="2018-10-28" who="#sb">Change overall structure, eliminating <gi>teiCorpus</gi> and allowing <gi>TEI</gi> to nest, thus removing need for crazy <gi>teiHeader</gi> inside <gi>standOff</gi>. This also obviates the need for <gi>listAnnotation</gi> inside <gi>standOff</gi>, putting its content directly in <gi>standOff</gi>.</change>
       <change when="2017-03-16" who="#pb">purified this ODD</change>
@@ -61,9 +67,121 @@
     </revisionDesc>
   </teiHeader>
   <text>
+    <front>
+      <head>Stand-off and Supratextual Features</head>
+      <div>
+	<head>Organization of this document</head>
+	<p>This ODD document contains some introductory material,
+	including a discussion of the desires and goals that led to
+	this proposal in the front matter. The main body is divided
+	into two main sections: discussion intended for the reader of
+	this ODD who is considering whether or not this is a good
+	change for TEI (i.e., mostly for TEI Council members, but also
+	for other interested parties and posterity), and discussion
+	that is intended to be cut-and-pasted into the TEI Guidelines.
+	The back matter contains the schema specification itself.</p>
+      </div>
+      <div>
+	<head>Problems Being Addressed Herein</head>
+	<p></p>
+      </div>
+      <div>
+	<head>History</head>
+	<p></p>
+      </div>
+    </front>
     <body>
+      <div>
+	<head>Part I: Discussion</head>
+	<div>
+	  <head></head>
+	  <p></p>
+	</div>
+	<div>
+	  <head>On Default Text Structure</head>
+	  <p>The current structure of a TEI document is as follows:
+	  <eg>  start = TEI | teiCorpus
+  TEI = teiHeader, model.resourceLike+
+  teiCorpus = teiHeader, ( model.resourceLike*, ( TEI | teiCorpus )* )
+  model.resourceLike = fsdDecl | \text | facsimile | sourceDoc</eg>
+  <note>The content model of <gi>teiHeader</gi> in this example is a
+  simplification of the actual content model, which requires that you
+  have at least one child of <gi>teiCorpus</gi>: either one element
+  from model.resourceLike or one of <gi>TEI</gi> or
+  <gi>teiCorpus</gi>.</note></p>
+  <p>In his proposal, @laurentromary asked for exactly the same thing,
+  except with one significant change:
+  <list>
+    <item>add <gi>standOff</gi> to model.resourceLike</item>
+  </list>
+  HOWEVER, he also asked that the <gi>standOff</gi> element have
+  <gi>teiHeader</gi> as a child:
+  <eg>  standOff = teiHeader?, model.resourceLike*, listAnnotation*</eg>
+
+  This is because he wants the document used for stand off annotations
+to also stand on its own. We (Council) really really did not like the
+idea of allowing <gi>teiHeader</gi> (and other model.resourceLike elements)
+as a child (or children) of <gi>standOff</gi>. Thus my proposed new
+structure for a TEI document is:            
+<eg>  start = TEI
+  TEI = teiHeader, ( model.resourceLike*, TEI* )</eg>
+<note>The content model of <gi>TEI</gi> in this example is a
+simplification of the actual proposed content model, which would
+require that you have at least one child of <gi>TEI</gi>: either one
+element from model.resourceLike or a <gi>TEI</gi>.</note>
+(Where model.resourceLike includes <gi>standOff</gi> or <gi>ldb</gi> or whatever we
+call it.) This allows an <gi>ldb</gi> to be associated very closely with a
+<gi>teiHeader</gi> (by being wrapped in a <gi>TEI</gi>) whether it is a document of
+its own or a child of another <gi>TEI</gi> document.</p>
+<p>That said, I could understand the argument that <said>a <gi>TEI</gi> is just a
+resource, albeit one with metadata associated; thus <gi>TEI</gi> should just
+be in model.resourceLike</said>. This makes for very simple content models: 
+<eg>  start = TEI
+  TEI = teiHeader, model.resourceLike+
+  model.resourceLike = TEI | fsdDecl | \text | facsimile | sourceDoc | standOff</eg>
+
+but allows some new weird things (in addition to the weird things we
+already allow but probably shouldn't), in particular <gi>TEI</gi> elements in
+between other resource thingies:
+<egXML xmlns="http://www.tei-c.org/ns/Examples">
+<TEI>
+  <teiHeader><!-- ... --></teiHeader>
+  <facsimile><!-- ... --></facsimile>
+   <TEI>
+     <teiHeader><!-- ... --></teiHeader>
+    <sourceDoc><!-- ... --></sourceDoc>
+    <ldb><!-- ... --></ldb>
+  </TEI>
+  <fsdDecl><!-- ... --></fsdDecl>
+  <text><!-- ... --></text>
+  <text><!-- ... --></text>
+  <ldb><!-- ... --></ldb>
+  <TEI>
+    <teiHeader><!-- ... --></teiHeader>
+    <text><!-- ... --></text>
+  </TEI>
+</TEI>
+</egXML>
+	  </p>
+	</div>
+      </div>
+      <div>
+	<head>Part II: <title>Guidelines</title> Prose</head>
+	<div>
+	  <head></head>
+	  <p></p>
+	</div>
+	<div>
+	  <head></head>
+	  <p></p>
+	</div>
+      </div>
+    </body>
+    <back>
       <!-- http://wiki.tei-c.org/index.php/Proposal_for_@selector_attribute_on_rendition -->
       <schemaSpec ident="standoff-proposal" start="TEI">
+	<desc>Proposed changes to TEI to incorporate stand-off markup
+	and other supratextual features</desc>
 	<moduleRef key="tei"/>
 	<moduleRef key="core"/>
 	<moduleRef key="analysis"/>
@@ -444,6 +562,6 @@
 	</elementSpec>
 
       </schemaSpec>
-    </body>
+    </back>
   </text>
 </TEI>

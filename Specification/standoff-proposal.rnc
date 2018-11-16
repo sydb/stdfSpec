@@ -8,11 +8,11 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2018-10-31T14:23:45Z. .
+# Schema generated from ODD source 2018-11-15T23:04:41Z. .
 # TEI Edition: Version 3.5.0a. Last updated on
-#	12th October 2018, revision ae63ddc
+#	1st October 2018, revision 7cfe7dc
 # TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0a./
-#
+#  Proposed changes to TEI to incorporate stand-off markup and other supratextual features 
 
 # CC+BY and BSD-2 licences
 standoff-proposal_macro.paraContent =
@@ -61,7 +61,7 @@ anyElement-content =
     (text | anyElement-content)*
   }
   >> sch:pattern [
-       id = "d8e118900-constraint"
+       id = "d8e119243-constraint"
        "\x{a}" ~
        "         "
        sch:rule [
@@ -92,7 +92,7 @@ anyElement-datatype =
     (text | anyElement-datatype)*
   }
   >> sch:pattern [
-       id = "d8e120183-constraint"
+       id = "d8e120526-constraint"
        "\x{a}" ~
        "         "
        sch:rule [
@@ -496,6 +496,13 @@ standoff-proposal_att.duration.w3c.attributes =
 standoff-proposal_att.duration.w3c.attribute.dur =
   ## (duration) indicates the length of this element in time.
   attribute dur { xsd:duration }?
+standoff-proposal_att.duration.iso.attributes =
+  standoff-proposal_att.duration.iso.attribute.dur-iso
+standoff-proposal_att.duration.iso.attribute.dur-iso =
+  ## (duration) indicates the length of this element in time.
+  attribute dur-iso {
+    xsd:token { pattern = "[0-9.,DHMPRSTWYZ/:+\-]+" }
+  }?
 standoff-proposal_att.global.responsibility.attributes =
   standoff-proposal_att.global.responsibility.attribute.cert,
   standoff-proposal_att.global.responsibility.attribute.resp
@@ -2404,13 +2411,6 @@ standoff-proposal_att.personal.attribute.sort =
   ## specifies the sort order of the name component in relation to others within the name.
   attribute sort { xsd:nonNegativeInteger }?
 standoff-proposal_model.placeLike = standoff-proposal_place
-standoff-proposal_att.duration.iso.attributes =
-  standoff-proposal_att.duration.iso.attribute.dur-iso
-standoff-proposal_att.duration.iso.attribute.dur-iso =
-  ## (duration) indicates the length of this element in time.
-  attribute dur-iso {
-    xsd:token { pattern = "[0-9.,DHMPRSTWYZ/:+\-]+" }
-  }?
 standoff-proposal_att.milestoneUnit.attributes =
   standoff-proposal_att.milestoneUnit.attribute.unit
 standoff-proposal_att.milestoneUnit.attribute.unit =
@@ -6927,10 +6927,11 @@ standoff-proposal_catchwords =
            "\x{a}" ~
            "               "
            sch:assert [
-             test = "ancestor::tei:msDesc or ancestor::tei:egXML"
-             "The "
+             test = "ancestor::tei:msDesc"
+             role = "nonfatal"
+             "WARNING: deprecated use of element — The "
              sch:name [ ]
-             " element should not be used outside of msDesc."
+             " element will not be allowed outside of msDesc as of 2018-10-01."
            ]
            "\x{a}" ~
            "            "
@@ -7162,10 +7163,11 @@ standoff-proposal_secFol =
            "\x{a}" ~
            "               "
            sch:assert [
-             test = "ancestor::tei:msDesc or ancestor::tei:egXML"
-             "The "
+             test = "ancestor::tei:msDesc"
+             role = "nonfatal"
+             "WARNING: deprecated use of element — The "
              sch:name [ ]
-             " element should not be used outside of msDesc."
+             " element will not be allowed outside of msDesc as of 2018-10-01."
            ]
            "\x{a}" ~
            "            "
@@ -7191,10 +7193,11 @@ standoff-proposal_signatures =
            "\x{a}" ~
            "               "
            sch:assert [
-             test = "ancestor::tei:msDesc or ancestor::tei:egXML"
-             "The "
+             test = "ancestor::tei:msDesc"
+             role = "nonfatal"
+             "WARNING: deprecated use of element — The "
              sch:name [ ]
-             " element should not be used outside of msDesc."
+             " element will not be allowed outside of msDesc as of 2018-10-01."
            ]
            "\x{a}" ~
            "            "
@@ -11676,6 +11679,12 @@ standoff-proposal_macroSpec =
      standoff-proposal_listRef*),
     standoff-proposal_att.global.attributes,
     standoff-proposal_att.identified.attributes,
+    ## indicates which type of entity should be generated, when an ODD processor is generating a module using XML DTD syntax.As dataSpec is now available to specify datatypes, macroSpec should not be used for this purpose. Thus it is not necessary to differentiate dt from pe macroSpecs. Instead drop the type attribute for pe type macroSpecs, and change dt type macroSpecs to dataSpecs.
+    attribute type {
+      ## (parameter entity) 
+      "pe" | ## (datatype entity) 
+        "dt"
+    }?,
     empty
   }
 
