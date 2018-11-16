@@ -10,7 +10,7 @@ Current structure of a TEI document is:
   start = TEI | teiCorpus
   TEI = teiHeader, model.resourceLike+
   teiCorpus = teiHeader, ( model.resourceLike*, ( TEI | teiCorpus )* )  [1]
-  model.resourceLike = fsdDecl | \text | facsimile | sourceDoc
+  model.resourceLike = \text | facsimile | fsdDecl | sourceDoc
 ~~~~~
 
 What @laurentromary asked for is exactly the same, except 1 change:
@@ -27,25 +27,25 @@ This is because he wants the document used for stand off annotations to also sta
 ~~~~~
   start = TEI
   TEI = teiHeader, ( model.resourceLike*, TEI* )  [2]
-
+  model.resourceLike = \text | facsimile | fsdDecl | ldb | sourceDoc
 ~~~~~
-(Where model.resourceLike includes `<standOff>` or `<ldb>` or whatever we call it.) This allows an `<ldb>` to be associated very closely with a `<teiHeader>` (by being wrapped in a `<TEI>`) whether it is a document of its own or a child of another `<TEI>` document.
+This allows an `<ldb>` to be associated very closely with a `<teiHeader>` (by being wrapped in a `<TEI>`) whether it is a document of its own or a child of another `<TEI>` document.
 
 That said, I could understand the argument that “a `<TEI>` is just a resource, albeit one with metadata associated; thus `<TEI>` should just be in model.resourceLike”. This makes for very simple content models: 
 
 ~~~~~
   start = TEI
   TEI = teiHeader, model.resourceLike+
-  model.resourceLike = TEI | fsdDecl | \text | facsimile | sourceDoc | standOff
+  model.resourceLike = TEI | \text | facsimile | fsdDecl | ldb | sourceDoc
 ~~~~~
-but allows some new weird things (in addition to the weird things we already allow but probably shouldn’t), in particular `<TEI>` elements in between other resource thingies:
+That’s good, but it also allows some new weird things (in addition to the weird things we already allow but probably shouldn’t), in particular `<TEI>` elements in between other resource thingies:
 
 ~~~~~xml
 <TEI>
   <teiHeader><!-- ... --></teiHeader>
   <facsimile><!-- ... --></facsimile>
   <TEI>
-     <teiHeader><!-- ... --></teiHeader>
+    <teiHeader><!-- ... --></teiHeader>
     <sourceDoc><!-- ... --></sourceDoc>
     <ldb><!-- ... --></ldb>
   </TEI>

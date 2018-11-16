@@ -52,13 +52,15 @@
     <revisionDesc>
       <change when="2018-11-15" who="#sb">
 	<list>
-	  <item>Move <gi>schemaSpec</gi> into <gi>back</gi>, thus giving us a place to put prose (in <gi>body</gi>)</item>
+	  <item>Move <gi>schemaSpec</gi> into <gi>back</gi>, thus
+	  giving us a place to put prose (in <gi>body</gi>)</item>
 	  <item>Add start of discussion in <gi>body</gi></item>
-	  <item>Added <gi>extraTextual</gi>, <gi>acorstic</gi>, and <gi>anagram</gi>.</item>
+	  <item>Added <gi>prop:extraTextual</gi>,
+	  <gi>prop:acorstic</gi>, and <gi>prop:anagram</gi>.</item>
 	</list>
       </change>
-      <change when="2018-10-30" who="#sb">Change <gi>standOff</gi> to <gi>ldb</gi>, and return <gi>listAnnotation</gi>; add <gi>castList</gi> to <name>model.annotation</name> (and thus to <gi>ldb</gi>)</change>
-      <change when="2018-10-28" who="#sb">Change overall structure, eliminating <gi>teiCorpus</gi> and allowing <gi>TEI</gi> to nest, thus removing need for crazy <gi>teiHeader</gi> inside <gi>standOff</gi>. This also obviates the need for <gi>listAnnotation</gi> inside <gi>standOff</gi>, putting its content directly in <gi>standOff</gi>.</change>
+      <change when="2018-10-30" who="#sb">Change <gi>prop:standOff</gi> to <gi>prop:ldb</gi>, and return <gi>prop:listAnnotation</gi>; add <gi>castList</gi> to <name>model.annotation</name> (and thus to <gi>ldb</gi>)</change>
+      <change when="2018-10-28" who="#sb">Change overall structure, eliminating <gi>teiCorpus</gi> and allowing <gi>TEI</gi> to nest, thus removing need for crazy <gi>teiHeader</gi> inside <gi>prop:standOff</gi>. This also obviates the need for <gi>prop:listAnnotation</gi> inside <gi>prop:standOff</gi>, putting its content directly in <gi>standOff</gi>.</change>
       <change when="2017-03-16" who="#pb">purified this ODD</change>
       <change when="2017-03-15" who="#pb">combined two elementSpec for "standoff" into one, removed the macroSpec redeclaration (it had no effect on the compiled ODD)</change>
       <change when="2015-03-14" who="#ps">modification and extension (changes since that date not logged here, see the <ref target="https://github.com/laurentromary/stdfSpec/commits/master"
@@ -104,48 +106,58 @@
 	  <eg xml:space="preserve">  start = TEI | teiCorpus
   TEI = teiHeader, model.resourceLike+
   teiCorpus = teiHeader, ( model.resourceLike*, ( TEI | teiCorpus )* )
-  model.resourceLike = fsdDecl | \text | facsimile | sourceDoc</eg>
+  model.resourceLike = \text | facsimile | fsdDecl | sourceDoc</eg>
   <note>The content model of <gi>teiHeader</gi> in this example is a
   simplification of the actual content model, which requires that you
   have at least one child of <gi>teiCorpus</gi>: either one element
   from model.resourceLike or one of <gi>TEI</gi> or
   <gi>teiCorpus</gi>.</note></p>
-  <p>In his proposal, @laurentromary asked for exactly the same thing,
-  except with one significant change:
+  <p>In his <ref
+  target="https://github.com/laurentromary/stdfSpec">original
+  stand-off proposal</ref>, @laurentromary asked for exactly the same
+  thing, except with one significant change:
   <list>
-    <item>add <gi>standOff</gi> to model.resourceLike</item>
+    <item>add <gi>standOff</gi> to <name type="class">model.resourceLike</name></item>
   </list>
   HOWEVER, he also asked that the <gi>standOff</gi> element have
   <gi>teiHeader</gi> as a child:
+
   <eg xml:space="preserve">  standOff = teiHeader?, model.resourceLike*, listAnnotation*</eg>
 
   This is because he wants the document used for stand off annotations
-to also stand on its own. We (Council) really really did not like the
-idea of allowing <gi>teiHeader</gi> (and other model.resourceLike elements)
-as a child (or children) of <gi>standOff</gi>. Thus my proposed new
-structure for a TEI document is:            
-<eg xml:space="preserve">  start = TEI
-  TEI = teiHeader, ( model.resourceLike*, TEI* )</eg>
-<note>The content model of <gi>TEI</gi> in this example is a
-simplification of the actual proposed content model, which would
-require that you have at least one child of <gi>TEI</gi>: either one
-element from model.resourceLike or a <gi>TEI</gi>.</note>
-(Where model.resourceLike includes <gi>standOff</gi> or <gi>ldb</gi> or whatever we
-call it.) This allows an <gi>ldb</gi> to be associated very closely with a
-<gi>teiHeader</gi> (by being wrapped in a <gi>TEI</gi>) whether it is a document of
-its own or a child of another <gi>TEI</gi> document.</p>
-<p>That said, I could understand the argument that <said>a <gi>TEI</gi> is just a
-resource, albeit one with metadata associated; thus <gi>TEI</gi> should just
-be in model.resourceLike</said>. This makes for very simple content models: 
-<eg xml:space="preserve">  start = TEI
-  TEI = teiHeader, model.resourceLike+
-  model.resourceLike = TEI | fsdDecl | \text | facsimile | sourceDoc | standOff</eg>
+  to also stand on its own. We (Council) really really did not like
+  the idea of allowing <gi>teiHeader</gi> (and other <name
+  type="class">model.resourceLike</name> elements) as a child (or
+  children) of <gi>standOff</gi>. Thus my proposed new structure for a
+  TEI document is:
 
-but allows some new weird things (in addition to the weird things we
-already allow but probably shouldn't), in particular <gi>TEI</gi> elements in
-between other resource thingies:
-<egXML xmlns="http://www.tei-c.org/ns/Examples">
-<TEI>
+  <eg xml:space="preserve">  start = TEI
+  TEI = teiHeader, ( model.resourceLike*, TEI* )
+  model.resourceLike = \text | facsimile | fsdDecl | ldb | sourceDoc</eg>
+
+  <note>The content model of <gi>TEI</gi> in this example is a
+  simplification of the actual proposed content model, which would
+  require that you have at least one child of <gi>TEI</gi>: either one
+  element from <name type="class">model.resourceLike</name> or a
+  <gi>TEI</gi>.</note> This allows an <gi>ldb</gi> to
+  be associated very closely with a <gi>teiHeader</gi> (by being
+  wrapped in a <gi>TEI</gi>) whether it is a document of its own or a
+  child of another <gi>TEI</gi> document.</p>
+  <p>That said, I could understand the argument that <said>a
+  <gi>TEI</gi> is just a resource, albeit one with metadata
+  associated; thus <gi>TEI</gi> should just be in <name
+  type="class">model.resourceLike</name></said>. This makes for very
+  simple content models:
+
+  <eg xml:space="preserve">  start = TEI
+  TEI = teiHeader, model.resourceLike+
+  model.resourceLike = TEI | \text | facsimile | fsdDecl | ldb | sourceDoc</eg>
+
+  That’s good, but it also allows some new weird things (in addition
+  to the weird things we already allow but probably shouldn’t), in
+  particular <gi>TEI</gi> elements in between other resource thingies:
+
+  <egXML xmlns="http://www.tei-c.org/ns/Examples"><TEI>
   <teiHeader><!-- ... --></teiHeader>
   <facsimile><!-- ... --></facsimile>
    <TEI>
@@ -161,20 +173,46 @@ between other resource thingies:
     <teiHeader><!-- ... --></teiHeader>
     <text><!-- ... --></text>
   </TEI>
-</TEI>
-</egXML>
+</TEI></egXML>
 	  </p>
 	</div>
       </div>
       <div>
 	<head>Part II: <title>Guidelines</title> Prose</head>
 	<div>
-	  <head></head>
-	  <p></p>
+	  <head>For somewhere in DS:</head>
+	    <p>The <gi>TEI</gi> element is used to group together an
+	    encoded resource (e.g., a logical transcription of a
+	    source document in a <gi>text</gi> element; a diplomatic
+	    transcription of a source document in a <gi>sourceDoc</gi>
+	    element; or an encoded representation of a text bearing
+	    object as images in a <gi>facsimile</gi>) with metadata
+	    about it (in <gi>teiHeader</gi>).</p>
 	</div>
 	<div>
-	  <head></head>
-	  <p></p>
+	  <head>For somewhere in SO(?):</head>
+	    <p>The <gi>ldb</gi> or <soCalled>linked data
+	    block</soCalled> element is a catch-all element intended
+	    for holding content that is neither transcribed from the
+	    source document, nor strictly speaking metadata about said
+	    document. It may also be used to hold transcribed text
+	    that does not, for some reason, fit into the encoding
+	    model being used.</p>
+	    <p>Examples of the former include contextual information
+	    about named entities (typically encoded using
+	    <gi>listBibl</gi>, <gi>listOrg</gi>, <?TEI LR or HC:
+	    <gi>listNym</gi>, too?><gi>listPerson</gi>, or
+	    <gi>listPlace</gi>), collections of <gi>alt</gi> elements
+	    for encoding ambiguity of reference, and an encoded
+	    <gi>castList</gi> used to record information about
+	    speaking characters in a drama who were not mentioned in
+	    the source cast list.</p>
+	    <p>Examples of the latter include encoding source
+	    authorial footnotes in the <gi>ldb</gi> in order to more
+	    easily represent source pages when a footnote runs across
+	    a page break, or to encode words that appear in the source
+	    text as part of an acrostic (using <gi>acrostic</gi> in
+	    <gi>extraTextual</gi>).</p>
 	</div>
       </div>
     </body>
@@ -231,23 +269,11 @@ between other resource thingies:
 	      </alternate>
 	    </sequence>
 	  </content>
-	  <remarks>
-	    <?TEI This prose is intended as much for source material for use in the main prose
-	          of the Guidelines as for use here in the remakrs —Syd, 2018-10-31 ?>
-	    <p>The <gi>TEI</gi> element is used to group together an
-	    encoded resource (e.g., a diplomatic transcription of a
-	    source document in a <gi>sourceDoc</gi> element; a logical
-	    transcription of a source document in a <gi>text</gi>
-	    element; or an encoded representation of text bearing
-	    objects as images in a <gi>facsimile</gi>) with metadata
-	    about it (in <gi>teiHeader</gi>).
-	    <?SB discussion of nested TEI here?>
-	    </p>
-	  </remarks>
 	</elementSpec>
 
-	<!-- Create new "standOff" module for the new elements introduced here:
-	     <ldb>, <listAnnotation>, and <extraTextual> -->
+	<!-- Create new "standOff" module for the new elements
+	     introduced here: <ldb>, <listAnnotation>, <extraTextual>,
+	     <acrostic>, and <anagram>. -->
 	<moduleSpec ident="standOff">
 	  <desc>Elements to collect stand-off annotations and
 	  contextual information in a TEI document</desc>
@@ -280,31 +306,6 @@ between other resource thingies:
 	    </constraint>
 	  </constraintSpec>
 	  <remarks>
-	    <?TEI This prose is intended as much for source material for use in the main prose
-	          of the Guidelines as for use here in the remakrs —Syd, 2018-10-31 ?>
-	    <p>The <gi>ldb</gi> or <soCalled>linked data
-	    block</soCalled> element is a catch-all element intended
-	    for holding content that is neither transcribed from the
-	    source document, nor strictly speaking metadata about said
-	    document. It may also be used to hold transcribed text
-	    that does not, for some reason, fit into the encoding
-	    model being used.</p>
-	    <p>Examples of the former include contextual information
-	    about named entities (typically encoded using
-	    <gi>listBibl</gi>, <gi>listOrg</gi>, <?TEI LR or HC:
-	    <gi>listNym</gi>, too?><gi>listPerson</gi>, or
-	    <gi>listPlace</gi>), collections of <gi>alt</gi> elements
-	    for encoding ambiguity of reference, and an encoded
-	    <gi>castList</gi> used to record information about
-	    speaking characters in a drama who were not mentioned in
-	    the source cast list.</p>
-	    <p>Examples of the latter include encoding source
-	    authorial footnotes in the <gi>ldb</gi> in order to more
-	    easily represent source pages when a footnote runs across
-	    a page break, or to encode words that appear in the source
-	    text as part of an acrostic.<?TEI The WWP has two elements
-	    specifically for this latter case: <acrostics> which contains
-	    a serios of one or more <acrostic>.?></p>
 	  </remarks>
 	</elementSpec>
 
@@ -373,7 +374,7 @@ between other resource thingies:
 	      </ldb>
 	      <!-- ... -->
 	      <div type="tinyExample">
-		<head>Billy Batson's List</head>
+		<head>Billy Batson’s List</head>
 		<p>If you came of age in 1940s <placeName
 		ref="l:nyc">New York City</placeName>, you probably
 		knew this list better than the list of <placeName
@@ -479,7 +480,7 @@ between other resource thingies:
 	  </content>
 	  <remarks>
 	    <?LR What? Why is @xml:base used to specify the target,
-	         rather than a @target attribute? And why can't I
+	         rather than a @target attribute? And why can’t I
 		 specify complete absolute URIs if I want?
 		 —Syd, 2018-10-31 ?>
 	    <p>The global <att>xml:base</att> attribute is used on
@@ -501,7 +502,7 @@ between other resource thingies:
 	    <memberOf key="model.segLike" mode="add"/>
 	    <!-- allow indication of notation variants inside -->
 	    <memberOf key="att.notated" mode="add"/>
-	    <!-- 'tis repeatable and catagorizable: -->
+	    <!-- ’tis repeatable and catagorizable: -->
 	    <memberOf key="att.typed"/>
 	  </classes>
 	  <content>
@@ -515,7 +516,7 @@ between other resource thingies:
 	  </content>
 	  <remarks>
 	    <?LR What? Why is @xml:base used to specify the target,
-	         rather than a @target attribute? And why can't I
+	         rather than a @target attribute? And why can’t I
 		 specify complete absolute URIs if I want?
 		 —Syd, 2018-10-31 HC, MT, and I think what you should
 		 be using here is a prive prefix. But in any case, this
