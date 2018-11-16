@@ -8,7 +8,7 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2018-11-16T19:47:56Z. .
+# Schema generated from ODD source 2018-11-16T20:54:05Z. .
 # TEI Edition: Version 3.5.0a. Last updated on
 #	12th October 2018, revision ae63ddc
 # TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0a./
@@ -61,7 +61,7 @@ anyElement-content =
     (text | anyElement-content)*
   }
   >> sch:pattern [
-       id = "d8e119227-constraint"
+       id = "d8e119309-constraint"
        "\x{a}" ~
        "         "
        sch:rule [
@@ -92,7 +92,7 @@ anyElement-datatype =
     (text | anyElement-datatype)*
   }
   >> sch:pattern [
-       id = "d8e120510-constraint"
+       id = "d8e120592-constraint"
        "\x{a}" ~
        "         "
        sch:rule [

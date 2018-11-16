@@ -97,11 +97,30 @@
       <div>
 	<head>Part I: Discussion</head>
 	<div>
-	  <head></head>
-	  <p></p>
+	  <head>Main Sticking Point</head>
+	  <p>At Council’s face-to-face meeting in Feb 2018 in Cologne
+	  (<foreign xml:lang="de">Köln</foreign>), SB, HC, and MT were
+	  assigned as a sub-group to read Laurent’s proposal and
+	  develop a counter proposal. The main sticking point was that
+	  Council objected (quite strongly) to the idea of having
+	  <gi>teiHeader</gi> be a child of the new <gi>standOff</gi>.
+	  Furthermore, Council wanted to explore the relationship
+	  between the stand-off annotations being recommended and the
+	  <ref
+	  target="http://www.openannotation.org/spec/core/">OADM</ref>.</p>
 	</div>
-	<div>
+	<div xml:id="ODTS">
 	  <head>On Default Text Structure</head>
+	  <p>This section describes the solution to the request that
+	  <gi>teiHeader</gi> be a child of <gi>standOff</gi>. The
+	  basic gist of the solution is to allow <gi>TEI</gi> to nest
+	  within <gi>TEI</gi> instead. The result is that a
+	  <gi>teiHeader</gi> can be closely bound to the
+	  <gi>standOff</gi> by being a child of the same <gi>TEI</gi>,
+	  whether the <gi>standOff</gi> is used inside an existing TEI
+	  structure or free-standing. The (desirable) side-effect is
+	  that <gi>teiCorpus</gi> is no longer needed.</p>
+
 	  <p>The current structure of a TEI document is as follows:
 	  <eg xml:space="preserve">  start = TEI | teiCorpus
   TEI = teiHeader, model.resourceLike+
@@ -175,10 +194,25 @@
   </TEI>
 </TEI></egXML>
 	  </p>
+	  <p>While this solution has significant
+	  backwards-compatability implications (we would have to leave
+	  <gi>teiCorpus</gi> as deprecated for a long time), it would
+	  seem to both solve the linguists desire to associate header
+	  information closely with annotations, and to allow a
+	  significantly simpler overall model of TEI documents, while
+	  still allowing for representation of complex structures.</p>
 	</div>
       </div>
       <div>
 	<head>Part II: <title>Guidelines</title> Prose</head>
+	<div>
+	  <head>For somewhere in #DRSP:</head>
+	  <p>In the event there is a speech that is assigned to a
+	  character that is not listed in the source cast list, a
+	  <gi>castList</gi> may be encoded inside the <gi>ldb</gi>
+	  element to provide an element to which the <att>who</att> of
+	  <gi>sp</gi> may point.</p>
+	</div>
 	<div>
 	  <head>For somewhere in DS:</head>
 	    <p>The <gi>TEI</gi> element is used to group together an
@@ -188,6 +222,10 @@
 	    element; or an encoded representation of a text bearing
 	    object as images in a <gi>facsimile</gi>) with metadata
 	    about it (in <gi>teiHeader</gi>).</p>
+	    <p>In a case in which more than one encoded version of the
+	    same source document share the same metadata, they may be
+	    grouped together in a <gi>TEI</gi> element following a
+	    single <gi>teiHeader</gi>.</p>
 	</div>
 	<div>
 	  <head>For somewhere in SO(?):</head>
