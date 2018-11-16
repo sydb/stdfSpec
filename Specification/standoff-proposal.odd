@@ -54,6 +54,7 @@
 	<list>
 	  <item>Move <gi>schemaSpec</gi> into <gi>back</gi>, thus giving us a place to put prose (in <gi>body</gi>)</item>
 	  <item>Add start of discussion in <gi>body</gi></item>
+	  <item>Added <gi>extraTextual</gi>, <gi>acorstic</gi>, and <gi>anagram</gi>.</item>
 	</list>
       </change>
       <change when="2018-10-30" who="#sb">Change <gi>standOff</gi> to <gi>ldb</gi>, and return <gi>listAnnotation</gi>; add <gi>castList</gi> to <name>model.annotation</name> (and thus to <gi>ldb</gi>)</change>
@@ -100,7 +101,7 @@
 	<div>
 	  <head>On Default Text Structure</head>
 	  <p>The current structure of a TEI document is as follows:
-	  <eg>  start = TEI | teiCorpus
+	  <eg xml:space="preserve">  start = TEI | teiCorpus
   TEI = teiHeader, model.resourceLike+
   teiCorpus = teiHeader, ( model.resourceLike*, ( TEI | teiCorpus )* )
   model.resourceLike = fsdDecl | \text | facsimile | sourceDoc</eg>
@@ -116,14 +117,14 @@
   </list>
   HOWEVER, he also asked that the <gi>standOff</gi> element have
   <gi>teiHeader</gi> as a child:
-  <eg>  standOff = teiHeader?, model.resourceLike*, listAnnotation*</eg>
+  <eg xml:space="preserve">  standOff = teiHeader?, model.resourceLike*, listAnnotation*</eg>
 
   This is because he wants the document used for stand off annotations
 to also stand on its own. We (Council) really really did not like the
 idea of allowing <gi>teiHeader</gi> (and other model.resourceLike elements)
 as a child (or children) of <gi>standOff</gi>. Thus my proposed new
 structure for a TEI document is:            
-<eg>  start = TEI
+<eg xml:space="preserve">  start = TEI
   TEI = teiHeader, ( model.resourceLike*, TEI* )</eg>
 <note>The content model of <gi>TEI</gi> in this example is a
 simplification of the actual proposed content model, which would
@@ -136,7 +137,7 @@ its own or a child of another <gi>TEI</gi> document.</p>
 <p>That said, I could understand the argument that <said>a <gi>TEI</gi> is just a
 resource, albeit one with metadata associated; thus <gi>TEI</gi> should just
 be in model.resourceLike</said>. This makes for very simple content models: 
-<eg>  start = TEI
+<eg xml:space="preserve">  start = TEI
   TEI = teiHeader, model.resourceLike+
   model.resourceLike = TEI | fsdDecl | \text | facsimile | sourceDoc | standOff</eg>
 
@@ -246,7 +247,7 @@ between other resource thingies:
 	</elementSpec>
 
 	<!-- Create new "standOff" module for the new elements introduced here:
-	     <ldb> and <listAnnotation> -->
+	     <ldb>, <listAnnotation>, and <extraTextual> -->
 	<moduleSpec ident="standOff">
 	  <desc>Elements to collect stand-off annotations and
 	  contextual information in a TEI document</desc>
@@ -306,6 +307,155 @@ between other resource thingies:
 	    a serios of one or more <acrostic>.?></p>
 	  </remarks>
 	</elementSpec>
+
+	<!-- New element for holding text not actually present in source -->
+	<elementSpec ident="extraTextual" mode="add" ns="http://www.tei-c.org/proposal/standoff/ns" module="standOff">
+	  <desc>Container element for extra textual phenomena.</desc>
+	  <classes>
+	    <memberOf key="att.global"/>
+	    <memberOf key="model.annotation"/>
+	    <memberOf key="att.typed"/>
+	  </classes>
+	  <content>
+	    <alternate minOccurs="1" maxOccurs="unbounded">
+	      <elementRef key="acrostic"/>
+	      <elementRef key="anagram"/>
+	      <elementRef key="et"/>
+	    </alternate>
+	  </content>
+	  <!-- Need examples here -->
+	</elementSpec>
+        <elementSpec ident="acrostic" mode="add" ns="http://www.tei-c.org/proposal/standoff/ns" module="standOff">
+          <desc>a derived element that contains the word or phrase
+          (including any appropriate phrase-level encoding like
+          <gi>persName</gi>) that are spelled by the initial letters
+          of a passage (e.g., the first letter of each line of a
+          stanza or poem).</desc>
+          <classes mode="replace">
+            <memberOf key="att.global"/>
+	    <memberOf key="att.scoping"/>
+          </classes>
+          <content>
+            <macroRef key="macro.phraseSeq"/>
+          </content>
+	  <constraintSpec scheme="schematron" ident="acrostic_attrs">
+	    <constraint>
+	      <sch:report test="(@target|@match) and @components">Either @target, @target and @match, or @components should be used to indicate the acrostic, not both @target and @components</sch:report>
+	      <sch:report test="@match[not(substring(normalize-space(.),1,1) eq '/')] and not(@target)">The @target attribute must be specified to indicate the context for @match</sch:report>
+	    </constraint>
+	  </constraintSpec>
+          <attList>
+            <attDef ident="target" mode="change">
+              <desc>points to the parent element (e.g., an
+              <gi>lg</gi>) that contains the elements of which the
+              first letter of each make up the acrostic.</desc>
+              <datatype minOccurs="1" maxOccurs="1"><dataRef key="teidata.pointer"/></datatype>
+            </attDef>
+            <attDef ident="components" usage="opt" mode="add">
+              <desc>points to a sequence of individual elements; when
+              taken in the order specified, the first letter of each
+              element that has textual content or the first letter
+              immediately following each that is empty, make up the
+              acrostic.</desc>
+              <datatype minOccurs="2" maxOccurs="unbounded">
+		<dataRef key="teidata.pointer"/>
+	      </datatype>
+            </attDef>
+          </attList>
+	  <exemplum>
+	    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE">
+	      <ldb>
+		<extraTextual>
+		  <acrostic target="#cptMarvel">
+		    <said>Shazam!</said>
+		  </acrostic>
+		</extraTextual>
+	      </ldb>
+	      <!-- ... -->
+	      <div type="tinyExample">
+		<head>Billy Batson's List</head>
+		<p>If you came of age in 1940s <placeName
+		ref="l:nyc">New York City</placeName>, you probably
+		knew this list better than the list of <placeName
+		ref="l:nyc">NYC</placeName> Borough Presidents.</p>
+		<list xml:id="cptMarvel">
+		  <item>Solomon</item>
+		  <item>Hercules</item>
+		  <item>Atlas</item>
+		  <item>Zeus</item>
+		  <item>Achilles</item>
+		  <item>Mercury</item>
+		</list>
+	      </div>
+	    </egXML>
+	  </exemplum>
+        </elementSpec>
+        <elementSpec ident="anagram" mode="add" ns="http://www.tei-c.org/proposal/standoff/ns" module="standOff">
+          <desc>points to 2 or more textual elements to indicate they
+          are anagrams of each other, or points to a single textual
+          element to indicate said element is an anagram of its
+          content</desc>
+          <classes mode="replace">
+            <memberOf key="att.global"/>
+            <memberOf key="att.pointing"/>
+          </classes>
+          <content>
+	    <macroRef key="macro.phraseSeq"/>
+	  </content>
+          <attList>
+            <attDef ident="target" usage="req" mode="change">
+	      <desc>points to an element of which the current element
+	      is (roughly) an anagram, or points to 2 or more elements
+	      whose content are (roughly) anagrams of each
+	      other</desc>
+              <datatype minOccurs="1" maxOccurs="unbounded">
+		<dataRef key="teidata.pointer"/>
+	      </datatype>
+	      <constraintSpec scheme="schematron" ident="one_ptr_iff_content">
+		<constraint>
+		  <sch:rule context="tei:anagram[normalize-space(.) eq '']">
+		    <sch:let name="targets" value="tokenize( normalize-space( @target ),'&#x20;')"/>
+		    <sch:assert test="count( $targets ) gt 1">An empty ＜anagram＞ element should point to 2 or more targets</sch:assert>
+		  </sch:rule>
+		  <sch:rule context="tei:anagram[normalize-space(.) ne '']">
+		    <sch:let name="targets" value="tokenize( normalize-space( @target ),'&#x20;')"/>
+		    <sch:assert test="count( $targets ) eq 1">An ＜anagram＞ element that contains an anagram should point to only 1 target</sch:assert>
+		  </sch:rule>
+		</constraint>
+	      </constraintSpec>
+              <remarks>
+                <p>The elements pointed to should be intentional, if
+                not exact, anagrams of one another. If one of the
+                textual objects that is an anagram is made of several
+                XML elements, then the <att>target</att> should point
+                to either <emph>the first</emph> XML element (in
+                document order) if they are connected with
+                <att>part</att> or <att>next</att> &amp;
+                <att>prev</att>; or to a <gi>link</gi> or
+                <gi>join</gi>. The point is, the <att>target</att>
+                should not point to each XML element that is a
+                component of a single anagram.</p>
+              </remarks>
+            </attDef>
+          </attList>
+	  <remarks>
+	    <p>The <gi>anagram</gi> element may contain content to
+	    indicate the re-arranged order of the letters in the
+	    source, for use when the source does not indicate the
+	    re-arrangement itself. E.g., if the source says <quote>He
+	    hired a new <soCalled>crap built on lies</soCalled>
+	    officer</quote>, but does not explain what <quote>crap
+	    built on lies</quote> is an anagrom <emph>for</emph>, we
+	    might encode
+	    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+	      <anagram target="#cbol">public relations</anagram>
+	      &lt;!-- ... -->
+	      <lb/>He hired a new <soCalled xml:id="cbol">crap built
+	      on lies</soCalled> officer
+	    </egXML>
+	    </p>
+	  </remarks>
+        </elementSpec>
 
 	<!-- The main container for linguistic stand-off or OAM type annotations -->
 	<elementSpec ident="listAnnotation" mode="add" ns="http://www.tei-c.org/proposal/standoff/ns" module="standOff">
