@@ -215,17 +215,17 @@
 	</div>
 	<div>
 	  <head>For somewhere in DS:</head>
-	    <p>The <gi>TEI</gi> element is used to group together an
-	    encoded resource (e.g., a logical transcription of a
-	    source document in a <gi>text</gi> element; a diplomatic
-	    transcription of a source document in a <gi>sourceDoc</gi>
-	    element; or an encoded representation of a text bearing
-	    object as images in a <gi>facsimile</gi>) with metadata
-	    about it (in <gi>teiHeader</gi>).</p>
-	    <p>In a case in which more than one encoded version of the
-	    same source document share the same metadata, they may be
-	    grouped together in a <gi>TEI</gi> element following a
-	    single <gi>teiHeader</gi>.</p>
+	  <p>The <gi>TEI</gi> element is used to group together
+	  metadata about an encoded resource (in <gi>teiHeader</gi>)
+	  with an encoded resource (e.g., a logical transcription of a
+	  source document in a <gi>text</gi> element; a diplomatic
+	  transcription of a source document in a <gi>sourceDoc</gi>
+	  element; or an encoded representation of a text bearing
+	  object as images in a <gi>facsimile</gi>).</p>
+	  <p>In a case in which more than one encoded version of the
+	  same source document share the same metadata, they may be
+	  grouped together in a <gi>TEI</gi> element following a
+	  single <gi>teiHeader</gi>.</p>
 	</div>
 	<div>
 	  <head>For somewhere in SO(?):</head>
@@ -430,10 +430,8 @@
 	  </exemplum>
         </elementSpec>
         <elementSpec ident="anagram" mode="add" ns="http://www.tei-c.org/proposal/standoff/ns" module="standOff">
-          <desc>points to 2 or more textual elements to indicate they
-          are anagrams of each other, or points to a single textual
-          element to indicate said element is an anagram of its
-          content</desc>
+          <desc>indicates that two or more strings (either words or
+          phrases) are anagrams of each other</desc>
           <classes mode="replace">
             <memberOf key="att.global"/>
             <memberOf key="att.pointing"/>
@@ -462,8 +460,8 @@
 		  </sch:rule>
 		</constraint>
 	      </constraintSpec>
-              <remarks>
-                <p>The elements pointed to should be intentional, if
+	      <remarks>
+                <p>The elements referred to should be intentional, if
                 not exact, anagrams of one another. If one of the
                 textual objects that is an anagram is made of several
                 XML elements, then the <att>target</att> should point
