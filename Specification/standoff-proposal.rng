@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <grammar xmlns="http://relaxng.org/ns/structure/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="http://www.tei-c.org/ns/1.0">
   <!--
-Schema generated from ODD source 2018-11-16T20:54:05Z. .
-TEI Edition: Version 3.5.0a. Last updated on
-	12th October 2018, revision ae63ddc
-TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0a./
+Schema generated from ODD source 2019-04-27T03:59:05Z. .
+TEI Edition: Version 3.5.0. Last updated on
+	29th January 2019, revision 282facd
+TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
  Proposed changes to TEI to incorporate stand-off markup and other supratextual features 
 -->
   <!--CC+BY and BSD-2 licences-->
@@ -132,7 +132,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0a./
         </choice>
       </zeroOrMore>
     </element>
-    <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d8e119309-constraint">
+    <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d8e120208-constraint">
       <rule context="tei:content">
         <report test="descendant::*[not(namespace-uri(.) =               ('http://relaxng.org/ns/structure/1.0', 'http://www.tei-c.org/ns/1.0'))]">content descendants must be in the
               namespaces
@@ -181,7 +181,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0a./
         </choice>
       </zeroOrMore>
     </element>
-    <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d8e120592-constraint">
+    <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d8e121492-constraint">
       <rule context="tei:datatype">
         <report test="descendant::*[not(namespace-uri(.) =               ('http://relaxng.org/ns/structure/1.0', 'http://www.tei-c.org/ns/1.0'))]">datatype descendants must be in the
               namespaces
@@ -1557,44 +1557,6 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
             </sch:assert>
     </sch:rule>
   </pattern>
-  <define name="standoff-proposal_att.tableDecoration.attributes">
-    <ref name="standoff-proposal_att.tableDecoration.attribute.role"/>
-    <ref name="standoff-proposal_att.tableDecoration.attribute.rows"/>
-    <ref name="standoff-proposal_att.tableDecoration.attribute.cols"/>
-  </define>
-  <define name="standoff-proposal_att.tableDecoration.attribute.role">
-    <optional>
-      <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="role" a:defaultValue="data">
-        <a:documentation>indicates the kind of information held in this cell or in each cell of this row.
-Suggested values include: 1] label; 2] data</a:documentation>
-        <choice>
-          <value>label</value>
-          <a:documentation>labelling or descriptive information only.</a:documentation>
-          <value>data</value>
-          <a:documentation>data values.</a:documentation>
-          <data type="token">
-            <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
-          </data>
-        </choice>
-      </attribute>
-    </optional>
-  </define>
-  <define name="standoff-proposal_att.tableDecoration.attribute.rows">
-    <optional>
-      <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="rows" a:defaultValue="1">
-        <a:documentation>indicates the number of rows occupied by this cell or row.</a:documentation>
-        <data type="nonNegativeInteger"/>
-      </attribute>
-    </optional>
-  </define>
-  <define name="standoff-proposal_att.tableDecoration.attribute.cols">
-    <optional>
-      <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="cols" a:defaultValue="1">
-        <a:documentation>(columns) indicates the number of columns occupied by this cell or row.</a:documentation>
-        <data type="nonNegativeInteger"/>
-      </attribute>
-    </optional>
-  </define>
   <define name="standoff-proposal_att.timed.attributes">
     <ref name="standoff-proposal_att.duration.attributes"/>
     <ref name="standoff-proposal_att.timed.attribute.start"/>
@@ -2938,6 +2900,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       <ref name="standoff-proposal_listPerson"/>
       <ref name="standoff-proposal_listPlace"/>
       <ref name="standoff-proposal_listRelation"/>
+      <ref name="standoff-proposal_listObject"/>
       <ref name="standoff-proposal_listNym"/>
       <ref name="standoff-proposal_listApp"/>
       <ref name="standoff-proposal_listWit"/>
@@ -2952,6 +2915,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       <ref name="standoff-proposal_listPerson"/>
       <ref name="standoff-proposal_listPlace"/>
       <ref name="standoff-proposal_listRelation"/>
+      <ref name="standoff-proposal_listObject"/>
       <ref name="standoff-proposal_listNym"/>
       <ref name="standoff-proposal_listApp"/>
       <ref name="standoff-proposal_listWit"/>
@@ -2965,6 +2929,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
     <ref name="standoff-proposal_listPerson"/>
     <ref name="standoff-proposal_listPlace"/>
     <ref name="standoff-proposal_listRelation"/>
+    <ref name="standoff-proposal_listObject"/>
     <ref name="standoff-proposal_listNym"/>
     <ref name="standoff-proposal_listApp"/>
     <ref name="standoff-proposal_listWit"/>
@@ -2990,6 +2955,9 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
     </optional>
     <optional>
       <ref name="standoff-proposal_listRelation"/>
+    </optional>
+    <optional>
+      <ref name="standoff-proposal_listObject"/>
     </optional>
     <optional>
       <ref name="standoff-proposal_listNym"/>
@@ -3024,6 +2992,9 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       <ref name="standoff-proposal_listRelation"/>
     </zeroOrMore>
     <zeroOrMore>
+      <ref name="standoff-proposal_listObject"/>
+    </zeroOrMore>
+    <zeroOrMore>
       <ref name="standoff-proposal_listNym"/>
     </zeroOrMore>
     <zeroOrMore>
@@ -3056,6 +3027,9 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       <ref name="standoff-proposal_listRelation"/>
     </oneOrMore>
     <oneOrMore>
+      <ref name="standoff-proposal_listObject"/>
+    </oneOrMore>
+    <oneOrMore>
       <ref name="standoff-proposal_listNym"/>
     </oneOrMore>
     <oneOrMore>
@@ -3068,7 +3042,6 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
   <define name="standoff-proposal_model.noteLike">
     <choice>
       <ref name="standoff-proposal_note"/>
-      <ref name="standoff-proposal_witDetail"/>
     </choice>
   </define>
   <define name="standoff-proposal_model.lLike">
@@ -3304,6 +3277,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
     <choice>
       <ref name="standoff-proposal_gap"/>
       <ref name="standoff-proposal_app"/>
+      <ref name="standoff-proposal_witDetail"/>
       <ref name="standoff-proposal_addSpan"/>
       <ref name="standoff-proposal_damageSpan"/>
       <ref name="standoff-proposal_delSpan"/>
@@ -3931,6 +3905,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       <ref name="standoff-proposal_lang"/>
       <ref name="standoff-proposal_idno"/>
       <ref name="standoff-proposal_model.persNamePart"/>
+      <ref name="standoff-proposal_objectName"/>
     </choice>
   </define>
   <define name="standoff-proposal_model.nameLike_alternation">
@@ -3942,6 +3917,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       <ref name="standoff-proposal_lang"/>
       <ref name="standoff-proposal_idno"/>
       <ref name="standoff-proposal_model.persNamePart_alternation"/>
+      <ref name="standoff-proposal_objectName"/>
     </choice>
   </define>
   <define name="standoff-proposal_model.nameLike_sequence">
@@ -3952,6 +3928,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
     <ref name="standoff-proposal_lang"/>
     <ref name="standoff-proposal_idno"/>
     <ref name="standoff-proposal_model.persNamePart_sequence"/>
+    <ref name="standoff-proposal_objectName"/>
   </define>
   <define name="standoff-proposal_model.nameLike_sequenceOptional">
     <optional>
@@ -3974,6 +3951,9 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
     </optional>
     <optional>
       <ref name="standoff-proposal_model.persNamePart_sequenceOptional"/>
+    </optional>
+    <optional>
+      <ref name="standoff-proposal_objectName"/>
     </optional>
   </define>
   <define name="standoff-proposal_model.nameLike_sequenceOptionalRepeatable">
@@ -3998,6 +3978,9 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
     <zeroOrMore>
       <ref name="standoff-proposal_model.persNamePart_sequenceOptionalRepeatable"/>
     </zeroOrMore>
+    <zeroOrMore>
+      <ref name="standoff-proposal_objectName"/>
+    </zeroOrMore>
   </define>
   <define name="standoff-proposal_model.nameLike_sequenceRepeatable">
     <oneOrMore>
@@ -4020,6 +4003,9 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
     </oneOrMore>
     <oneOrMore>
       <ref name="standoff-proposal_model.persNamePart_sequenceRepeatable"/>
+    </oneOrMore>
+    <oneOrMore>
+      <ref name="standoff-proposal_objectName"/>
     </oneOrMore>
   </define>
   <define name="standoff-proposal_model.global">
@@ -4054,6 +4040,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       <ref name="standoff-proposal_availability"/>
       <ref name="standoff-proposal_msIdentifier"/>
       <ref name="standoff-proposal_listRelation"/>
+      <ref name="standoff-proposal_objectIdentifier"/>
     </choice>
   </define>
   <define name="standoff-proposal_model.frontPart">
@@ -4292,6 +4279,12 @@ Suggested values include: 1] full (full form) ; 2] pref (prefix) ; 3] suff (suff
       <ref name="standoff-proposal_facsimile"/>
       <ref name="standoff-proposal_sourceDoc"/>
       <ref name="standoff-proposal_ldb"/>
+    </choice>
+  </define>
+  <define name="standoff-proposal_model.objectLike">
+    <choice>
+      <ref name="standoff-proposal_object"/>
+      <ref name="standoff-proposal_listObject"/>
     </choice>
   </define>
   <define name="standoff-proposal_att.personal.attributes">
@@ -4980,7 +4973,7 @@ Measures]</a:documentation>
   </define>
   <define name="standoff-proposal_date">
     <element name="date">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a date in any format. [3.5.4. Dates and Times 2.2.4. Publication, Distribution, Licensing, etc. 2.6. The Revision Description 3.11.2.4. Imprint, Size of a Document, and Reprint Information 15.2.3. The Setting Description 13.3.6. Dates and Times]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a date in any format. [3.5.4. Dates and Times 2.2.4. Publication, Distribution, Licensing, etc. 2.6. The Revision Description 3.11.2.4. Imprint, Size of a Document, and Reprint Information 15.2.3. The Setting Description 13.3.7. Dates and Times]</a:documentation>
       <zeroOrMore>
         <choice>
           <text/>
@@ -4990,6 +4983,7 @@ Measures]</a:documentation>
         </choice>
       </zeroOrMore>
       <ref name="standoff-proposal_att.global.attributes"/>
+      <ref name="standoff-proposal_att.canonical.attributes"/>
       <ref name="standoff-proposal_att.datable.attributes"/>
       <ref name="standoff-proposal_att.duration.attributes"/>
       <ref name="standoff-proposal_att.editLike.attributes"/>
@@ -8120,6 +8114,44 @@ Suggested values include: 1] light; 2] sound; 3] prop; 4] block</a:documentation
       <empty/>
     </element>
   </define>
+  <define name="standoff-proposal_att.tableDecoration.attributes">
+    <ref name="standoff-proposal_att.tableDecoration.attribute.role"/>
+    <ref name="standoff-proposal_att.tableDecoration.attribute.rows"/>
+    <ref name="standoff-proposal_att.tableDecoration.attribute.cols"/>
+  </define>
+  <define name="standoff-proposal_att.tableDecoration.attribute.role">
+    <optional>
+      <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="role" a:defaultValue="data">
+        <a:documentation>indicates the kind of information held in this cell or in each cell of this row.
+Suggested values include: 1] label; 2] data</a:documentation>
+        <choice>
+          <value>label</value>
+          <a:documentation>labelling or descriptive information only.</a:documentation>
+          <value>data</value>
+          <a:documentation>data values.</a:documentation>
+          <data type="token">
+            <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
+          </data>
+        </choice>
+      </attribute>
+    </optional>
+  </define>
+  <define name="standoff-proposal_att.tableDecoration.attribute.rows">
+    <optional>
+      <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="rows" a:defaultValue="1">
+        <a:documentation>indicates the number of rows occupied by this cell or row.</a:documentation>
+        <data type="nonNegativeInteger"/>
+      </attribute>
+    </optional>
+  </define>
+  <define name="standoff-proposal_att.tableDecoration.attribute.cols">
+    <optional>
+      <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="cols" a:defaultValue="1">
+        <a:documentation>(columns) indicates the number of columns occupied by this cell or row.</a:documentation>
+        <data type="nonNegativeInteger"/>
+      </attribute>
+    </optional>
+  </define>
   <define name="standoff-proposal_table">
     <element name="table">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains text displayed in tabular form, in rows and columns. [14.1.1. TEI Tables]</a:documentation>
@@ -10625,7 +10657,7 @@ You must supply at least two values for @target on <name/>
   </define>
   <define name="standoff-proposal_catchwords">
     <element name="catchwords">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes the system used to ensure correct ordering of the quires making up a codex or incunable, typically by means of annotations at the foot of the page. [10.3.7. Catchwords, Signatures, Secundo Folio]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes the system used to ensure correct ordering of the quires or similar making up a codex, incunable, or other object typically by means of annotations at the foot of the page. [10.3.7. Catchwords, Signatures, Secundo Folio]</a:documentation>
       <ref name="standoff-proposal_macro.phraseSeq"/>
       <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-catchwords-catchword_in_msDesc-constraint-assert-12">
         <rule context="tei:catchwords">
@@ -10727,7 +10759,7 @@ Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniature
   </define>
   <define name="standoff-proposal_locus">
     <element name="locus">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">defines a location within a manuscript or manuscript part, usually as a (possibly discontinuous) sequence of folio references. [10.3.5. References to Locations within a Manuscript]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">defines a location within a manuscript, manuscript part, or other object typically as a (possibly discontinuous) sequence of folio references. [10.3.5. References to Locations within a Manuscript]</a:documentation>
       <zeroOrMore>
         <choice>
           <text/>
@@ -10766,7 +10798,7 @@ Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniature
   </define>
   <define name="standoff-proposal_locusGrp">
     <element name="locusGrp">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">groups a number of locations which together form a distinct but discontinuous item within a manuscript or manuscript part, according to a specific foliation. [10.3.5. References to Locations within a Manuscript]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">groups a number of locations which together form a distinct but discontinuous item within a manuscript, manuscript part, or other object. [10.3.5. References to Locations within a Manuscript]</a:documentation>
       <oneOrMore>
         <ref name="standoff-proposal_locus"/>
       </oneOrMore>
@@ -10800,7 +10832,7 @@ Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniature
   </define>
   <define name="standoff-proposal_origDate">
     <element name="origDate">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(origin date) contains any form of date, used to identify the date of origin for a manuscript or manuscript part. [10.3.1. Origination]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(origin date) contains any form of date, used to identify the date of origin for a manuscript, manuscript part, or other object. [10.3.1. Origination]</a:documentation>
       <zeroOrMore>
         <choice>
           <text/>
@@ -10819,7 +10851,7 @@ Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniature
   </define>
   <define name="standoff-proposal_origPlace">
     <element name="origPlace">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(origin place) contains any form of place name, used to identify the place of origin for a manuscript or manuscript part. [10.3.1. Origination]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(origin place) contains any form of place name, used to identify the place of origin for a manuscript, manuscript part, or other object. [10.3.1. Origination]</a:documentation>
       <ref name="standoff-proposal_macro.phraseSeq"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <ref name="standoff-proposal_att.naming.attributes"/>
@@ -10844,7 +10876,7 @@ Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniature
   </define>
   <define name="standoff-proposal_signatures">
     <element name="signatures">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains discussion of the leaf or quire signatures found within a codex. [10.3.7. Catchwords, Signatures, Secundo Folio]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains discussion of the leaf or quire signatures found within a codex or similar object. [10.3.7. Catchwords, Signatures, Secundo Folio]</a:documentation>
       <ref name="standoff-proposal_macro.specialPara"/>
       <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-signatures-signatures_in_msDesc-constraint-assert-14">
         <rule context="tei:signatures">
@@ -10875,7 +10907,7 @@ Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniature
   </define>
   <define name="standoff-proposal_msIdentifier">
     <element name="msIdentifier">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(manuscript identifier) contains the information required to identify the manuscript being described. [10.4. The Manuscript Identifier]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(manuscript identifier) contains the information required to identify the manuscript or similar object being described. [10.4. The Manuscript Identifier]</a:documentation>
       <group>
         <group>
           <optional>
@@ -10908,20 +10940,21 @@ Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniature
           <zeroOrMore>
             <ref name="standoff-proposal_collection"/>
           </zeroOrMore>
-          <optional>
+          <zeroOrMore>
             <ref name="standoff-proposal_idno"/>
-          </optional>
+          </zeroOrMore>
         </group>
         <zeroOrMore>
           <choice>
             <ref name="standoff-proposal_msName"/>
+            <ref name="standoff-proposal_objectName"/>
             <ref name="standoff-proposal_altIdentifier"/>
           </choice>
         </zeroOrMore>
       </group>
       <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-msIdentifier-msId_minimal-constraint-report-23">
         <rule context="tei:msIdentifier">
-          <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="not(parent::tei:msPart) and       (local-name(*[1])='idno' or       local-name(*[1])='altIdentifier' or       normalize-space(.)='')">An msIdentifier must contain either a repository or location of some type, or a manuscript name</report>
+          <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="not(parent::tei:msPart) and (local-name(*[1])='idno' or local-name(*[1])='altIdentifier' or normalize-space(.)='')">An msIdentifier must contain either a repository or location.</report>
         </rule>
       </pattern>
       <ref name="standoff-proposal_att.global.attributes"/>
@@ -10930,7 +10963,7 @@ Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniature
   </define>
   <define name="standoff-proposal_institution">
     <element name="institution">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the name of an organization such as a university or library, with which a manuscript is identified, generally its holding institution. [10.4. The Manuscript Identifier]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the name of an organization such as a university or library, with which a manuscript or other object is identified, generally its holding institution. [10.4. The Manuscript Identifier]</a:documentation>
       <ref name="standoff-proposal_macro.xtext"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <ref name="standoff-proposal_att.naming.attributes"/>
@@ -10939,7 +10972,7 @@ Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniature
   </define>
   <define name="standoff-proposal_repository">
     <element name="repository">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the name of a repository within which manuscripts are stored, possibly forming part of an institution. [10.4. The Manuscript Identifier]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the name of a repository within which manuscripts or other objects are stored, possibly forming part of an institution. [10.4. The Manuscript Identifier]</a:documentation>
       <ref name="standoff-proposal_macro.xtext"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <ref name="standoff-proposal_att.naming.attributes"/>
@@ -10948,7 +10981,7 @@ Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniature
   </define>
   <define name="standoff-proposal_collection">
     <element name="collection">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the name of a collection of manuscripts, not necessarily located within a single repository. [10.4. The Manuscript Identifier]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the name of a collection of manuscripts or other objects, not necessarily located within a single repository. [10.4. The Manuscript Identifier]</a:documentation>
       <ref name="standoff-proposal_macro.xtext"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <ref name="standoff-proposal_att.naming.attributes"/>
@@ -10958,7 +10991,7 @@ Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniature
   </define>
   <define name="standoff-proposal_altIdentifier">
     <element name="altIdentifier">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(alternative identifier) contains an alternative or former structured identifier used for a manuscript, such as a former catalogue number. [10.4. The Manuscript Identifier]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(alternative identifier) contains an alternative or former structured identifier used for a manuscript or other object, such as a former catalogue number. [10.4. The Manuscript Identifier]</a:documentation>
       <group>
         <optional>
           <ref name="standoff-proposal_placeName"/>
@@ -11002,7 +11035,7 @@ Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniature
   </define>
   <define name="standoff-proposal_msName">
     <element name="msName">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(alternative name) contains any form of unstructured alternative name used for a manuscript, such as an ocellus nominum, or nickname. [10.4. The Manuscript Identifier]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(alternative name) contains any form of unstructured alternative name used for a manuscript or other object, such as an ocellus nominum, or nickname. [10.4. The Manuscript Identifier]</a:documentation>
       <zeroOrMore>
         <choice>
           <text/>
@@ -11018,7 +11051,7 @@ Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniature
   </define>
   <define name="standoff-proposal_colophon">
     <element name="colophon">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the colophon of a manuscript item: that is, a statement providing information regarding the date, place, agency, or reason for production of the manuscript. [10.6.1. The msItem and msItemStruct Elements]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the colophon of an item: that is, a statement providing information regarding the date, place, agency, or reason for production of the manuscript or other object. [10.6.1. The msItem and msItemStruct Elements]</a:documentation>
       <ref name="standoff-proposal_macro.phraseSeq"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <ref name="standoff-proposal_att.msExcerpt.attributes"/>
@@ -11027,7 +11060,7 @@ Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniature
   </define>
   <define name="standoff-proposal_explicit">
     <element name="explicit">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the explicit of a manuscript item, that is, the closing words of the text proper, exclusive of any rubric or colophon which might follow it. [10.6.1. The msItem and msItemStruct Elements]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the explicit of a item, that is, the closing words of the text proper, exclusive of any rubric or colophon which might follow it. [10.6.1. The msItem and msItemStruct Elements]</a:documentation>
       <ref name="standoff-proposal_macro.phraseSeq"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <ref name="standoff-proposal_att.typed.attributes"/>
@@ -11037,7 +11070,7 @@ Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniature
   </define>
   <define name="standoff-proposal_filiation">
     <element name="filiation">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains information concerning the manuscript's filiation, i.e. its relationship to other surviving manuscripts of the same text, its protographs, antigraphs and apographs. [10.6.1. The msItem and msItemStruct Elements]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains information concerning the manuscript or other object's filiation, i.e. its relationship to other surviving manuscripts or other objects of the same text or contents, its protographs, antigraphs and apographs. [10.6.1. The msItem and msItemStruct Elements]</a:documentation>
       <ref name="standoff-proposal_macro.specialPara"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <ref name="standoff-proposal_att.typed.attributes"/>
@@ -11056,7 +11089,7 @@ Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniature
   </define>
   <define name="standoff-proposal_incipit">
     <element name="incipit">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the incipit of a manuscript item, that is the opening words of the text proper, exclusive of any rubric which might precede it, of sufficient length to identify the work uniquely; such incipits were, in former times, frequently used a means of reference to a work, in place of a title. [10.6.1. The msItem and msItemStruct Elements]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the incipit of a manuscript or similar object item, that is the opening words of the text proper, exclusive of any rubric which might precede it, of sufficient length to identify the work uniquely; such incipits were, in former times, frequently used a means of reference to a work, in place of a title. [10.6.1. The msItem and msItemStruct Elements]</a:documentation>
       <ref name="standoff-proposal_macro.phraseSeq"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <ref name="standoff-proposal_att.typed.attributes"/>
@@ -11066,7 +11099,7 @@ Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniature
   </define>
   <define name="standoff-proposal_msContents">
     <element name="msContents">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(manuscript contents) describes the intellectual content of a manuscript or manuscript part, either as a series of paragraphs or as a series of structured manuscript items. [10.6. Intellectual Content]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(manuscript contents) describes the intellectual content of a manuscript, manuscript part, or other object either as a series of paragraphs or as a series of structured manuscript items. [10.6. Intellectual Content]</a:documentation>
       <choice>
         <oneOrMore>
           <ref name="standoff-proposal_model.pLike"/>
@@ -11097,7 +11130,7 @@ Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniature
   </define>
   <define name="standoff-proposal_msItem">
     <element name="msItem">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(manuscript item) describes an individual work or item within the intellectual content of a manuscript or manuscript part. [10.6.1. The msItem and msItemStruct Elements]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(manuscript item) describes an individual work or item within the intellectual content of a manuscript, manuscript part, or other object. [10.6.1. The msItem and msItemStruct Elements]</a:documentation>
       <group>
         <zeroOrMore>
           <choice>
@@ -11126,7 +11159,7 @@ Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniature
   </define>
   <define name="standoff-proposal_msItemStruct">
     <element name="msItemStruct">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(structured manuscript item) contains a structured description for an individual work or item within the intellectual content of a manuscript or manuscript part. [10.6.1. The msItem and msItemStruct Elements]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(structured manuscript item) contains a structured description for an individual work or item within the intellectual content of a manuscript, manuscript part, or other object. [10.6.1. The msItem and msItemStruct Elements]</a:documentation>
       <group>
         <optional>
           <choice>
@@ -11198,7 +11231,7 @@ Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniature
   </define>
   <define name="standoff-proposal_rubric">
     <element name="rubric">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the text of any rubric or heading attached to a particular manuscript item, that is, a string of words through which a manuscript signals the beginning of a text division, often with an assertion as to its author and title, which is in some way set off from the text itself, usually in red ink, or by use of different size or type of script, or some other such visual device. [10.6.1. The msItem and msItemStruct Elements]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains the text of any rubric or heading attached to a particular manuscript item, that is, a string of words through which a manuscript or other object signals the beginning of a text division, often with an assertion as to its author and title, which is in some way set off from the text itself, typically in red ink, or by use of different size or type of script, or some other such visual device. [10.6.1. The msItem and msItemStruct Elements]</a:documentation>
       <ref name="standoff-proposal_macro.phraseSeq"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <ref name="standoff-proposal_att.typed.attributes"/>
@@ -11208,7 +11241,7 @@ Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniature
   </define>
   <define name="standoff-proposal_summary">
     <element name="summary">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains an overview of the available information concerning some aspect of an item (for example, its intellectual content, history, layout, typography etc.) as a complement or alternative to the more detailed information carried by more specific elements. [10.6. Intellectual Content]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains an overview of the available information concerning some aspect of an item or object (for example, its intellectual content, history, layout, typography etc.) as a complement or alternative to the more detailed information carried by more specific elements. [10.6. Intellectual Content]</a:documentation>
       <ref name="standoff-proposal_macro.specialPara"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <empty/>
@@ -11216,7 +11249,7 @@ Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniature
   </define>
   <define name="standoff-proposal_physDesc">
     <element name="physDesc">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(physical description) contains a full physical description of a manuscript or manuscript part, optionally subdivided using more specialized elements from the model.physDescPart class. [10.7. Physical Description]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(physical description) contains a full physical description of a manuscript, manuscript part, or other object optionally subdivided using more specialized elements from the model.physDescPart class. [10.7. Physical Description]</a:documentation>
       <group>
         <zeroOrMore>
           <ref name="standoff-proposal_model.pLike"/>
@@ -11286,7 +11319,7 @@ Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniature
   </define>
   <define name="standoff-proposal_supportDesc">
     <element name="supportDesc">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(support description) groups elements describing the physical support for the written part of a manuscript. [10.7.1. Object Description]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(support description) groups elements describing the physical support for the written part of a manuscript or other object. [10.7.1. Object Description]</a:documentation>
       <choice>
         <oneOrMore>
           <ref name="standoff-proposal_model.pLike"/>
@@ -11332,7 +11365,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_support">
     <element name="support">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a description of the materials etc. which make up the physical support for the written part of a manuscript. [10.7.1. Object Description]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a description of the materials etc. which make up the physical support for the written part of a manuscript or other object. [10.7.1. Object Description]</a:documentation>
       <ref name="standoff-proposal_macro.specialPara"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <empty/>
@@ -11340,7 +11373,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_collation">
     <element name="collation">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a description of how the leaves or bifolia are physically arranged. [10.7.1. Object Description]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a description of how the leaves, bifolia, or similar objects are physically arranged. [10.7.1. Object Description]</a:documentation>
       <ref name="standoff-proposal_macro.specialPara"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <empty/>
@@ -11348,7 +11381,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_foliation">
     <element name="foliation">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes the numbering system or systems used to count the leaves or pages in a codex. [10.7.1.4. Foliation]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes the numbering system or systems used to count the leaves or pages in a codex or similar object. [10.7.1.4. Foliation]</a:documentation>
       <ref name="standoff-proposal_macro.specialPara"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <empty/>
@@ -11356,7 +11389,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_condition">
     <element name="condition">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a description of the physical condition of the manuscript. [10.7.1.5. Condition]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a description of the physical condition of the manuscript or object. [10.7.1.5. Condition]</a:documentation>
       <ref name="standoff-proposal_macro.specialPara"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <empty/>
@@ -11364,7 +11397,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_layoutDesc">
     <element name="layoutDesc">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(layout description) collects the set of layout descriptions applicable to a manuscript. [10.7.2. Writing, Decoration, and Other Notations]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(layout description) collects the set of layout descriptions applicable to a manuscript or other object. [10.7.2. Writing, Decoration, and Other Notations]</a:documentation>
       <choice>
         <oneOrMore>
           <ref name="standoff-proposal_model.pLike"/>
@@ -11384,7 +11417,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_layout">
     <element name="layout">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes how text is laid out on the page, including information about any ruling, pricking, or other evidence of page-preparation techniques. [10.7.2. Writing, Decoration, and Other Notations]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes how text is laid out on the page or surface of the object, including information about any ruling, pricking, or other evidence of page-preparation techniques. [10.7.2. Writing, Decoration, and Other Notations]</a:documentation>
       <ref name="standoff-proposal_macro.specialPara"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <optional>
@@ -11436,7 +11469,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_handDesc">
     <element name="handDesc">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(description of hands) contains a description of all the different hands used in a manuscript. [10.7.2. Writing, Decoration, and Other Notations]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(description of hands) contains a description of all the different hands used in a manuscript or other object. [10.7.2. Writing, Decoration, and Other Notations]</a:documentation>
       <choice>
         <oneOrMore>
           <ref name="standoff-proposal_model.pLike"/>
@@ -11491,7 +11524,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_scriptDesc">
     <element name="scriptDesc">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a description of the scripts used in a manuscript or similar source. [10.7.2.1. Writing]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a description of the scripts used in a manuscript or other object. [10.7.2.1. Writing]</a:documentation>
       <choice>
         <oneOrMore>
           <ref name="standoff-proposal_model.pLike"/>
@@ -11519,7 +11552,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_decoDesc">
     <element name="decoDesc">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(decoration description) contains a description of the decoration of a manuscript, either as a sequence of paragraphs, or as a sequence of topically organized decoNote elements. [10.7.3. Bindings, Seals, and Additional Material]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(decoration description) contains a description of the decoration of a manuscript or other object, either as in paragraphs, or as one or more decoNote elements. [10.7.3. Bindings, Seals, and Additional Material]</a:documentation>
       <choice>
         <oneOrMore>
           <ref name="standoff-proposal_model.pLike"/>
@@ -11539,7 +11572,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_decoNote">
     <element name="decoNote">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(note on decoration) contains a note describing either a decorative component of a manuscript, or a fairly homogenous class of such components. [10.7.3. Bindings, Seals, and Additional Material]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(note on decoration) contains a note describing either a decorative component of a manuscript or other object, or a fairly homogenous class of such components. [10.7.3. Bindings, Seals, and Additional Material]</a:documentation>
       <ref name="standoff-proposal_macro.specialPara"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <ref name="standoff-proposal_att.typed.attributes"/>
@@ -11548,7 +11581,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_additions">
     <element name="additions">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a description of any significant additions found within a manuscript, such as marginalia or other annotations. [10.7.2. Writing, Decoration, and Other Notations]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a description of any significant additions found within a manuscript or other object, such as marginalia or other annotations. [10.7.2. Writing, Decoration, and Other Notations]</a:documentation>
       <ref name="standoff-proposal_macro.specialPara"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <empty/>
@@ -11556,7 +11589,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_bindingDesc">
     <element name="bindingDesc">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(binding description) describes the present and former bindings of a manuscript, either as a series of paragraphs or as a series of distinct binding elements, one for each binding of the manuscript. [10.7.3.1. Binding Descriptions]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(binding description) describes the present and former bindings of a manuscript or other object, either as a series of paragraphs or as a series of distinct binding elements, one for each binding of the manuscript. [10.7.3.1. Binding Descriptions]</a:documentation>
       <choice>
         <oneOrMore>
           <choice>
@@ -11575,7 +11608,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_binding">
     <element name="binding">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a description of one binding, i.e. type of covering, boards, etc. applied to a manuscript. [10.7.3.1. Binding Descriptions]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a description of one binding, i.e. type of covering, boards, etc. applied to a manuscript or other object. [10.7.3.1. Binding Descriptions]</a:documentation>
       <oneOrMore>
         <choice>
           <ref name="standoff-proposal_model.pLike"/>
@@ -11657,7 +11690,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_accMat">
     <element name="accMat">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(accompanying material) contains details of any significant additional material which may be closely associated with the manuscript being described, such as non-contemporaneous documents or fragments bound in with the manuscript at some earlier historical period. [10.7.3.3. Accompanying Material]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(accompanying material) contains details of any significant additional material which may be closely associated with the manuscript or object being described, such as non-contemporaneous documents or fragments bound in with it at some earlier historical period. [10.7.3.3. Accompanying Material]</a:documentation>
       <ref name="standoff-proposal_macro.specialPara"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <ref name="standoff-proposal_att.typed.attributes"/>
@@ -11666,7 +11699,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_history">
     <element name="history">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">groups elements describing the full history of a manuscript or manuscript part. [10.8. History]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">groups elements describing the full history of a manuscript, manuscript part, or other object. [10.8. History]</a:documentation>
       <choice>
         <oneOrMore>
           <ref name="standoff-proposal_model.pLike"/>
@@ -11692,7 +11725,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_origin">
     <element name="origin">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains any descriptive or other information concerning the origin of a manuscript or manuscript part. [10.8. History]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains any descriptive or other information concerning the origin of a manuscript, manuscript part, or other object. [10.8. History]</a:documentation>
       <ref name="standoff-proposal_macro.specialPara"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <ref name="standoff-proposal_att.editLike.attributes"/>
@@ -11702,7 +11735,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_provenance">
     <element name="provenance">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains any descriptive or other information concerning a single identifiable episode during the history of a manuscript or manuscript part, after its creation but before its acquisition. [10.8. History]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains any descriptive or other information concerning a single identifiable episode during the history of a manuscript, manuscript part, or other object after its creation but before its acquisition. [10.8. History]</a:documentation>
       <ref name="standoff-proposal_macro.specialPara"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <ref name="standoff-proposal_att.datable.attributes"/>
@@ -11712,7 +11745,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_acquisition">
     <element name="acquisition">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains any descriptive or other information concerning the process by which a manuscript or manuscript part entered the holding institution. [10.8. History]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains any descriptive or other information concerning the process by which a manuscript or manuscript part or other object entered the holding institution. [10.8. History]</a:documentation>
       <ref name="standoff-proposal_macro.specialPara"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <ref name="standoff-proposal_att.datable.attributes"/>
@@ -11721,7 +11754,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_additional">
     <element name="additional">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">groups additional information, combining bibliographic information about a manuscript, or surrogate copies of it with curatorial or administrative information. [10.9. Additional Information]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">groups additional information, combining bibliographic information about a manuscript or other object, or surrogate copies of it, with curatorial or administrative information. [10.9. Additional Information]</a:documentation>
       <group>
         <optional>
           <ref name="standoff-proposal_adminInfo"/>
@@ -11739,7 +11772,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_adminInfo">
     <element name="adminInfo">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(administrative information) contains information about the present custody and availability of the manuscript, and also about the record description itself. [10.9.1. Administrative Information]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(administrative information) contains information about the present custody and availability of the manuscript or other object, and also about the record description itself. [10.9.1. Administrative Information]</a:documentation>
       <group>
         <optional>
           <ref name="standoff-proposal_recordHist"/>
@@ -11760,7 +11793,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_recordHist">
     <element name="recordHist">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(recorded history) provides information about the source and revision status of the parent manuscript description itself. [10.9.1. Administrative Information]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(recorded history) provides information about the source and revision status of the parent manuscript or object description itself. [10.9.1. Administrative Information]</a:documentation>
       <choice>
         <oneOrMore>
           <ref name="standoff-proposal_model.pLike"/>
@@ -11778,7 +11811,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_source">
     <element name="source">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes the original source for the information contained with a manuscript description. [10.9.1.1. Record History]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes the original source for the information contained with a manuscript or object description. [10.9.1.1. Record History]</a:documentation>
       <ref name="standoff-proposal_macro.specialPara"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <empty/>
@@ -11786,7 +11819,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_custodialHist">
     <element name="custodialHist">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(custodial history) contains a description of a manuscript's custodial history, either as running prose or as a series of dated custodial events. [10.9.1.2. Availability and Custodial History]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(custodial history) contains a description of a manuscript or other object's custodial history, either as running prose or as a series of dated custodial events. [10.9.1.2. Availability and Custodial History]</a:documentation>
       <choice>
         <oneOrMore>
           <ref name="standoff-proposal_model.pLike"/>
@@ -11801,7 +11834,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_custEvent">
     <element name="custEvent">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(custodial event) describes a single event during the custodial history of a manuscript. [10.9.1.2. Availability and Custodial History]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(custodial event) describes a single event during the custodial history of a manuscript or other object. [10.9.1.2. Availability and Custodial History]</a:documentation>
       <ref name="standoff-proposal_macro.specialPara"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <ref name="standoff-proposal_att.datable.attributes"/>
@@ -11811,7 +11844,7 @@ Suggested values include: 1] paper; 2] parch (parchment) ; 3] mixed</a:documenta
   </define>
   <define name="standoff-proposal_surrogates">
     <element name="surrogates">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains information about any representations of the manuscript being described which may exist in the holding institution or elsewhere. [10.9. Additional Information]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains information about any representations of the manuscript or other object being described which may exist in the holding institution or elsewhere. [10.9. Additional Information]</a:documentation>
       <ref name="standoff-proposal_macro.specialPara"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <empty/>
@@ -13453,9 +13486,120 @@ Sample values include: 1] atBirth; 2] atDeath; 3] dependent; 4] inherited; 5] in
       <empty/>
     </element>
   </define>
+  <define name="standoff-proposal_objectName">
+    <element name="objectName">
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(name of an object) contains a proper noun or noun phrase used to refer to an object. [13.2.4. Object Names]</a:documentation>
+      <ref name="standoff-proposal_macro.phraseSeq"/>
+      <ref name="standoff-proposal_att.datable.attributes"/>
+      <ref name="standoff-proposal_att.editLike.attributes"/>
+      <ref name="standoff-proposal_att.global.attributes"/>
+      <ref name="standoff-proposal_att.personal.attributes"/>
+      <ref name="standoff-proposal_att.typed.attributes"/>
+      <empty/>
+    </element>
+  </define>
+  <define name="standoff-proposal_object">
+    <element name="object">
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a description of a single identifiable physical object. [13.3.5. Objects]</a:documentation>
+      <group>
+        <oneOrMore>
+          <ref name="standoff-proposal_objectIdentifier"/>
+        </oneOrMore>
+        <zeroOrMore>
+          <ref name="standoff-proposal_model.headLike"/>
+        </zeroOrMore>
+        <choice>
+          <zeroOrMore>
+            <ref name="standoff-proposal_model.pLike"/>
+          </zeroOrMore>
+          <group>
+            <optional>
+              <ref name="standoff-proposal_msContents"/>
+            </optional>
+            <optional>
+              <ref name="standoff-proposal_physDesc"/>
+            </optional>
+            <optional>
+              <ref name="standoff-proposal_history"/>
+            </optional>
+            <optional>
+              <ref name="standoff-proposal_additional"/>
+            </optional>
+          </group>
+        </choice>
+        <zeroOrMore>
+          <choice>
+            <ref name="standoff-proposal_model.noteLike"/>
+            <ref name="standoff-proposal_model.biblLike"/>
+            <ref name="standoff-proposal_linkGrp"/>
+            <ref name="standoff-proposal_link"/>
+          </choice>
+        </zeroOrMore>
+        <optional>
+          <ref name="standoff-proposal_object"/>
+        </optional>
+      </group>
+      <ref name="standoff-proposal_att.global.attributes"/>
+      <ref name="standoff-proposal_att.sortable.attributes"/>
+      <ref name="standoff-proposal_att.typed.attributes"/>
+      <ref name="standoff-proposal_att.declaring.attributes"/>
+      <ref name="standoff-proposal_att.docStatus.attributes"/>
+      <ref name="standoff-proposal_att.canonical.attributes"/>
+      <empty/>
+    </element>
+  </define>
+  <define name="standoff-proposal_listObject">
+    <element name="listObject">
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(list of objects) contains a list of descriptions, each of which provides information about an identifiable physical object. [13.3.5. Objects]</a:documentation>
+      <group>
+        <zeroOrMore>
+          <ref name="standoff-proposal_model.headLike"/>
+        </zeroOrMore>
+        <oneOrMore>
+          <ref name="standoff-proposal_model.objectLike"/>
+        </oneOrMore>
+        <zeroOrMore>
+          <choice>
+            <ref name="standoff-proposal_relation"/>
+            <ref name="standoff-proposal_listRelation"/>
+          </choice>
+        </zeroOrMore>
+      </group>
+      <ref name="standoff-proposal_att.global.attributes"/>
+      <ref name="standoff-proposal_att.typed.attributes"/>
+      <ref name="standoff-proposal_att.declarable.attributes"/>
+      <ref name="standoff-proposal_att.sortable.attributes"/>
+      <empty/>
+    </element>
+  </define>
+  <define name="standoff-proposal_objectIdentifier">
+    <element name="objectIdentifier">
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(object identifier) groups one or more identifiers or pieces of locating information concerning a single object. [13.3.5. Objects]</a:documentation>
+      <zeroOrMore>
+        <choice>
+          <ref name="standoff-proposal_model.placeNamePart"/>
+          <ref name="standoff-proposal_institution"/>
+          <ref name="standoff-proposal_repository"/>
+          <ref name="standoff-proposal_collection"/>
+          <ref name="standoff-proposal_idno"/>
+          <ref name="standoff-proposal_msName"/>
+          <ref name="standoff-proposal_objectName"/>
+          <ref name="standoff-proposal_altIdentifier"/>
+          <ref name="standoff-proposal_address"/>
+        </choice>
+      </zeroOrMore>
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-objectIdentifier-objectIdentifier_minimal-constraint-report-26">
+        <rule context="tei:objectIdentifier">
+          <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="not(count(*) gt 0)">An objectIdentifier must contain at minimum a single piece of locating or identifying information.</report>
+        </rule>
+      </pattern>
+      <ref name="standoff-proposal_att.global.attributes"/>
+      <empty/>
+    </element>
+  </define>
   <define name="standoff-proposal_nym">
     <element name="nym">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(canonical name) contains the definition for a canonical name or name component of any kind. [13.3.5. Names and Nyms]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(canonical name) contains the definition for a canonical name or name component of any kind. [13.3.6. Names and Nyms]</a:documentation>
       <group>
         <zeroOrMore>
           <ref name="standoff-proposal_model.entryPart"/>
@@ -13485,7 +13629,7 @@ Sample values include: 1] atBirth; 2] atDeath; 3] dependent; 4] inherited; 5] in
   </define>
   <define name="standoff-proposal_listNym">
     <element name="listNym">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(list of canonical names) contains a list of nyms, that is, standardized names for any thing. [13.3.5. Names and Nyms]</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(list of canonical names) contains a list of nyms, that is, standardized names for any thing. [13.3.6. Names and Nyms]</a:documentation>
       <group>
         <zeroOrMore>
           <ref name="standoff-proposal_model.headLike"/>
@@ -14466,6 +14610,7 @@ Sample values include: 1] homeoteleuton; 2] homeoarchy; 3] paleographicConfusion
           <choice>
             <ref name="standoff-proposal_model.rdgLike"/>
             <ref name="standoff-proposal_model.noteLike"/>
+            <ref name="standoff-proposal_witDetail"/>
             <ref name="standoff-proposal_wit"/>
             <ref name="standoff-proposal_rdgGrp"/>
           </choice>
@@ -14601,6 +14746,9 @@ Sample values include: 1] homeoteleuton; 2] homeoarchy; 3] paleographicConfusion
           </zeroOrMore>
           <zeroOrMore>
             <ref name="standoff-proposal_model.noteLike"/>
+          </zeroOrMore>
+          <zeroOrMore>
+            <ref name="standoff-proposal_witDetail"/>
           </zeroOrMore>
         </choice>
       </oneOrMore>
@@ -15059,14 +15207,14 @@ Sample values include: 1] homeoteleuton; 2] homeoarchy; 3] paleographicConfusion
           </group>
         </optional>
       </group>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-div-abstractModel-structure-l-constraint-report-26">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-div-abstractModel-structure-l-constraint-report-27">
         <rule context="tei:div">
           <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="ancestor::tei:l">
         Abstract model violation: Lines may not contain higher-level structural elements such as div.
       </report>
         </rule>
       </pattern>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-div-abstractModel-structure-p-constraint-report-27">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-div-abstractModel-structure-p-constraint-report-28">
         <rule context="tei:div">
           <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="ancestor::tei:p or ancestor::tei:ab and not(ancestor::tei:floatingText)">
         Abstract model violation: p and ab may not contain higher-level structural elements such as div.
@@ -16991,7 +17139,7 @@ should correspond to an existing module, via a moduleSpec or
       <optional>
         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="scheme" a:defaultValue="TEI">
           <a:documentation>supplies an identifier for the scheme in which this name is defined.
-Sample values include: 1] TEI (text encoding initiative) ; 2] DBK (docbook) ; 3] XX (unknown) ; 4] imaginary; 5] XHTML; 6] XML; 7] XI</a:documentation>
+Sample values include: 1] TEI (Text Encoding Initiative) ; 2] DBK (Docbook) ; 3] XX (unknown) ; 4] imaginary; 5] XHTML; 6] XML; 7] XI</a:documentation>
           <data type="token">
             <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
           </data>
@@ -17973,7 +18121,7 @@ Sample values include: 1] web; 2] print; 3] plain</a:documentation>
           </zeroOrMore>
         </group>
       </group>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-modelSequence-no_outputs_nor_predicates_4_my_kids-constraint-report-33">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-modelSequence-no_outputs_nor_predicates_4_my_kids-constraint-report-34">
         <rule context="tei:modelSequence">
           <sch:report xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="tei:model[@output]" role="warning">The 'model' children
       of a 'modelSequence' element inherit the @output attribute of the
@@ -18245,7 +18393,7 @@ Suggested values include: 1] alternate; 2] default; 3] height; 4] id; 5] label; 
         </optional>
       </group>
       <ns xmlns="http://purl.oclc.org/dsdl/schematron" prefix="s" uri="http://www.ascc.net/xml/schematron"/>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-constraintSpec-sch_no_more-constraint-report-34">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-constraintSpec-sch_no_more-constraint-report-35">
         <rule context="tei:constraintSpec">
           <sch:report xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="tei:constraint/s:*  and  @scheme = ('isoschematron','schematron')">Rules
         in the Schematron 1.* language must be inside a constraintSpec
@@ -18254,7 +18402,7 @@ Suggested values include: 1] alternate; 2] default; 3] height; 4] id; 5] label; 
         </rule>
       </pattern>
       <ns xmlns="http://purl.oclc.org/dsdl/schematron" prefix="sch" uri="http://purl.oclc.org/dsdl/schematron"/>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-constraintSpec-isosch-constraint-report-35">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-constraintSpec-isosch-constraint-report-36">
         <rule context="tei:constraintSpec">
           <sch:report xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="tei:constraint/sch:*  and  not( @scheme eq 'schematron')">Rules
         in the ISO Schematron language must be inside a constraintSpec
@@ -18719,12 +18867,12 @@ Suggested values include: 1] schematron (ISO Schematron) </a:documentation>
     <element name="acrostic" ns="http://www.tei-c.org/proposal/standoff/ns">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">a derived element that contains the word or phrase (including any appropriate phrase-level encoding like persName) that are spelled by the initial letters of a passage (e.g., the first letter of each line of a stanza or poem).</a:documentation>
       <ref name="standoff-proposal_macro.phraseSeq"/>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-acrostic-acrostic_attrs-constraint-report-40">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-acrostic-acrostic_attrs-constraint-report-41">
         <rule context="prop:acrostic">
           <sch:report xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="(@target|@match) and @components">Either @target, @target and @match, or @components should be used to indicate the acrostic, not both @target and @components</sch:report>
         </rule>
       </pattern>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-acrostic-acrostic_attrs-constraint-report-41">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-acrostic-acrostic_attrs-constraint-report-42">
         <rule context="prop:acrostic">
           <sch:report xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="@match[not(substring(normalize-space(.),1,1) eq '/')] and not(@target)">The @target attribute must be specified to indicate the context for @match</sch:report>
         </rule>
@@ -18754,7 +18902,7 @@ Suggested values include: 1] schematron (ISO Schematron) </a:documentation>
   </define>
   <define name="standoff-proposal_anagram">
     <element name="anagram" ns="http://www.tei-c.org/proposal/standoff/ns">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to 2 or more textual elements to indicate they are anagrams of each other, or points to a single textual element to indicate said element is an anagram of its content</a:documentation>
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates that two or more strings (either words or phrases) are anagrams of each other</a:documentation>
       <ref name="standoff-proposal_macro.phraseSeq"/>
       <ref name="standoff-proposal_att.global.attributes"/>
       <ref name="standoff-proposal_att.pointing.attribute.targetLang"/>

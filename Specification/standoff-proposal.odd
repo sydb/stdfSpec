@@ -301,9 +301,9 @@
 	      <alternate>
 		<sequence>
 		  <classRef key="model.resourceLike" minOccurs="1" maxOccurs="unbounded"/>
-		  <classRef key="TEI" minOccurs="0" maxOccurs="unbounded"/>
+		  <elementRef key="TEI" minOccurs="0" maxOccurs="unbounded"/>
 		</sequence>
-		<classRef key="TEI" minOccurs="1" maxOccurs="unbounded"/>
+		<elementRef key="TEI" minOccurs="1" maxOccurs="unbounded"/>
 	      </alternate>
 	    </sequence>
 	  </content>
@@ -333,12 +333,12 @@
 	  <content>
 	    <classRef key="model.annotation" minOccurs="1" maxOccurs="unbounded"/>
 	  </content>
-	  <constraintSpec ident="proposalNS" scheme="isoschematron" mode="add">
+	  <constraintSpec ident="proposalNS" scheme="schematron" mode="add">
 	    <constraint>
 	      <sch:ns prefix="prop" uri="http://www.tei-c.org/proposal/standoff/ns"/>
 	    </constraint>
 	  </constraintSpec>
-	  <constraintSpec ident="nestedLDBshouldBtyped" scheme="isoschematron" mode="add">
+	  <constraintSpec ident="nestedLDBshouldBtyped" scheme="schematron" mode="add">
 	    <constraint>
 	      <sch:assert test="@type or not(ancestor::prop:ldb)">This <sch:name/> element must have a @type attribute, since it is nested inside an <sch:name/></sch:assert>
 	    </constraint>
