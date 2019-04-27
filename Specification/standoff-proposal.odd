@@ -360,6 +360,10 @@
 	      <elementRef key="acrostic"/>
 	      <elementRef key="anagram"/>
 	      <elementRef key="et"/>
+	      <?TEI <et>, above, is currently undefined. I'm not sure whether I intended
+		it to be just a placeholder for other extra textual stuff, or an actual
+		generic extra textual element. Doesn't matter what I intended, really, so
+		much as what would be better. Any thoughts? -- Syd ?>
 	    </alternate>
 	  </content>
 	  <!-- Need examples here -->
