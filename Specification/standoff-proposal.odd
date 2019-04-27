@@ -103,10 +103,10 @@
 	  assigned as a sub-group to read Laurent’s proposal and
 	  develop a counter proposal. The main sticking point was that
 	  Council objected (quite strongly) to the idea of having
-	  <gi>teiHeader</gi> be a child of the new <gi>standOff</gi>.
-	  Furthermore, Council wanted to explore the relationship
-	  between the stand-off annotations being recommended and the
-	  <ref
+	  <gi>teiHeader</gi> be a child of the new <gi>standOff</gi>
+	  (herein called <gi>ldb</gi>). Furthermore, Council wanted to
+	  explore the relationship between the stand-off annotations
+	  being recommended and the <ref
 	  target="http://www.openannotation.org/spec/core/">OADM</ref>.</p>
 	</div>
 	<div xml:id="ODTS">
@@ -116,8 +116,8 @@
 	  basic gist of the solution is to allow <gi>TEI</gi> to nest
 	  within <gi>TEI</gi> instead. The result is that a
 	  <gi>teiHeader</gi> can be closely bound to the
-	  <gi>standOff</gi> by being a child of the same <gi>TEI</gi>,
-	  whether the <gi>standOff</gi> is used inside an existing TEI
+	  <gi>ldb</gi> by being a child of the same <gi>TEI</gi>,
+	  whether the <gi>ldb</gi> is used inside an existing TEI
 	  structure or free-standing. The (desirable) side-effect is
 	  that <gi>teiCorpus</gi> is no longer needed.</p>
 
@@ -126,28 +126,28 @@
   TEI = teiHeader, model.resourceLike+
   teiCorpus = teiHeader, ( model.resourceLike*, ( TEI | teiCorpus )* )
   model.resourceLike = \text | facsimile | fsdDecl | sourceDoc</eg>
-  <note>The content model of <gi>teiHeader</gi> in this example is a
+  <note>The content model of <gi>teiCorpus</gi> in this example is a
   simplification of the actual content model, which requires that you
   have at least one child of <gi>teiCorpus</gi>: either one element
-  from model.resourceLike or one of <gi>TEI</gi> or
+  from model.resourceLike, or one of either <gi>TEI</gi> or
   <gi>teiCorpus</gi>.</note></p>
   <p>In his <ref
   target="https://github.com/laurentromary/stdfSpec">original
   stand-off proposal</ref>, @laurentromary asked for exactly the same
   thing, except with one significant change:
   <list>
-    <item>add <gi>standOff</gi> to <name type="class">model.resourceLike</name></item>
+    <item>add <gi>ldb</gi> to <name type="class">model.resourceLike</name></item>
   </list>
-  HOWEVER, he also asked that the <gi>standOff</gi> element have
+  HOWEVER, he also asked that the <gi>ldb</gi> element have
   <gi>teiHeader</gi> as a child:
 
-  <eg xml:space="preserve">  standOff = teiHeader?, model.resourceLike*, listAnnotation*</eg>
+  <eg xml:space="preserve">  ldb = teiHeader?, model.resourceLike*, listAnnotation*</eg>
 
   This is because he wants the document used for stand off annotations
   to also stand on its own. We (Council) really really did not like
   the idea of allowing <gi>teiHeader</gi> (and other <name
   type="class">model.resourceLike</name> elements) as a child (or
-  children) of <gi>standOff</gi>. Thus my proposed new structure for a
+  children) of <gi>ldb</gi>. Thus my proposed new structure for a
   TEI document is:
 
   <eg xml:space="preserve">  start = TEI
