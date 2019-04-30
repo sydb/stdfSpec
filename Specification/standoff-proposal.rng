@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <grammar xmlns="http://relaxng.org/ns/structure/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="http://www.tei-c.org/ns/1.0">
   <!--
-Schema generated from ODD source 2019-04-27T22:17:57Z. .
+Schema generated from ODD source 2019-04-29T17:57:30Z. .
 TEI Edition: Version 3.5.0. Last updated on
-	19th April 2019, revision 2374d5a
+	29th January 2019, revision 282facd
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
  Proposed changes to TEI to incorporate stand-off markup and other supratextual features 
 -->
@@ -132,7 +132,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
         </choice>
       </zeroOrMore>
     </element>
-    <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d8e120290-constraint">
+    <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d8e120280-constraint">
       <rule context="tei:content">
         <report test="descendant::*[not(namespace-uri(.) =               ('http://relaxng.org/ns/structure/1.0', 'http://www.tei-c.org/ns/1.0'))]">content descendants must be in the
               namespaces
@@ -181,7 +181,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
         </choice>
       </zeroOrMore>
     </element>
-    <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d8e121556-constraint">
+    <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d8e121564-constraint">
       <rule context="tei:datatype">
         <report test="descendant::*[not(namespace-uri(.) =               ('http://relaxng.org/ns/structure/1.0', 'http://www.tei-c.org/ns/1.0'))]">datatype descendants must be in the
               namespaces
@@ -601,9 +601,9 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
   </define>
   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-att.datable-calendar-calendar-constraint-rule-4">
     <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="tei:*[@calendar]">
-      <sch:assert test="string-length(.) gt 0"> @calendar indicates the system or calendar to
-              which the date represented by the content of this element belongs, but this
-              <sch:name/> element has no textual content.</sch:assert>
+      <sch:assert test="string-length(.) gt 0">
+@calendar indicates the system or calendar to which the date represented by the content of this element
+belongs, but this <sch:name/> element has no textual content.</sch:assert>
     </sch:rule>
   </pattern>
   <define name="standoff-proposal_att.datable.attribute.period">
@@ -4278,7 +4278,7 @@ Suggested values include: 1] full (full form) ; 2] pref (prefix) ; 3] suff (suff
       <ref name="standoff-proposal_text"/>
       <ref name="standoff-proposal_facsimile"/>
       <ref name="standoff-proposal_sourceDoc"/>
-      <ref name="standoff-proposal_ldb"/>
+      <ref name="standoff-proposal_standOff"/>
     </choice>
   </define>
   <define name="standoff-proposal_model.objectLike">
@@ -4377,14 +4377,14 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
     <element name="p">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(paragraph) marks paragraphs in prose. [3.1. Paragraphs 7.2.5. Speech Contents]</a:documentation>
       <ref name="standoff-proposal_macro.paraContent"/>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-p-abstractModel-structure-p-constraint-report-4">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-p-abstractModel-structure-p-constraint-report-5">
         <rule context="tei:p">
           <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="not(ancestor::tei:floatingText) and (ancestor::tei:p or ancestor::tei:ab)          and not(parent::tei:exemplum                |parent::tei:item                |parent::tei:note                |parent::tei:q                |parent::tei:quote                |parent::tei:remarks                |parent::tei:said                |parent::tei:sp                |parent::tei:stage                |parent::tei:cell                |parent::tei:figure                )">
         Abstract model violation: Paragraphs may not occur inside other paragraphs or ab elements.
       </report>
         </rule>
       </pattern>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-p-abstractModel-structure-l-constraint-report-5">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-p-abstractModel-structure-l-constraint-report-6">
         <rule context="tei:p">
           <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="ancestor::tei:l[not(.//tei:note//tei:p[. = current()])]">
         Abstract model violation: Lines may not contain higher-level structural elements such as div, p, or ab.
@@ -4581,7 +4581,7 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
     <element name="desc">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(description) contains a brief description of the object documented by its parent element, typically a documentation element or an entity. [22.4.1. Description of Components]</a:documentation>
       <ref name="standoff-proposal_macro.limitedContent"/>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-desc-deprecationInfo-only-in-deprecated-constraint-rule-9">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-desc-deprecationInfo-only-in-deprecated-constraint-rule-10">
         <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="tei:desc[ @type eq 'deprecationInfo']">
           <sch:assert test="../@validUntil">Information about a
 	deprecation should only be present in a specification element
@@ -5043,7 +5043,7 @@ Sample values include: 1] suspension; 2] contraction; 3] brevigraph; 4] superscr
     <element name="ptr">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(pointer) defines a pointer to another location. [3.6. Simple Links and Cross-References 16.1. Links]</a:documentation>
       <empty/>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-ptr-ptrAtts-constraint-report-6">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-ptr-ptrAtts-constraint-report-7">
         <rule context="tei:ptr">
           <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="@target and @cRef">Only one of the
 attributes @target and @cRef may be supplied on <name/>.</report>
@@ -5062,7 +5062,7 @@ attributes @target and @cRef may be supplied on <name/>.</report>
     <element name="ref">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference) defines a reference to another location, possibly modified by additional text or comment. [3.6. Simple Links and Cross-References 16.1. Links]</a:documentation>
       <ref name="standoff-proposal_macro.paraContent"/>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-ref-refAtts-constraint-report-7">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-ref-refAtts-constraint-report-8">
         <rule context="tei:ref">
           <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="@target and @cRef">Only one of the
 	attributes @target' and @cRef' may be supplied on <name/>
@@ -5127,7 +5127,7 @@ attributes @target and @cRef may be supplied on <name/>.</report>
           </group>
         </zeroOrMore>
       </group>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-list-gloss-list-must-have-labels-constraint-rule-10">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-list-gloss-list-must-have-labels-constraint-rule-11">
         <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="tei:list[@type='gloss']">
           <sch:assert test="tei:label">The content of a "gloss" list should include a sequence of one or more pairs of a label element followed by an item element</sch:assert>
         </sch:rule>
@@ -5792,7 +5792,7 @@ Sample values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4] s
           <ref name="standoff-proposal_model.ptrLike"/>
         </choice>
       </optional>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-relatedItem-targetorcontent1-constraint-report-8">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-relatedItem-targetorcontent1-constraint-report-9">
         <rule context="tei:relatedItem">
           <sch:report xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="@target and count( child::* ) &gt; 0">
 If the @target attribute on <sch:name/> is used, the
@@ -5828,7 +5828,7 @@ relatedItem element must be empty</sch:report>
           <ref name="standoff-proposal_model.global"/>
         </choice>
       </zeroOrMore>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-l-abstractModel-structure-l-constraint-report-9">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-l-abstractModel-structure-l-constraint-report-10">
         <rule context="tei:l">
           <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="ancestor::tei:l[not(.//tei:note//tei:l[. = current()])]">
         Abstract model violation: Lines may not contain lines or lg elements.
@@ -5879,10 +5879,10 @@ relatedItem element must be empty</sch:report>
       <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-lg-atleast1oflggapl-constraint-assert-9">
         <rule context="tei:lg">
           <sch:assert xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="count(descendant::tei:lg|descendant::tei:l|descendant::tei:gap) &gt; 0">An lg element
-        must contain at least one child l, lg, or gap element.</sch:assert>
+        must contain at least one child l, lg or gap element.</sch:assert>
         </rule>
       </pattern>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-lg-abstractModel-structure-l-constraint-report-10">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-lg-abstractModel-structure-l-constraint-report-11">
         <rule context="tei:lg">
           <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="ancestor::tei:l[not(.//tei:note//tei:lg[. = current()])]">
         Abstract model violation: Lines may not contain line groups.
@@ -6115,7 +6115,7 @@ Sample values include: 1] index; 2] toc; 3] figlist; 4] tablist</a:documentation
     <element name="s">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(s-unit) contains a sentence-like division of a text. [17.1. Linguistic Segment Categories 8.4.1. Segmentation]</a:documentation>
       <ref name="standoff-proposal_macro.phraseSeq"/>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-s-noNestedS-constraint-report-11">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-s-noNestedS-constraint-report-12">
         <rule context="tei:s">
           <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="tei:s">You may not nest one s element within
       another: use seg instead</report>
@@ -6265,27 +6265,27 @@ Sample values include: 1] index; 2] toc; 3] figlist; 4] tablist</a:documentation
     <element name="span">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">associates an interpretative annotation directly with a span of text. [17.3. Spans and Interpretations]</a:documentation>
       <ref name="standoff-proposal_macro.phraseSeq.limited"/>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-span-targetfrom-constraint-report-12">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-span-targetfrom-constraint-report-13">
         <rule context="tei:span">
           <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="@from and @target">
 Only one of the attributes @target and @from may be supplied on <name/>
                </report>
         </rule>
       </pattern>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-span-targetto-constraint-report-13">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-span-targetto-constraint-report-14">
         <rule context="tei:span">
           <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="@to and @target">
 Only one of the attributes @target and @to may be supplied on <name/>
                </report>
         </rule>
       </pattern>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-span-tonotfrom-constraint-report-14">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-span-tonotfrom-constraint-report-15">
         <rule context="tei:span">
           <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="@to and not(@from)">
 If @to is supplied on <name/>, @from must be supplied as well</report>
         </rule>
       </pattern>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-span-tofrom-constraint-report-15">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-span-tofrom-constraint-report-16">
         <rule context="tei:span">
           <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="contains(normalize-space(@to),' ') or contains(normalize-space(@from),' ')">
 The attributes @to and @from on <name/> may each contain only a single value</report>
@@ -8936,7 +8936,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
       <zeroOrMore>
         <ref name="standoff-proposal_model.pLike"/>
       </zeroOrMore>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-quotation-quotationContents-constraint-report-16">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-quotation-quotationContents-constraint-report-17">
         <rule context="tei:quotation">
           <report xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="not(@marks) and not (tei:p)">
 On <name/>, either the @marks attribute should be used, or a paragraph of description provided</report>
@@ -10280,14 +10280,14 @@ Feature Value]</a:documentation>
     <element name="ab">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(anonymous block) contains any arbitrary component-level unit of text, acting as an anonymous container for phrase or inter level elements analogous to, but without the semantic baggage of, a paragraph. [16.3. Blocks, Segments, and Anchors]</a:documentation>
       <ref name="standoff-proposal_macro.paraContent"/>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-ab-abstractModel-structure-ab-constraint-report-17">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-ab-abstractModel-structure-ab-constraint-report-18">
         <rule context="tei:ab">
           <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="not(ancestor::tei:floatingText) and (ancestor::tei:p or ancestor::tei:ab)          and not(parent::tei:exemplum         |parent::tei:item         |parent::tei:note         |parent::tei:q         |parent::tei:quote         |parent::tei:remarks         |parent::tei:said         |parent::tei:sp         |parent::tei:stage         |parent::tei:cell         |parent::tei:figure)">
         Abstract model violation: ab may not occur inside paragraphs or other ab elements.
       </report>
         </rule>
       </pattern>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-ab-abstractModel-structure-l-constraint-report-18">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-ab-abstractModel-structure-l-constraint-report-19">
         <rule context="tei:ab">
           <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="ancestor::tei:l or ancestor::tei:lg">
         Abstract model violation: Lines may not contain higher-level divisions such as p or ab.
@@ -10677,21 +10677,21 @@ You must supply at least two values for @target on <name/>
           <ref name="standoff-proposal_model.dimLike"/>
         </choice>
       </zeroOrMore>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-dimensions-duplicateDim-constraint-report-19">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-dimensions-duplicateDim-constraint-report-20">
         <rule context="tei:dimensions">
           <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="count(tei:width)&gt; 1">
 The element <name/> may appear once only
       </report>
         </rule>
       </pattern>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-dimensions-duplicateDim-constraint-report-20">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-dimensions-duplicateDim-constraint-report-21">
         <rule context="tei:dimensions">
           <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="count(tei:height)&gt; 1">
 The element <name/> may appear once only
       </report>
         </rule>
       </pattern>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-dimensions-duplicateDim-constraint-report-21">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-dimensions-duplicateDim-constraint-report-22">
         <rule context="tei:dimensions">
           <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="count(tei:depth)&gt; 1">
 The element <name/> may appear once only
@@ -10952,7 +10952,7 @@ Sample values include: 1] leaves; 2] ruled; 3] pricked; 4] written; 5] miniature
           </choice>
         </zeroOrMore>
       </group>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-msIdentifier-msId_minimal-constraint-report-22">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-msIdentifier-msId_minimal-constraint-report-23">
         <rule context="tei:msIdentifier">
           <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="not(parent::tei:msPart) and (local-name(*[1])='idno' or local-name(*[1])='altIdentifier' or normalize-space(.)='')">An msIdentifier must contain either a repository or location.</report>
         </rule>
@@ -13219,12 +13219,12 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</a:documentation
           <assert xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="@ref or @key or @name">One of the attributes  'name', 'ref' or 'key' must be supplied</assert>
         </rule>
       </pattern>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-relation-activemutual-constraint-report-23">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-relation-activemutual-constraint-report-24">
         <rule context="tei:relation">
           <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="@active and @mutual">Only one of the attributes @active and @mutual may be supplied</report>
         </rule>
       </pattern>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-relation-activepassive-constraint-report-24">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-relation-activepassive-constraint-report-25">
         <rule context="tei:relation">
           <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="@passive and not(@active)">the attribute 'passive' may be supplied only if the attribute 'active' is supplied</report>
         </rule>
@@ -13588,7 +13588,7 @@ Sample values include: 1] atBirth; 2] atDeath; 3] dependent; 4] inherited; 5] in
           <ref name="standoff-proposal_address"/>
         </choice>
       </zeroOrMore>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-objectIdentifier-objectIdentifier_minimal-constraint-report-25">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-objectIdentifier-objectIdentifier_minimal-constraint-report-26">
         <rule context="tei:objectIdentifier">
           <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="not(count(*) gt 0)">An objectIdentifier must contain at minimum a single piece of locating or identifying information.</report>
         </rule>
@@ -14487,7 +14487,7 @@ Suggested values include: 1] tempo; 2] loud; 3] pitch; 4] tension; 5] rhythm; 6]
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">groups together various annotations, e.g. for parallel interpretations of a spoken segment. [8.4.6. Analytic Coding]</a:documentation>
       <choice>
         <oneOrMore>
-          <ref name="standoff-proposal_model.annotation"/>
+          <ref name="standoff-proposal_model.standOffPart"/>
         </oneOrMore>
         <group>
           <oneOrMore>
@@ -14552,7 +14552,6 @@ Suggested values include: 1] tempo; 2] loud; 3] pitch; 4] tension; 5] rhythm; 6]
   </define>
   <define name="standoff-proposal_att.textCritical.attributes">
     <ref name="standoff-proposal_att.written.attributes"/>
-    <ref name="standoff-proposal_att.typed.attributes"/>
     <ref name="standoff-proposal_att.textCritical.attribute.type"/>
     <ref name="standoff-proposal_att.textCritical.attribute.cause"/>
     <ref name="standoff-proposal_att.textCritical.attribute.varSeq"/>
@@ -14895,7 +14894,7 @@ Sample values include: 1] homeoteleuton; 2] homeoarchy; 3] paleographicConfusion
           <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">apparatus appears outside the base text.</a:documentation>
         </choice>
       </attribute>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-variantEncoding-location-variantEncodingLocation-constraint-rule-11">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-variantEncoding-location-variantEncodingLocation-constraint-rule-12">
         <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="tei:variantEncoding">
           <sch:assert test="(@location != 'external') or (@method != 'parallel-segmentation')">
               The @location value "external" is inconsistent with the
@@ -15208,14 +15207,14 @@ Sample values include: 1] homeoteleuton; 2] homeoarchy; 3] paleographicConfusion
           </group>
         </optional>
       </group>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-div-abstractModel-structure-l-constraint-report-26">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-div-abstractModel-structure-l-constraint-report-27">
         <rule context="tei:div">
           <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="ancestor::tei:l">
         Abstract model violation: Lines may not contain higher-level structural elements such as div.
       </report>
         </rule>
       </pattern>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-div-abstractModel-structure-p-constraint-report-27">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-div-abstractModel-structure-p-constraint-report-28">
         <rule context="tei:div">
           <report xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="ancestor::tei:p or ancestor::tei:ab and not(ancestor::tei:floatingText)">
         Abstract model violation: p and ab may not contain higher-level structural elements such as div.
@@ -16189,17 +16188,17 @@ Suggested values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4
         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">identifies a two dimensional area within the bounding box specified by the other attributes by means of a series of pairs of numbers, each of which gives the x,y coordinates of a point on a line enclosing the area.</a:documentation>
         <list>
           <data type="token">
-            <param name="pattern">(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)</param>
+            <param name="pattern">(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)</param>
           </data>
           <data type="token">
-            <param name="pattern">(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)</param>
+            <param name="pattern">(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)</param>
           </data>
           <data type="token">
-            <param name="pattern">(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)</param>
+            <param name="pattern">(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)</param>
           </data>
           <zeroOrMore>
             <data type="token">
-              <param name="pattern">(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)</param>
+              <param name="pattern">(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)</param>
             </data>
           </zeroOrMore>
         </list>
@@ -16338,7 +16337,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
     <element name="path">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">defines any line passing through two or more points within a surface element. [11.1. Digital Facsimiles 11.2.2. Embedded Transcription]</a:documentation>
       <empty/>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-path-pathmustnotbeclosed-constraint-rule-12">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-path-pathmustnotbeclosed-constraint-rule-13">
         <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="tei:path[@points]">
           <sch:let name="firstPair" value="tokenize( normalize-space( @points ), ' ')[1]"/>
           <sch:let name="lastPair" value="tokenize( normalize-space( @points ), ' ')[last()]"/>
@@ -16364,14 +16363,14 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
           <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">identifies a line within the container or bounding box specified by the parent element by means of a series of two or more pairs of numbers, each of which gives the x,y coordinates of a point on the line.</a:documentation>
           <list>
             <data type="token">
-              <param name="pattern">(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)</param>
+              <param name="pattern">(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)</param>
             </data>
             <data type="token">
-              <param name="pattern">(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)</param>
+              <param name="pattern">(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)</param>
             </data>
             <zeroOrMore>
               <data type="token">
-                <param name="pattern">(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)</param>
+                <param name="pattern">(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)</param>
               </data>
             </zeroOrMore>
           </list>
@@ -17009,14 +17008,14 @@ Sample values include: 1] no; 2] yes; 3] weak; 4] strong</a:documentation>
       </attribute>
     </optional>
   </define>
-  <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-att.repeatable-MINandMAXoccurs-constraint-rule-13">
+  <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-att.repeatable-MINandMAXoccurs-constraint-rule-14">
     <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="*[ @minOccurs  and  @maxOccurs ]">
       <sch:let name="min" value="@minOccurs cast as xs:integer"/>
       <sch:let name="max" value="if ( normalize-space( @maxOccurs ) eq 'unbounded')                         then -1                         else @maxOccurs cast as xs:integer"/>
       <sch:assert test="$max eq -1  or  $max ge $min">@maxOccurs should be greater than or equal to @minOccurs</sch:assert>
     </sch:rule>
   </pattern>
-  <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-att.repeatable-MINandMAXoccurs-constraint-rule-14">
+  <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-att.repeatable-MINandMAXoccurs-constraint-rule-15">
     <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="*[ @minOccurs  and  not( @maxOccurs ) ]">
       <sch:assert test="@minOccurs cast as xs:integer lt 2">When @maxOccurs is not specified, @minOccurs must be 0 or 1</sch:assert>
     </sch:rule>
@@ -17084,7 +17083,7 @@ Sample values include: 1] no; 2] yes; 3] weak; 4] strong</a:documentation>
       </attribute>
     </optional>
   </define>
-  <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-att.identified-spec-in-module-constraint-rule-15">
+  <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-att.identified-spec-in-module-constraint-rule-16">
     <rule xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="tei:elementSpec[@module]|tei:classSpec[@module]|tei:macroSpec[@module]">
       <assert test="         (not(ancestor::tei:schemaSpec | ancestor::tei:TEI | ancestor::tei:teiCorpus)) or         (not(@module) or          (not(//tei:moduleSpec) and not(//tei:moduleRef))  or         (//tei:moduleSpec[@ident = current()/@module]) or          (//tei:moduleRef[@key = current()/@module]))         ">
         Specification <value-of select="@ident"/>: the value of the module attribute ("<value-of select="@module"/>") 
@@ -17103,7 +17102,7 @@ should correspond to an existing module, via a moduleSpec or
       </attribute>
     </optional>
   </define>
-  <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-att.deprecated-validUntil-deprecation-two-month-warning-constraint-rule-16">
+  <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-att.deprecated-validUntil-deprecation-two-month-warning-constraint-rule-17">
     <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="tei:*[@validUntil]">
       <sch:let name="advance_warning_period" value="current-date() + xs:dayTimeDuration('P60D')"/>
       <sch:let name="me_phrase" value="if (@ident)                                                then concat('The ', @ident )                                                else concat('This ',                                                            local-name(.),                                                            ' of ',                                                            ancestor::tei:*[@ident][1]/@ident )"/>
@@ -17115,7 +17114,7 @@ should correspond to an existing module, via a moduleSpec or
       </sch:assert>
     </sch:rule>
   </pattern>
-  <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-att.deprecated-validUntil-deprecation-should-be-explained-constraint-rule-17">
+  <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-att.deprecated-validUntil-deprecation-should-be-explained-constraint-rule-18">
     <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="tei:*[@validUntil][ not( self::valDesc | self::valList | self::defaultVal )]">
       <sch:assert test="child::tei:desc[ @type eq 'deprecationInfo']">
               A deprecated construct should include, whenever possible, an explanation, but this <sch:value-of select="name(.)"/> does not have a child &lt;desc type="deprecationInfo"&gt;</sch:assert>
@@ -17386,7 +17385,7 @@ Sample values include: 1] TEI (text encoding initiative) ; 2] DBK (docbook) ; 3]
       <optional>
         <ref name="standoff-proposal_content"/>
       </optional>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-moduleRef-modref-constraint-rule-18">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-moduleRef-modref-constraint-rule-19">
         <rule xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="tei:moduleRef">
           <report test="* and @key">
 Child elements of <name/> are only allowed when an external module is being loaded
@@ -17400,7 +17399,7 @@ Child elements of <name/> are only allowed when an external module is being load
           <data type="NCName"/>
         </attribute>
       </optional>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-moduleRef-prefix-not-same-prefix-constraint-rule-19">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-moduleRef-prefix-not-same-prefix-constraint-rule-20">
         <rule xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="tei:moduleRef">
           <report test="//*[ not( generate-id(.) eq generate-id(      current() ) ) ]/@prefix = @prefix">The prefix attribute
 	    of <name/> should not match that of any other
@@ -17988,7 +17987,7 @@ Child elements of <name/> are only allowed when an external module is being load
           <ref name="standoff-proposal_outputRendition"/>
         </zeroOrMore>
       </group>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-model-no_dup_default_models-constraint-rule-20">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-model-no_dup_default_models-constraint-rule-21">
         <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="tei:model[ not( parent::tei:modelSequence ) ][ not( @predicate ) ]">
           <sch:let name="output" value="normalize-space( @output )"/>
           <sch:report test="following-sibling::tei:model                             [ not( @predicate )]                             [ normalize-space( @output ) eq $output ]">
@@ -17997,7 +17996,7 @@ Child elements of <name/> are only allowed when an external module is being load
           ("<sch:value-of select="( $output, parent::modelGrp/@output, 'all')[1]"/>")</sch:report>
         </sch:rule>
       </pattern>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-model-no_dup_models-constraint-rule-21">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-model-no_dup_models-constraint-rule-22">
         <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="tei:model[ not( parent::tei:modelSequence ) ][ @predicate ]">
           <sch:let name="predicate" value="normalize-space( @predicate )"/>
           <sch:let name="output" value="normalize-space( @output )"/>
@@ -18122,7 +18121,7 @@ Sample values include: 1] web; 2] print; 3] plain</a:documentation>
           </zeroOrMore>
         </group>
       </group>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-modelSequence-no_outputs_nor_predicates_4_my_kids-constraint-report-33">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-modelSequence-no_outputs_nor_predicates_4_my_kids-constraint-report-34">
         <rule context="tei:modelSequence">
           <sch:report xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="tei:model[@output]" role="warning">The 'model' children
       of a 'modelSequence' element inherit the @output attribute of the
@@ -18394,7 +18393,7 @@ Suggested values include: 1] alternate; 2] default; 3] height; 4] id; 5] label; 
         </optional>
       </group>
       <ns xmlns="http://purl.oclc.org/dsdl/schematron" prefix="s" uri="http://www.ascc.net/xml/schematron"/>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-constraintSpec-sch_no_more-constraint-report-34">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-constraintSpec-sch_no_more-constraint-report-35">
         <rule context="tei:constraintSpec">
           <sch:report xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="tei:constraint/s:*  and  @scheme = ('isoschematron','schematron')">Rules
         in the Schematron 1.* language must be inside a constraintSpec
@@ -18403,7 +18402,7 @@ Suggested values include: 1] alternate; 2] default; 3] height; 4] id; 5] label; 
         </rule>
       </pattern>
       <ns xmlns="http://purl.oclc.org/dsdl/schematron" prefix="sch" uri="http://purl.oclc.org/dsdl/schematron"/>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-constraintSpec-isosch-constraint-report-35">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-constraintSpec-isosch-constraint-report-36">
         <rule context="tei:constraintSpec">
           <sch:report xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="tei:constraint/sch:*  and  not( @scheme eq 'schematron')">Rules
         in the ISO Schematron language must be inside a constraintSpec
@@ -18411,7 +18410,7 @@ Suggested values include: 1] alternate; 2] default; 3] height; 4] id; 5] label; 
         </rule>
       </pattern>
       <ns xmlns="http://purl.oclc.org/dsdl/schematron" prefix="sch" uri="http://purl.oclc.org/dsdl/schematron"/>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-constraintSpec-needrules-constraint-rule-22">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-constraintSpec-needrules-constraint-rule-23">
         <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="tei:macroSpec/tei:constraintSpec[@scheme eq 'schematron']/tei:constraint">
           <sch:report test="sch:assert|sch:report">An ISO Schematron constraint specification for a macro should not
         have an 'assert' or 'report' element without a parent 'rule' element</sch:report>
@@ -18514,12 +18513,12 @@ Suggested values include: 1] schematron (ISO Schematron) </a:documentation>
                   <value-of select="local-name(ancestor::*[@ident][1])"/> should have a closed valList or a datatype</assert>
         </rule>
       </pattern>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-attDef-noDefault4Required-constraint-rule-23">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-attDef-noDefault4Required-constraint-rule-24">
         <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="tei:attDef[@usage eq 'req']">
           <sch:report test="tei:defaultVal">It does not make sense to make "<sch:value-of select="normalize-space(tei:defaultVal)"/>" the default value of @<sch:value-of select="@ident"/>, because that attribute is required.</sch:report>
         </sch:rule>
       </pattern>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-attDef-defaultIsInClosedList-twoOrMore-constraint-rule-24">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-attDef-defaultIsInClosedList-twoOrMore-constraint-rule-25">
         <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="tei:attDef[   tei:defaultVal   and   tei:valList[@type eq 'closed']   and   tei:datatype[    @maxOccurs &gt; 1    or    @minOccurs &gt; 1    or    @maxOccurs = 'unbounded'    ]   ]">
           <sch:assert test="     tokenize(normalize-space(tei:defaultVal),' ')     =     tei:valList/tei:valItem/@ident">In the <sch:value-of select="local-name(ancestor::*[@ident][1])"/> defining
         <sch:value-of select="ancestor::*[@ident][1]/@ident"/> the default value of the
@@ -18527,7 +18526,7 @@ Suggested values include: 1] schematron (ISO Schematron) </a:documentation>
         values</sch:assert>
         </sch:rule>
       </pattern>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-attDef-defaultIsInClosedList-one-constraint-rule-25">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-attDef-defaultIsInClosedList-one-constraint-rule-26">
         <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="tei:attDef[   tei:defaultVal   and   tei:valList[@type eq 'closed']   and   tei:datatype[    not(@maxOccurs)    or (    if ( @maxOccurs castable as xs:integer )     then ( @maxOccurs cast as xs:integer eq 1 )     else false()    )]   ]">
           <sch:assert test="string(tei:defaultVal)      =      tei:valList/tei:valItem/@ident">In the <sch:value-of select="local-name(ancestor::*[@ident][1])"/> defining
         <sch:value-of select="ancestor::*[@ident][1]/@ident"/> the default value of the
@@ -18616,13 +18615,13 @@ Suggested values include: 1] schematron (ISO Schematron) </a:documentation>
       <zeroOrMore>
         <ref name="standoff-proposal_dataFacet"/>
       </zeroOrMore>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-dataRef-restrictDataFacet-constraint-rule-26">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-dataRef-restrictDataFacet-constraint-rule-27">
         <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="tei:dataRef[tei:dataFacet]">
           <sch:assert test="@name" role="nonfatal">Data facets can only be specified for references to datatypes specified by
           XML Schemas: Part 2: Datatypes</sch:assert>
         </sch:rule>
       </pattern>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-dataRef-restrictAttRestriction-constraint-rule-27">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-dataRef-restrictAttRestriction-constraint-rule-28">
         <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="tei:dataRef[tei:dataFacet]">
           <sch:report test="@restriction" role="nonfatal">The attribute restriction cannot be used when dataFacet elements are present.</sch:report>
         </sch:rule>
@@ -18831,16 +18830,16 @@ Suggested values include: 1] schematron (ISO Schematron) </a:documentation>
       <empty/>
     </element>
   </define>
-  <define name="standoff-proposal_ldb">
-    <element name="ldb" ns="http://www.tei-c.org/proposal/standoff/ns">
-      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(linked data block) Container element for linked data, contextual information, and stand-off annotations embedded in a TEI document</a:documentation>
+  <define name="standoff-proposal_standOff">
+    <element name="standOff" ns="http://www.tei-c.org/proposal/standoff/ns">
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Container element for linked data, contextual information, and stand-off annotations embedded in a TEI document</a:documentation>
       <oneOrMore>
-        <ref name="standoff-proposal_model.annotation"/>
+        <ref name="standoff-proposal_model.standOffPart"/>
       </oneOrMore>
       <ns xmlns="http://purl.oclc.org/dsdl/schematron" prefix="prop" uri="http://www.tei-c.org/proposal/standoff/ns"/>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-ldb-nestedLDBshouldBtyped-constraint-assert-41">
-        <rule context="prop:ldb">
-          <sch:assert xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="@type or not(ancestor::prop:ldb)">This <sch:name/> element must have a @type attribute, since it is nested inside an <sch:name/>
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-standOff-nestedSTANDOFFshouldBtyped-constraint-assert-41">
+        <rule context="prop:standOff">
+          <sch:assert xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="@type or not(ancestor::prop:standOff)">This <sch:name/> element must have a @type attribute, since it is nested inside an <sch:name/>
                </sch:assert>
         </rule>
       </pattern>
@@ -18868,12 +18867,12 @@ Suggested values include: 1] schematron (ISO Schematron) </a:documentation>
     <element name="acrostic" ns="http://www.tei-c.org/proposal/standoff/ns">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">a derived element that contains the word or phrase (including any appropriate phrase-level encoding like persName) that are spelled by the initial letters of a passage (e.g., the first letter of each line of a stanza or poem).</a:documentation>
       <ref name="standoff-proposal_macro.phraseSeq"/>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-acrostic-acrostic_attrs-constraint-report-40">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-acrostic-acrostic_attrs-constraint-report-41">
         <rule context="prop:acrostic">
           <sch:report xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="(@target|@match) and @components">Either @target, @target and @match, or @components should be used to indicate the acrostic, not both @target and @components</sch:report>
         </rule>
       </pattern>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-acrostic-acrostic_attrs-constraint-report-41">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-acrostic-acrostic_attrs-constraint-report-42">
         <rule context="prop:acrostic">
           <sch:report xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="@match[not(substring(normalize-space(.),1,1) eq '/')] and not(@target)">The @target attribute must be specified to indicate the context for @match</sch:report>
         </rule>
@@ -18916,13 +18915,13 @@ Suggested values include: 1] schematron (ISO Schematron) </a:documentation>
           </oneOrMore>
         </list>
       </attribute>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-anagram-target-one_ptr_iff_content-constraint-rule-28">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-anagram-target-one_ptr_iff_content-constraint-rule-29">
         <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="tei:anagram[normalize-space(.) eq '']">
           <sch:let name="targets" value="tokenize( normalize-space( @target ),' ')"/>
           <sch:assert test="count( $targets ) gt 1">An empty ＜anagram＞ element should point to 2 or more targets</sch:assert>
         </sch:rule>
       </pattern>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-anagram-target-one_ptr_iff_content-constraint-rule-29">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="standoff-proposal-anagram-target-one_ptr_iff_content-constraint-rule-30">
         <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" context="tei:anagram[normalize-space(.) ne '']">
           <sch:let name="targets" value="tokenize( normalize-space( @target ),' ')"/>
           <sch:assert test="count( $targets ) eq 1">An ＜anagram＞ element that contains an anagram should point to only 1 target</sch:assert>
@@ -18953,7 +18952,7 @@ Suggested values include: 1] schematron (ISO Schematron) </a:documentation>
       <empty/>
     </element>
   </define>
-  <define name="standoff-proposal_model.annotation">
+  <define name="standoff-proposal_model.standOffPart">
     <choice>
       <ref name="standoff-proposal_model.global.meta"/>
       <ref name="standoff-proposal_model.biblLike"/>

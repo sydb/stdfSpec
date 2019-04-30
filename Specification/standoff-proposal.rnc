@@ -8,9 +8,9 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2019-04-27T22:17:57Z. .
+# Schema generated from ODD source 2019-04-29T17:57:30Z. .
 # TEI Edition: Version 3.5.0. Last updated on
-#	19th April 2019, revision 2374d5a
+#	29th January 2019, revision 282facd
 # TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
 #  Proposed changes to TEI to incorporate stand-off markup and other supratextual features 
 
@@ -61,7 +61,7 @@ anyElement-content =
     (text | anyElement-content)*
   }
   >> sch:pattern [
-       id = "d8e120290-constraint"
+       id = "d8e120280-constraint"
        "\x{a}" ~
        "         "
        sch:rule [
@@ -92,7 +92,7 @@ anyElement-datatype =
     (text | anyElement-datatype)*
   }
   >> sch:pattern [
-       id = "d8e121556-constraint"
+       id = "d8e121564-constraint"
        "\x{a}" ~
        "         "
        sch:rule [
@@ -400,9 +400,9 @@ sch:pattern [
     "            "
     sch:assert [
       test = "string-length(.) gt 0"
-      " @calendar indicates the system or calendar to\x{a}" ~
-      "              which the date represented by the content of this element belongs, but this\x{a}" ~
-      "              "
+      "\x{a}" ~
+      "@calendar indicates the system or calendar to which the date represented by the content of this element\x{a}" ~
+      "belongs, but this "
       sch:name [ ]
       " element has no textual content."
     ]
@@ -2379,7 +2379,7 @@ standoff-proposal_model.resourceLike =
   | standoff-proposal_text
   | standoff-proposal_facsimile
   | standoff-proposal_sourceDoc
-  | standoff-proposal_ldb
+  | standoff-proposal_standOff
 standoff-proposal_model.objectLike =
   standoff-proposal_object | standoff-proposal_listObject
 standoff-proposal_att.personal.attributes =
@@ -2435,7 +2435,7 @@ standoff-proposal_p =
     standoff-proposal_macro.paraContent
     >> sch:pattern [
          id =
-           "standoff-proposal-p-abstractModel-structure-p-constraint-report-4"
+           "standoff-proposal-p-abstractModel-structure-p-constraint-report-5"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -2457,7 +2457,7 @@ standoff-proposal_p =
        ]
     >> sch:pattern [
          id =
-           "standoff-proposal-p-abstractModel-structure-l-constraint-report-5"
+           "standoff-proposal-p-abstractModel-structure-l-constraint-report-6"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -2619,7 +2619,7 @@ standoff-proposal_desc =
     standoff-proposal_macro.limitedContent
     >> sch:pattern [
          id =
-           "standoff-proposal-desc-deprecationInfo-only-in-deprecated-constraint-rule-9"
+           "standoff-proposal-desc-deprecationInfo-only-in-deprecated-constraint-rule-10"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -2989,7 +2989,7 @@ standoff-proposal_ptr =
   element tei:ptr {
     empty
     >> sch:pattern [
-         id = "standoff-proposal-ptr-ptrAtts-constraint-report-6"
+         id = "standoff-proposal-ptr-ptrAtts-constraint-report-7"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -3023,7 +3023,7 @@ standoff-proposal_ref =
   element tei:ref {
     standoff-proposal_macro.paraContent
     >> sch:pattern [
-         id = "standoff-proposal-ref-refAtts-constraint-report-7"
+         id = "standoff-proposal-ref-refAtts-constraint-report-8"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -3068,7 +3068,7 @@ standoff-proposal_list =
       standoff-proposal_model.global*)*)
     >> sch:pattern [
          id =
-           "standoff-proposal-list-gloss-list-must-have-labels-constraint-rule-10"
+           "standoff-proposal-list-gloss-list-must-have-labels-constraint-rule-11"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -3557,7 +3557,7 @@ standoff-proposal_relatedItem =
       | standoff-proposal_model.ptrLike)?)
     >> sch:pattern [
          id =
-           "standoff-proposal-relatedItem-targetorcontent1-constraint-report-8"
+           "standoff-proposal-relatedItem-targetorcontent1-constraint-report-9"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -3615,7 +3615,7 @@ standoff-proposal_l =
       | standoff-proposal_model.global)*)
     >> sch:pattern [
          id =
-           "standoff-proposal-l-abstractModel-structure-l-constraint-report-9"
+           "standoff-proposal-l-abstractModel-structure-l-constraint-report-10"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -3670,7 +3670,7 @@ standoff-proposal_lg =
              test =
                "count(descendant::tei:lg|descendant::tei:l|descendant::tei:gap) > 0"
              "An lg element\x{a}" ~
-             "        must contain at least one child l, lg, or gap element."
+             "        must contain at least one child l, lg or gap element."
            ]
            "\x{a}" ~
            "            "
@@ -3680,7 +3680,7 @@ standoff-proposal_lg =
        ]
     >> sch:pattern [
          id =
-           "standoff-proposal-lg-abstractModel-structure-l-constraint-report-10"
+           "standoff-proposal-lg-abstractModel-structure-l-constraint-report-11"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -3835,7 +3835,7 @@ standoff-proposal_s =
   element tei:s {
     standoff-proposal_macro.phraseSeq
     >> sch:pattern [
-         id = "standoff-proposal-s-noNestedS-constraint-report-11"
+         id = "standoff-proposal-s-noNestedS-constraint-report-12"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -3968,7 +3968,7 @@ standoff-proposal_span =
   element tei:span {
     standoff-proposal_macro.phraseSeq.limited
     >> sch:pattern [
-         id = "standoff-proposal-span-targetfrom-constraint-report-12"
+         id = "standoff-proposal-span-targetfrom-constraint-report-13"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -3990,7 +3990,7 @@ standoff-proposal_span =
          "         "
        ]
     >> sch:pattern [
-         id = "standoff-proposal-span-targetto-constraint-report-13"
+         id = "standoff-proposal-span-targetto-constraint-report-14"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -4012,7 +4012,7 @@ standoff-proposal_span =
          "         "
        ]
     >> sch:pattern [
-         id = "standoff-proposal-span-tonotfrom-constraint-report-14"
+         id = "standoff-proposal-span-tonotfrom-constraint-report-15"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -4033,7 +4033,7 @@ standoff-proposal_span =
          "         "
        ]
     >> sch:pattern [
-         id = "standoff-proposal-span-tofrom-constraint-report-15"
+         id = "standoff-proposal-span-tofrom-constraint-report-16"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -5748,7 +5748,7 @@ standoff-proposal_quotation =
     (standoff-proposal_model.pLike*)
     >> sch:pattern [
          id =
-           "standoff-proposal-quotation-quotationContents-constraint-report-16"
+           "standoff-proposal-quotation-quotationContents-constraint-report-17"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -6664,7 +6664,7 @@ standoff-proposal_ab =
     standoff-proposal_macro.paraContent
     >> sch:pattern [
          id =
-           "standoff-proposal-ab-abstractModel-structure-ab-constraint-report-17"
+           "standoff-proposal-ab-abstractModel-structure-ab-constraint-report-18"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -6686,7 +6686,7 @@ standoff-proposal_ab =
        ]
     >> sch:pattern [
          id =
-           "standoff-proposal-ab-abstractModel-structure-l-constraint-report-18"
+           "standoff-proposal-ab-abstractModel-structure-l-constraint-report-19"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -6964,7 +6964,7 @@ standoff-proposal_dimensions =
     ((standoff-proposal_dim | standoff-proposal_model.dimLike)*)
     >> sch:pattern [
          id =
-           "standoff-proposal-dimensions-duplicateDim-constraint-report-19"
+           "standoff-proposal-dimensions-duplicateDim-constraint-report-20"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -6987,7 +6987,7 @@ standoff-proposal_dimensions =
        ]
     >> sch:pattern [
          id =
-           "standoff-proposal-dimensions-duplicateDim-constraint-report-20"
+           "standoff-proposal-dimensions-duplicateDim-constraint-report-21"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -7010,7 +7010,7 @@ standoff-proposal_dimensions =
        ]
     >> sch:pattern [
          id =
-           "standoff-proposal-dimensions-duplicateDim-constraint-report-21"
+           "standoff-proposal-dimensions-duplicateDim-constraint-report-22"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -7259,7 +7259,7 @@ standoff-proposal_msIdentifier =
       | standoff-proposal_altIdentifier)*)
     >> sch:pattern [
          id =
-           "standoff-proposal-msIdentifier-msId_minimal-constraint-report-22"
+           "standoff-proposal-msIdentifier-msId_minimal-constraint-report-23"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -8714,7 +8714,7 @@ standoff-proposal_relation =
        ]
     >> sch:pattern [
          id =
-           "standoff-proposal-relation-activemutual-constraint-report-23"
+           "standoff-proposal-relation-activemutual-constraint-report-24"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -8733,7 +8733,7 @@ standoff-proposal_relation =
        ]
     >> sch:pattern [
          id =
-           "standoff-proposal-relation-activepassive-constraint-report-24"
+           "standoff-proposal-relation-activepassive-constraint-report-25"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -8958,7 +8958,7 @@ standoff-proposal_objectIdentifier =
       | standoff-proposal_address)*)
     >> sch:pattern [
          id =
-           "standoff-proposal-objectIdentifier-objectIdentifier_minimal-constraint-report-25"
+           "standoff-proposal-objectIdentifier-objectIdentifier_minimal-constraint-report-26"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -9478,7 +9478,7 @@ standoff-proposal_shift =
 standoff-proposal_annotationBlock =
   ## groups together various annotations, e.g. for parallel interpretations of a spoken segment. [8.4.6. Analytic Coding]
   element tei:annotationBlock {
-    (standoff-proposal_model.annotation+
+    (standoff-proposal_model.standOffPart+
      | (standoff-proposal_model.OABody+,
         standoff-proposal_model.OATarget+)),
     standoff-proposal_att.notated.attributes,
@@ -9511,7 +9511,6 @@ standoff-proposal_att.witnessed.attribute.wit =
   }?
 standoff-proposal_att.textCritical.attributes =
   standoff-proposal_att.written.attributes,
-  standoff-proposal_att.typed.attributes,
   standoff-proposal_att.textCritical.attribute.type,
   standoff-proposal_att.textCritical.attribute.cause,
   standoff-proposal_att.textCritical.attribute.varSeq,
@@ -9747,7 +9746,7 @@ standoff-proposal_variantEncoding =
     }
     >> sch:pattern [
          id =
-           "standoff-proposal-variantEncoding-location-variantEncodingLocation-constraint-rule-11"
+           "standoff-proposal-variantEncoding-location-variantEncodingLocation-constraint-rule-12"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -9882,7 +9881,7 @@ standoff-proposal_div =
        standoff-proposal_model.global*)*)?)
     >> sch:pattern [
          id =
-           "standoff-proposal-div-abstractModel-structure-l-constraint-report-26"
+           "standoff-proposal-div-abstractModel-structure-l-constraint-report-27"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -9903,7 +9902,7 @@ standoff-proposal_div =
        ]
     >> sch:pattern [
          id =
-           "standoff-proposal-div-abstractModel-structure-p-constraint-report-27"
+           "standoff-proposal-div-abstractModel-structure-p-constraint-report-28"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -10400,18 +10399,10 @@ standoff-proposal_att.coordinated.attribute.points =
   ## identifies a two dimensional area within the bounding box specified by the other attributes by means of a series of pairs of numbers, each of which gives the x,y coordinates of a point on a line enclosing the area.
   attribute points {
     list {
-      xsd:token {
-        pattern = "(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)"
-      },
-      xsd:token {
-        pattern = "(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)"
-      },
-      xsd:token {
-        pattern = "(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)"
-      },
-      xsd:token {
-        pattern = "(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)"
-      }*
+      xsd:token { pattern = "(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)" },
+      xsd:token { pattern = "(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)" },
+      xsd:token { pattern = "(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)" },
+      xsd:token { pattern = "(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)" }*
     }
   }?
 
@@ -10502,7 +10493,7 @@ standoff-proposal_path =
     empty
     >> sch:pattern [
          id =
-           "standoff-proposal-path-pathmustnotbeclosed-constraint-rule-12"
+           "standoff-proposal-path-pathmustnotbeclosed-constraint-rule-13"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -10571,13 +10562,13 @@ standoff-proposal_path =
     attribute points {
       list {
         xsd:token {
-          pattern = "(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)"
+          pattern = "(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)"
         },
         xsd:token {
-          pattern = "(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)"
+          pattern = "(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)"
         },
         xsd:token {
-          pattern = "(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)"
+          pattern = "(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)"
         }*
       }
     }?,
@@ -11154,7 +11145,7 @@ standoff-proposal_att.repeatable.attribute.maxOccurs =
   }?
 sch:pattern [
   id =
-    "standoff-proposal-att.repeatable-MINandMAXoccurs-constraint-rule-13"
+    "standoff-proposal-att.repeatable-MINandMAXoccurs-constraint-rule-14"
   "\x{a}" ~
   "      "
   sch:rule [
@@ -11183,7 +11174,7 @@ sch:pattern [
 ]
 sch:pattern [
   id =
-    "standoff-proposal-att.repeatable-MINandMAXoccurs-constraint-rule-14"
+    "standoff-proposal-att.repeatable-MINandMAXoccurs-constraint-rule-15"
   "\x{a}" ~
   "      "
   sch:rule [
@@ -11240,7 +11231,7 @@ standoff-proposal_att.identified.attribute.module =
   attribute module { xsd:NCName }?
 sch:pattern [
   id =
-    "standoff-proposal-att.identified-spec-in-module-constraint-rule-15"
+    "standoff-proposal-att.identified-spec-in-module-constraint-rule-16"
   "\x{a}" ~
   "      "
   sch:rule [
@@ -11273,7 +11264,7 @@ standoff-proposal_att.deprecated.attribute.validUntil =
   attribute validUntil { xsd:date }?
 sch:pattern [
   id =
-    "standoff-proposal-att.deprecated-validUntil-deprecation-two-month-warning-constraint-rule-16"
+    "standoff-proposal-att.deprecated-validUntil-deprecation-two-month-warning-constraint-rule-17"
   "\x{a}" ~
   "      "
   sch:rule [
@@ -11326,7 +11317,7 @@ sch:pattern [
 ]
 sch:pattern [
   id =
-    "standoff-proposal-att.deprecated-validUntil-deprecation-should-be-explained-constraint-rule-17"
+    "standoff-proposal-att.deprecated-validUntil-deprecation-should-be-explained-constraint-rule-18"
   "\x{a}" ~
   "      "
   sch:rule [
@@ -11533,7 +11524,7 @@ standoff-proposal_moduleRef =
   element tei:moduleRef {
     (standoff-proposal_content?)
     >> sch:pattern [
-         id = "standoff-proposal-moduleRef-modref-constraint-rule-18"
+         id = "standoff-proposal-moduleRef-modref-constraint-rule-19"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -11560,7 +11551,7 @@ standoff-proposal_moduleRef =
      attribute prefix { xsd:NCName }?)
     >> sch:pattern [
          id =
-           "standoff-proposal-moduleRef-prefix-not-same-prefix-constraint-rule-19"
+           "standoff-proposal-moduleRef-prefix-not-same-prefix-constraint-rule-20"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -11896,7 +11887,7 @@ standoff-proposal_model =
      standoff-proposal_outputRendition*)
     >> sch:pattern [
          id =
-           "standoff-proposal-model-no_dup_default_models-constraint-rule-20"
+           "standoff-proposal-model-no_dup_default_models-constraint-rule-21"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -11931,7 +11922,7 @@ standoff-proposal_model =
          "         "
        ]
     >> sch:pattern [
-         id = "standoff-proposal-model-no_dup_models-constraint-rule-21"
+         id = "standoff-proposal-model-no_dup_models-constraint-rule-22"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -12031,7 +12022,7 @@ standoff-proposal_modelSequence =
       standoff-proposal_model*))
     >> sch:pattern [
          id =
-           "standoff-proposal-modelSequence-no_outputs_nor_predicates_4_my_kids-constraint-report-33"
+           "standoff-proposal-modelSequence-no_outputs_nor_predicates_4_my_kids-constraint-report-34"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -12264,7 +12255,7 @@ standoff-proposal_constraintSpec =
        ]
     >> sch:pattern [
          id =
-           "standoff-proposal-constraintSpec-sch_no_more-constraint-report-34"
+           "standoff-proposal-constraintSpec-sch_no_more-constraint-report-35"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -12291,7 +12282,7 @@ standoff-proposal_constraintSpec =
        ]
     >> sch:pattern [
          id =
-           "standoff-proposal-constraintSpec-isosch-constraint-report-35"
+           "standoff-proposal-constraintSpec-isosch-constraint-report-36"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -12317,7 +12308,7 @@ standoff-proposal_constraintSpec =
        ]
     >> sch:pattern [
          id =
-           "standoff-proposal-constraintSpec-needrules-constraint-rule-22"
+           "standoff-proposal-constraintSpec-needrules-constraint-rule-23"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -12422,7 +12413,7 @@ standoff-proposal_attDef =
        ]
     >> sch:pattern [
          id =
-           "standoff-proposal-attDef-noDefault4Required-constraint-rule-23"
+           "standoff-proposal-attDef-noDefault4Required-constraint-rule-24"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -12445,7 +12436,7 @@ standoff-proposal_attDef =
        ]
     >> sch:pattern [
          id =
-           "standoff-proposal-attDef-defaultIsInClosedList-twoOrMore-constraint-rule-24"
+           "standoff-proposal-attDef-defaultIsInClosedList-twoOrMore-constraint-rule-25"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -12477,7 +12468,7 @@ standoff-proposal_attDef =
        ]
     >> sch:pattern [
          id =
-           "standoff-proposal-attDef-defaultIsInClosedList-one-constraint-rule-25"
+           "standoff-proposal-attDef-defaultIsInClosedList-one-constraint-rule-26"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -12561,7 +12552,7 @@ standoff-proposal_dataRef =
     (standoff-proposal_dataFacet*)
     >> sch:pattern [
          id =
-           "standoff-proposal-dataRef-restrictDataFacet-constraint-rule-26"
+           "standoff-proposal-dataRef-restrictDataFacet-constraint-rule-27"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -12582,7 +12573,7 @@ standoff-proposal_dataRef =
        ]
     >> sch:pattern [
          id =
-           "standoff-proposal-dataRef-restrictAttRestriction-constraint-rule-27"
+           "standoff-proposal-dataRef-restrictAttRestriction-constraint-rule-28"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -12709,25 +12700,25 @@ standoff-proposal_empty =
     empty, standoff-proposal_att.global.attributes, empty
   }
 
-standoff-proposal_ldb =
-  ## (linked data block) Container element for linked data, contextual information, and stand-off annotations embedded in a TEI document
-  element ldb {
-    (standoff-proposal_model.annotation+)
+standoff-proposal_standOff =
+  ## Container element for linked data, contextual information, and stand-off annotations embedded in a TEI document
+  element standOff {
+    (standoff-proposal_model.standOffPart+)
     >> sch:ns [
          prefix = "prop"
          uri = "http://www.tei-c.org/proposal/standoff/ns"
        ]
     >> sch:pattern [
          id =
-           "standoff-proposal-ldb-nestedLDBshouldBtyped-constraint-assert-41"
+           "standoff-proposal-standOff-nestedSTANDOFFshouldBtyped-constraint-assert-41"
          "\x{a}" ~
          "            "
          sch:rule [
-           context = "prop:ldb"
+           context = "prop:standOff"
            "\x{a}" ~
            "               "
            sch:assert [
-             test = "@type or not(ancestor::prop:ldb)"
+             test = "@type or not(ancestor::prop:standOff)"
              "This "
              sch:name [ ]
              " element must have a @type attribute, since it is nested inside an "
@@ -12762,7 +12753,7 @@ standoff-proposal_acrostic =
     standoff-proposal_macro.phraseSeq
     >> sch:pattern [
          id =
-           "standoff-proposal-acrostic-acrostic_attrs-constraint-report-40"
+           "standoff-proposal-acrostic-acrostic_attrs-constraint-report-41"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -12781,7 +12772,7 @@ standoff-proposal_acrostic =
        ]
     >> sch:pattern [
          id =
-           "standoff-proposal-acrostic-acrostic_attrs-constraint-report-41"
+           "standoff-proposal-acrostic-acrostic_attrs-constraint-report-42"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -12823,7 +12814,7 @@ standoff-proposal_anagram =
     }
     >> sch:pattern [
          id =
-           "standoff-proposal-anagram-target-one_ptr_iff_content-constraint-rule-28"
+           "standoff-proposal-anagram-target-one_ptr_iff_content-constraint-rule-29"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -12848,7 +12839,7 @@ standoff-proposal_anagram =
        ]
     >> sch:pattern [
          id =
-           "standoff-proposal-anagram-target-one_ptr_iff_content-constraint-rule-29"
+           "standoff-proposal-anagram-target-one_ptr_iff_content-constraint-rule-30"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -12887,7 +12878,7 @@ standoff-proposal_listAnnotation =
     standoff-proposal_att.declaring.attributes,
     empty
   }
-standoff-proposal_model.annotation =
+standoff-proposal_model.standOffPart =
   standoff-proposal_model.global.meta
   | standoff-proposal_model.biblLike
   | standoff-proposal_model.listLike

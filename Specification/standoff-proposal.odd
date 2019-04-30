@@ -38,6 +38,20 @@
 	    <surname>Meoni</surname>
 	  </persName>
 	</respStmt>
+	<respStmt xml:id="hc">
+	  <resp>contributor</resp>
+	  <persName ref="https://github.com/hcayless">
+	    <forename>Hugh</forename>
+	    <surname>Cayless</surname>
+	  </persName>
+	</respStmt>
+	<respStmt xml:id="mt">
+	  <resp>contributor</resp>
+	  <persName ref="https://github.com/tuurma">
+	    <forename>Magdalena</forename>
+	    <surname>Turska</surname>
+	  </persName>
+	</respStmt>
       </titleStmt>
       <publicationStmt>
 	<authority>Berlin task force “standoff”</authority>
@@ -50,6 +64,20 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2019-04-29" who="#sb">
+	Per this morning's meeting with <persName
+	ref="#lr">Laurent</persName>, <persName
+	ref="#hc">Hugh</persName>, <persName
+	ref="#mt">Magdalena</persName> and myself:
+	<list>
+	  <item>use <gi>prop:standOff</gi> instead of
+	  <gi>prop:ldb</gi> — I am personally still in favor of
+	  <gi>ldb</gi>, but using that here makes <persName
+	  ref="#lr">Laurent</persName> too nervous, as he is committed
+	  to <gi>standOff</gi></item>
+	  <item>Change <name>model.annotation</name> to <name>model.standOffPart</name>.</item>
+	</list>
+      </change>
       <change when="2018-11-15" who="#sb">
 	<list>
 	  <item>Move <gi>schemaSpec</gi> into <gi>back</gi>, thus
@@ -104,7 +132,7 @@
 	  develop a counter proposal. The main sticking point was that
 	  Council objected (quite strongly) to the idea of having
 	  <gi>teiHeader</gi> be a child of the new <gi>standOff</gi>
-	  (herein called <gi>ldb</gi>). Furthermore, Council wanted to
+	  (herein called <gi>standOff</gi>). Furthermore, Council wanted to
 	  explore the relationship between the stand-off annotations
 	  being recommended and the <ref
 	  target="http://www.openannotation.org/spec/core/">OADM</ref>.</p>
@@ -116,8 +144,8 @@
 	  basic gist of the solution is to allow <gi>TEI</gi> to nest
 	  within <gi>TEI</gi> instead. The result is that a
 	  <gi>teiHeader</gi> can be closely bound to the
-	  <gi>ldb</gi> by being a child of the same <gi>TEI</gi>,
-	  whether the <gi>ldb</gi> is used inside an existing TEI
+	  <gi>standOff</gi> by being a child of the same <gi>TEI</gi>,
+	  whether the <gi>standOff</gi> is used inside an existing TEI
 	  structure or free-standing. The (desirable) side-effect is
 	  that <gi>teiCorpus</gi> is no longer needed.</p>
 
@@ -136,29 +164,29 @@
   stand-off proposal</ref>, @laurentromary asked for exactly the same
   thing, except with one significant change:
   <list>
-    <item>add <gi>ldb</gi> to <name type="class">model.resourceLike</name></item>
+    <item>add <gi>standOff</gi> to <name type="class">model.resourceLike</name></item>
   </list>
-  HOWEVER, he also asked that the <gi>ldb</gi> element have
+  HOWEVER, he also asked that the <gi>standOff</gi> element have
   <gi>teiHeader</gi> as a child:
 
-  <eg xml:space="preserve">  ldb = teiHeader?, model.resourceLike*, listAnnotation*</eg>
+  <eg xml:space="preserve">  standOff = teiHeader?, model.resourceLike*, listAnnotation*</eg>
 
   This is because he wants the document used for stand off annotations
   to also stand on its own. We (Council) really really did not like
   the idea of allowing <gi>teiHeader</gi> (and other <name
   type="class">model.resourceLike</name> elements) as a child (or
-  children) of <gi>ldb</gi>. Thus my proposed new structure for a
+  children) of <gi>standOff</gi>. Thus my proposed new structure for a
   TEI document is:
 
   <eg xml:space="preserve">  start = TEI
   TEI = teiHeader, ( model.resourceLike*, TEI* )
-  model.resourceLike = \text | facsimile | fsdDecl | ldb | sourceDoc</eg>
+  model.resourceLike = \text | facsimile | fsdDecl | standOff | sourceDoc</eg>
 
   <note>The content model of <gi>TEI</gi> in this example is a
   simplification of the actual proposed content model, which would
   require that you have at least one child of <gi>TEI</gi>: either one
   element from <name type="class">model.resourceLike</name> or a
-  <gi>TEI</gi>.</note> This allows an <gi>ldb</gi> to
+  <gi>TEI</gi>.</note> This allows an <gi>standOff</gi> to
   be associated very closely with a <gi>teiHeader</gi> (by being
   wrapped in a <gi>TEI</gi>) whether it is a document of its own or a
   child of another <gi>TEI</gi> document.</p>
@@ -170,7 +198,7 @@
 
   <eg xml:space="preserve">  start = TEI
   TEI = teiHeader, model.resourceLike+
-  model.resourceLike = TEI | \text | facsimile | fsdDecl | ldb | sourceDoc</eg>
+  model.resourceLike = TEI | \text | facsimile | fsdDecl | standOff | sourceDoc</eg>
 
   That’s good, but it also allows some new weird things (in addition
   to the weird things we already allow but probably shouldn’t), in
@@ -182,12 +210,12 @@
    <TEI>
      <teiHeader><!-- ... --></teiHeader>
     <sourceDoc><!-- ... --></sourceDoc>
-    <ldb><!-- ... --></ldb>
+    <standOff><!-- ... --></standOff>
   </TEI>
   <fsdDecl><!-- ... --></fsdDecl>
   <text><!-- ... --></text>
   <text><!-- ... --></text>
-  <ldb><!-- ... --></ldb>
+  <standOff><!-- ... --></standOff>
   <TEI>
     <teiHeader><!-- ... --></teiHeader>
     <text><!-- ... --></text>
@@ -209,7 +237,7 @@
 	  <head>For somewhere in #DRSP:</head>
 	  <p>In the event there is a speech that is assigned to a
 	  character that is not listed in the source cast list, a
-	  <gi>castList</gi> may be encoded inside the <gi>ldb</gi>
+	  <gi>castList</gi> may be encoded inside the <gi>standOff</gi>
 	  element to provide an element to which the <att>who</att> of
 	  <gi>sp</gi> may point.</p>
 	</div>
@@ -229,8 +257,8 @@
 	</div>
 	<div>
 	  <head>For somewhere in SO(?):</head>
-	    <p>The <gi>ldb</gi> or <soCalled>linked data
-	    block</soCalled> element is a catch-all element intended
+	    <p>The <gi>standOff</gi> (or <soCalled>linked data
+	    block</soCalled>) element is a catch-all element intended
 	    for holding content that is neither transcribed from the
 	    source document, nor strictly speaking metadata about said
 	    document. It may also be used to hold transcribed text
@@ -246,7 +274,7 @@
 	    speaking characters in a drama who were not mentioned in
 	    the source cast list.</p>
 	    <p>Examples of the latter include encoding source
-	    authorial footnotes in the <gi>ldb</gi> in order to more
+	    authorial footnotes in the <gi>standOff</gi> in order to more
 	    easily represent source pages when a footnote runs across
 	    a page break, or to encode words that appear in the source
 	    text as part of an acrostic (using <gi>acrostic</gi> in
@@ -255,7 +283,6 @@
       </div>
     </body>
     <back>
-      <!-- http://wiki.tei-c.org/index.php/Proposal_for_@selector_attribute_on_rendition -->
       <schemaSpec ident="standoff-proposal" start="TEI">
 	<desc>Proposed changes to TEI to incorporate stand-off markup
 	and other supratextual features</desc>
@@ -310,17 +337,16 @@
 	</elementSpec>
 
 	<!-- Create new "standOff" module for the new elements
-	     introduced here: <ldb>, <listAnnotation>, <extraTextual>,
+	     introduced here: <standOff>, <listAnnotation>, <extraTextual>,
 	     <acrostic>, and <anagram>. -->
 	<moduleSpec ident="standOff">
 	  <desc>Elements to collect stand-off annotations and
 	  contextual information in a TEI document</desc>
 	</moduleSpec>
 
-	<!--  The entry point to stand-off annotations, as member of model.resourceLike-->
-	<elementSpec ident="ldb" mode="add" module="standOff"
+	<!--  The entry point to stand-off annotations, as member of model.resourceLike -->
+	<elementSpec ident="standOff" mode="add" module="standOff"
 		     ns="http://www.tei-c.org/proposal/standoff/ns">
-	  <gloss versionDate="2018-10-30">linked data block</gloss>
 	  <desc>Container element for linked data, contextual
 	  information, and stand-off annotations embedded in a TEI
 	  document</desc>
@@ -331,16 +357,16 @@
 	    <memberOf key="att.declaring"/>
 	  </classes>
 	  <content>
-	    <classRef key="model.annotation" minOccurs="1" maxOccurs="unbounded"/>
+	    <classRef key="model.standOffPart" minOccurs="1" maxOccurs="unbounded"/>
 	  </content>
 	  <constraintSpec ident="proposalNS" scheme="schematron" mode="add">
 	    <constraint>
 	      <sch:ns prefix="prop" uri="http://www.tei-c.org/proposal/standoff/ns"/>
 	    </constraint>
 	  </constraintSpec>
-	  <constraintSpec ident="nestedLDBshouldBtyped" scheme="schematron" mode="add">
+	  <constraintSpec ident="nestedSTANDOFFshouldBtyped" scheme="schematron" mode="add">
 	    <constraint>
-	      <sch:assert test="@type or not(ancestor::prop:ldb)">This <sch:name/> element must have a @type attribute, since it is nested inside an <sch:name/></sch:assert>
+	      <sch:assert test="@type or not(ancestor::prop:standOff)">This <sch:name/> element must have a @type attribute, since it is nested inside an <sch:name/></sch:assert>
 	    </constraint>
 	  </constraintSpec>
 	  <remarks>
@@ -352,7 +378,7 @@
 	  <desc>Container element for extra textual phenomena.</desc>
 	  <classes>
 	    <memberOf key="att.global"/>
-	    <memberOf key="model.annotation"/>
+	    <memberOf key="model.standOffPart"/>
 	    <memberOf key="att.typed"/>
 	  </classes>
 	  <content>
@@ -407,13 +433,13 @@
           </attList>
 	  <exemplum>
 	    <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#NONE">
-	      <ldb>
+	      <standOff>
 		<extraTextual>
 		  <acrostic target="#cptMarvel">
 		    <said>Shazam!</said>
 		  </acrostic>
 		</extraTextual>
-	      </ldb>
+	      </standOff>
 	      <!-- ... -->
 	      <div type="tinyExample">
 		<head>Billy Batson’s List</head>
@@ -502,7 +528,7 @@
 	<elementSpec ident="listAnnotation" mode="add" ns="http://www.tei-c.org/proposal/standoff/ns" module="standOff">
 	  <desc>Groups together annotations, for instance for parallel interpretations of a spoken segment</desc>
 	  <classes>
-	    <memberOf key="model.annotation"/>
+	    <memberOf key="model.standOffPart"/>
 	    <memberOf key="att.global"/>
 	    <memberOf key="att.typed"/>
 	    <memberOf key="att.notated"/>
@@ -537,7 +563,7 @@
 	     -->
 	<elementSpec ident="annotationBlock" mode="change" module="spoken">
 	  <classes mode="change">
-	    <memberOf key="model.annotation" mode="add"/>
+	    <memberOf key="model.standOffPart" mode="add"/>
 	    <!-- allow <annotationBlock> wherever annotated segLike objects can go -->
 	    <memberOf key="model.segLike" mode="add"/>
 	    <!-- allow indication of notation variants inside -->
@@ -547,7 +573,7 @@
 	  </classes>
 	  <content>
 	    <alternate>
-	      <classRef key="model.annotation" minOccurs="1" maxOccurs="unbounded"/>
+	      <classRef key="model.standOffPart" minOccurs="1" maxOccurs="unbounded"/>
 	      <sequence>
 		<classRef key="model.OABody" minOccurs="1" maxOccurs="unbounded"/>
 		<classRef key="model.OATarget" minOccurs="1" maxOccurs="unbounded"/>
@@ -570,7 +596,7 @@
 	  </remarks>
 	</elementSpec>
 
-	<classSpec type="model" ident="model.annotation" mode="add" module="standOff">
+	<classSpec type="model" ident="model.standOffPart" mode="add" module="standOff">
 	  <desc>groups together various element types that may be used
 	  to annotate an annotatable segment</desc>
 	</classSpec>
@@ -651,63 +677,63 @@
 
 	<elementSpec ident="castList" mode="change" module="drama">
 	  <classes mode="change">
-	    <memberOf key="model.annotation" mode="add"/>
+	    <memberOf key="model.standOffPart" mode="add"/>
 	  </classes>
 	  <remarks>
 	    <p>The <gi>castList</gi> element is used both to
 	    transcribe the source cast list and to record information
-	    that about speaking roles in the drama that does not
-	    appear in the source cast list. When used to represent
-	    the source cast list, the <gi>castList</gi> would
-	    typically appear within <gi>front</gi>, although it may
-	    also appear occasionally within <gi>body</gi> or
-	    <gi>back</gi>. When used to record information about
-	    speaking roles that is not in the source cast list (or
-	    for some other reason not being transcribed from the
-	    source cast list), the <gi>castList</gi> element should
-	    be inside an <gi>ldb</gi> element.</p>
+	    about speaking roles in the drama that do not appear in
+	    the source cast list. When used to represent the source
+	    cast list, the <gi>castList</gi> would typically appear
+	    within <gi>front</gi>, although it may also appear
+	    occasionally within <gi>body</gi> or <gi>back</gi>. When
+	    used to record information about speaking roles that are
+	    not in the source cast list (or for some other reason not
+	    being transcribed from the source cast list), the
+	    <gi>castList</gi> element should be inside a
+	    <gi>standOff</gi> element.</p>
 	  </remarks>
 	</elementSpec>
 
 	<elementSpec ident="u" mode="change" module="spoken">
 	  <classes mode="change">
-	    <memberOf key="model.annotation" mode="add"/>
+	    <memberOf key="model.standOffPart" mode="add"/>
 	  </classes>
 	</elementSpec>
 
 	<elementSpec ident="seg" mode="change" module="linking">
 	  <classes mode="change">
-	    <memberOf key="model.annotation" mode="add"/>
+	    <memberOf key="model.standOffPart" mode="add"/>
 	  </classes>
 	</elementSpec>
 
 	<classSpec type="model" ident="model.global.meta" mode="change">
 	  <classes mode="change">
-	    <memberOf key="model.annotation" mode="add"/>
+	    <memberOf key="model.standOffPart" mode="add"/>
 	  </classes>
 	</classSpec>
 
 	<classSpec type="model" ident="model.listLike" mode="change">
 	  <classes mode="change">
-	    <memberOf key="model.annotation" mode="add"/>
+	    <memberOf key="model.standOffPart" mode="add"/>
 	  </classes>
 	</classSpec>
 
 	<classSpec type="model" ident="model.entryLike" mode="change">
 	  <classes mode="change">
-	    <memberOf key="model.annotation" mode="add"/>
+	    <memberOf key="model.standOffPart" mode="add"/>
 	  </classes>
 	</classSpec>
 
 	<classSpec type="model" ident="model.biblLike" mode="change">
 	  <classes mode="change">
-	    <memberOf key="model.annotation" mode="add"/>
+	    <memberOf key="model.standOffPart" mode="add"/>
 	  </classes>
 	</classSpec>
 
 	<elementSpec ident="listChange" mode="change" module="header">
 	  <classes mode="change">
-	    <memberOf key="model.annotation" mode="add"/>
+	    <memberOf key="model.standOffPart" mode="add"/>
 	  </classes>
 	</elementSpec>
 	
@@ -715,37 +741,37 @@
 
 	<elementSpec ident="graph" mode="change">
 	  <classes mode="change">
-	    <memberOf key="model.annotation" mode="add"/>
+	    <memberOf key="model.standOffPart" mode="add"/>
 	  </classes>
 	</elementSpec>
 
 	<elementSpec ident="forest" mode="change">
 	  <classes mode="change">
-	    <memberOf key="model.annotation" mode="add"/>
+	    <memberOf key="model.standOffPart" mode="add"/>
 	  </classes>
 	</elementSpec>
 
 	<elementSpec ident="listForest" mode="change">
 	  <classes mode="change">
-	    <memberOf key="model.annotation" mode="add"/>
+	    <memberOf key="model.standOffPart" mode="add"/>
 	  </classes>
 	</elementSpec>
 
 	<elementSpec ident="tree" mode="change">
 	  <classes mode="change">
-	    <memberOf key="model.annotation" mode="add"/>
+	    <memberOf key="model.standOffPart" mode="add"/>
 	  </classes>
 	</elementSpec>
 
 	<elementSpec ident="eTree" mode="change">
 	  <classes mode="change">
-	    <memberOf key="model.annotation" mode="add"/>
+	    <memberOf key="model.standOffPart" mode="add"/>
 	  </classes>
 	</elementSpec>
 
 	<elementSpec ident="zone" mode="change">
 	  <classes mode="change">
-	    <memberOf mode="add" key="model.annotation"/>
+	    <memberOf mode="add" key="model.standOffPart"/>
 	  </classes>
 	</elementSpec>
 
