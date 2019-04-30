@@ -64,6 +64,13 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2019-04-30" who="#sb">
+	Continuing changes started yesterday:
+	<list>
+	  <item>prose tweaks (e.g., stop using 1st person singular :-)</item>
+	  <item>add skeleton of new <gi>prop:annotation</gi> element</item>
+	</list>
+      </change>
       <change when="2019-04-29" who="#sb">
 	Per this morning's meeting with <persName
 	ref="#lr">Laurent</persName>, <persName
@@ -132,9 +139,10 @@
 	  develop a counter proposal. The main sticking point was that
 	  Council objected (quite strongly) to the idea of having
 	  <gi>teiHeader</gi> be a child of the new <gi>standOff</gi>
-	  (herein called <gi>standOff</gi>). Furthermore, Council wanted to
-	  explore the relationship between the stand-off annotations
-	  being recommended and the <ref
+	  (which some of us would prefere were called <gi>ldb</gi>).
+	  Furthermore, Council wanted to explore the relationship
+	  between the stand-off annotations being recommended and the
+	  <ref
 	  target="http://www.openannotation.org/spec/core/">OADM</ref>.</p>
 	</div>
 	<div xml:id="ODTS">
@@ -145,11 +153,12 @@
 	  within <gi>TEI</gi> instead. The result is that a
 	  <gi>teiHeader</gi> can be closely bound to the
 	  <gi>standOff</gi> by being a child of the same <gi>TEI</gi>,
-	  whether the <gi>standOff</gi> is used inside an existing TEI
-	  structure or free-standing. The (desirable) side-effect is
-	  that <gi>teiCorpus</gi> is no longer needed.</p>
+	  whether the <gi>standOff</gi> is used as a child of a nested
+	  <gi>TEI</gi> structure or a free-standing TEI document. The
+	  (desirable) side-effect is that <gi>teiCorpus</gi> is no
+	  longer needed.</p>
 
-	  <p>The current structure of a TEI document is as follows:
+	  <p>The current (v. 3.5.0) structure of a TEI document is as follows:
 	  <eg xml:space="preserve">  start = TEI | teiCorpus
   TEI = teiHeader, model.resourceLike+
   teiCorpus = teiHeader, ( model.resourceLike*, ( TEI | teiCorpus )* )
@@ -161,8 +170,9 @@
   <gi>teiCorpus</gi>.</note></p>
   <p>In his <ref
   target="https://github.com/laurentromary/stdfSpec">original
-  stand-off proposal</ref>, @laurentromary asked for exactly the same
-  thing, except with one significant change:
+  stand-off proposal</ref>, <persName ref="#lr">Laurent</persName>
+  asked for exactly the same thing, except with one significant
+  change:
   <list>
     <item>add <gi>standOff</gi> to <name type="class">model.resourceLike</name></item>
   </list>
@@ -186,23 +196,34 @@
   simplification of the actual proposed content model, which would
   require that you have at least one child of <gi>TEI</gi>: either one
   element from <name type="class">model.resourceLike</name> or a
-  <gi>TEI</gi>.</note> This allows an <gi>standOff</gi> to
+  <gi>TEI</gi>.</note> This allows a <gi>standOff</gi> to
   be associated very closely with a <gi>teiHeader</gi> (by being
   wrapped in a <gi>TEI</gi>) whether it is a document of its own or a
   child of another <gi>TEI</gi> document.</p>
-  <p>That said, I could understand the argument that <said>a
-  <gi>TEI</gi> is just a resource, albeit one with metadata
-  associated; thus <gi>TEI</gi> should just be in <name
-  type="class">model.resourceLike</name></said>. This makes for very
-  simple content models:
+  <p>While this solution has significant backwards-compatability
+  implications (we would have to leave <gi>teiCorpus</gi> as
+  deprecated for a long time), it would seem to both solve the
+  linguists’ desire to associate header information closely with
+  annotations, and to allow a significantly simpler overall model of
+  TEI documents, while still allowing for representation of complex
+  structures.</p>
+  
+  <div xml:id="ODTSalt">
+    <head>Possible simpler content model</head>
+    <p>That said, there is a reasonable argument that <said>a
+    <gi>TEI</gi> is just a resource, albeit one with metadata
+    associated; thus <gi>TEI</gi> should just be in <name
+    type="class">model.resourceLike</name></said>. This makes for very
+    simple content models:
 
   <eg xml:space="preserve">  start = TEI
   TEI = teiHeader, model.resourceLike+
   model.resourceLike = TEI | \text | facsimile | fsdDecl | standOff | sourceDoc</eg>
 
-  That’s good, but it also allows some new weird things (in addition
-  to the weird things we already allow but probably shouldn’t), in
-  particular <gi>TEI</gi> elements in between other resource thingies:
+  While that simplicity is good, it allows some new weird things (in
+  addition to the weird things we already allow but probably
+  shouldn’t), in particular <gi>TEI</gi> elements in between other
+  resources:
 
   <egXML xmlns="http://www.tei-c.org/ns/Examples"><TEI>
   <teiHeader><!-- ... --></teiHeader>
@@ -221,14 +242,10 @@
     <text><!-- ... --></text>
   </TEI>
 </TEI></egXML>
-	  </p>
-	  <p>While this solution has significant
-	  backwards-compatability implications (we would have to leave
-	  <gi>teiCorpus</gi> as deprecated for a long time), it would
-	  seem to both solve the linguists desire to associate header
-	  information closely with annotations, and to allow a
-	  significantly simpler overall model of TEI documents, while
-	  still allowing for representation of complex structures.</p>
+    Thus Syd, at least, thinks we should stick with the slightly more complex
+    content model that avoids interspersion of resources and
+    <gi>TEI</gi>.</p>
+  </div>
 	</div>
       </div>
       <div>
@@ -364,13 +381,11 @@
 	      <sch:ns prefix="prop" uri="http://www.tei-c.org/proposal/standoff/ns"/>
 	    </constraint>
 	  </constraintSpec>
-	  <constraintSpec ident="nestedSTANDOFFshouldBtyped" scheme="schematron" mode="add">
+	  <constraintSpec ident="nested_standOff_should_be_typed" scheme="schematron" mode="add">
 	    <constraint>
-	      <sch:assert test="@type or not(ancestor::prop:standOff)">This <sch:name/> element must have a @type attribute, since it is nested inside an <sch:name/></sch:assert>
+	      <sch:assert test="@type or not(ancestor::prop:standOff)">This <sch:name/> element must have a @type attribute, since it is nested inside a <sch:name/></sch:assert>
 	    </constraint>
 	  </constraintSpec>
-	  <remarks>
-	  </remarks>
 	</elementSpec>
 
 	<!-- New element for holding text not actually present in source -->
@@ -540,6 +555,7 @@
 	      <classRef key="model.headLike" minOccurs="0" maxOccurs="unbounded"/>
 	      <alternate minOccurs="1" maxOccurs="unbounded">
 		<elementRef key="annotationBlock"/>
+		<elementRef key="annotation"/>
 		<classRef key="model.noteLike"/>
 	      </alternate>
 	    </sequence>
@@ -557,6 +573,26 @@
 	    within the complete TEI document to which it applies. </p>
 	  </remarks>
 	</elementSpec>
+
+	<elementSpec ident="annotation" mode="add" ns="http://www.tei-c.org/proposal/standoff/ns" module="standOff">
+	  <classes mode="replace">
+	    <memberOf key="att.global"/>
+	    <memberOf key="att.typed"/>
+	    <memberOf key="att.pointing"/>
+	  </classes>
+	  <content>
+	    <empty/>
+	  </content>
+	  <attList>
+	    <attRef class="att.scoping" name="match"/>
+	    <attDef ident="body" usage="req">
+	      <desc>pointer(s) to the annotation body</desc>
+	      <datatype minOccurs="1" maxOccurs="unbounded">
+		<dataRef key="teidata.pointer"/>
+	      </datatype>
+	    </attDef>
+	  </attList>
+	</elementSpec>
 	
 	<!-- The content model for <annotationBlock> is revised to
 	     deal with the various anticipated annotation use cases
@@ -573,9 +609,14 @@
 	  </classes>
 	  <content>
 	    <alternate>
-	      <classRef key="model.standOffPart" minOccurs="1" maxOccurs="unbounded"/>
+	      <alternate minOccurs="1" maxOccurs="unbounded">
+		<elementRef key="u"/>
+		<elementRef key="spanGrp"/>
+		<classRef key="model.global.spoken"/>
+	      </alternate>
 	      <sequence>
 		<classRef key="model.OABody" minOccurs="1" maxOccurs="unbounded"/>
+		<elementRef key="annotation" minOccurs="1" maxOccurs="1"/>
 		<classRef key="model.OATarget" minOccurs="1" maxOccurs="unbounded"/>
 	      </sequence>
 	    </alternate>
