@@ -27,16 +27,16 @@ This is because he wants the document used for stand off annotations to also sta
 ~~~~~
   start = TEI
   TEI = teiHeader, ( model.resourceLike*, TEI* )  [2]
-  model.resourceLike = \text | facsimile | fsdDecl | ldb | sourceDoc
+  model.resourceLike = \text | facsimile | fsdDecl | standoff | sourceDoc
 ~~~~~
-This allows an `<ldb>` to be associated very closely with a `<teiHeader>` (by being wrapped in a `<TEI>`) whether it is a document of its own or a child of another `<TEI>` document.
+This allows an `<standoff>` to be associated very closely with a `<teiHeader>` (by being wrapped in a `<TEI>`) whether it is a document of its own or a child of another `<TEI>` document.
 
 That said, I could understand the argument that “a `<TEI>` is just a resource, albeit one with metadata associated; thus `<TEI>` should just be in model.resourceLike”. This makes for very simple content models: 
 
 ~~~~~
   start = TEI
   TEI = teiHeader, model.resourceLike+
-  model.resourceLike = TEI | \text | facsimile | fsdDecl | ldb | sourceDoc
+  model.resourceLike = TEI | \text | facsimile | fsdDecl | standoff | sourceDoc
 ~~~~~
 That’s good, but it also allows some new weird things (in addition to the weird things we already allow but probably shouldn’t), in particular `<TEI>` elements in between other resource thingies:
 
@@ -47,12 +47,12 @@ That’s good, but it also allows some new weird things (in addition to the weir
   <TEI>
     <teiHeader><!-- ... --></teiHeader>
     <sourceDoc><!-- ... --></sourceDoc>
-    <ldb><!-- ... --></ldb>
+    <standoff><!-- ... --></standoff>
   </TEI>
   <fsdDecl><!-- ... --></fsdDecl>
   <text><!-- ... --></text>
   <text><!-- ... --></text>
-  <ldb><!-- ... --></ldb>
+  <standoff><!-- ... --></standoff>
   <TEI>
     <teiHeader><!-- ... --></teiHeader>
     <text><!-- ... --></text>

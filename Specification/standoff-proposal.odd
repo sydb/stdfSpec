@@ -5,7 +5,7 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-	<title>Proposal for link data block &amp; standoff annotations in TEI</title>
+	<title>Proposal for standoff annotations in TEI</title>
 	<author xml:id="ps">
 	  <persName ref="https://github.com/peterstadler">
 	    <forename>Peter</forename>
@@ -64,6 +64,12 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change when="2019-10-16" who="#sb">
+	Settle on <gi>standoff</gi> over <gi>ldb</gi> per Council meeting
+	of <date when="2019-09-16T15:00:00+02:00">Mon 16 Sep 19</date>.
+	Note that most of the work was done last year, just tidying up
+	a bit.
+      </change>
       <change when="2019-04-30" who="#sb">
 	Continuing changes started yesterday:
 	<list>
@@ -138,8 +144,7 @@
 	  assigned as a sub-group to read Laurent’s proposal and
 	  develop a counter proposal. The main sticking point was that
 	  Council objected (quite strongly) to the idea of having
-	  <gi>teiHeader</gi> be a child of the new <gi>standOff</gi>
-	  (which some of us would prefere were called <gi>ldb</gi>).
+	  <gi>teiHeader</gi> be a child of the new <gi>standOff</gi>.
 	  Furthermore, Council wanted to explore the relationship
 	  between the stand-off annotations being recommended and the
 	  <ref
@@ -274,8 +279,7 @@
 	</div>
 	<div>
 	  <head>For somewhere in SO(?):</head>
-	    <p>The <gi>standOff</gi> (or <soCalled>linked data
-	    block</soCalled>) element is a catch-all element intended
+	    <p>The <gi>standOff</gi> element is a catch-all element intended
 	    for holding content that is neither transcribed from the
 	    source document, nor strictly speaking metadata about said
 	    document. It may also be used to hold transcribed text
